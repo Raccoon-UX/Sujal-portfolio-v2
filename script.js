@@ -845,16 +845,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // B. 9-Panel Expanding Accordion Interactivity
   if (certPanels.length > 0) {
-    const activatePanel = (panel) => {
-      if (panel.classList.contains("hide")) return;
-      certPanels.forEach(p => p.classList.remove("active"));
-      panel.classList.add("active");
+    let activateHoverTimer = null;
+
+    const activatePanel = (panel, immediate = false) => {
+      if (!panel || panel.classList.contains("hide") || panel.classList.contains("active")) return;
+      
+      const executeActivation = () => {
+        certPanels.forEach(p => p.classList.remove("active"));
+        panel.classList.add("active");
+        if (typeof ScrollTrigger !== 'undefined') {
+          ScrollTrigger.refresh();
+        }
+      };
+
+      if (immediate) {
+        if (activateHoverTimer) clearTimeout(activateHoverTimer);
+        executeActivation();
+      } else {
+        if (activateHoverTimer) clearTimeout(activateHoverTimer);
+        activateHoverTimer = setTimeout(executeActivation, 45);
+      }
     };
 
     certPanels.forEach(panel => {
-      panel.addEventListener("mouseenter", () => activatePanel(panel));
-      panel.addEventListener("click", () => activatePanel(panel));
+      panel.addEventListener("mouseenter", () => activatePanel(panel, false));
+      panel.addEventListener("click", () => activatePanel(panel, true));
+      panel.addEventListener("focus", () => activatePanel(panel, true));
     });
+
+    // Clear hover timer if mouse leaves the deck
+    const deck = document.getElementById("certAccordionDeck");
+    if (deck) {
+      deck.addEventListener("mouseleave", () => {
+        if (activateHoverTimer) clearTimeout(activateHoverTimer);
+      });
+    }
   }
 
   /* ================= 12. GLOBAL SCROLL REVEALS ================= */
