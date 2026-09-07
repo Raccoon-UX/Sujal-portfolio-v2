@@ -874,6 +874,16 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ================= 12. GLOBAL SCROLL REVEALS ================= */
   const scrollingReveals = document.querySelectorAll(".reveal");
 
+  function processScrollReveal() {
+    scrollingReveals.forEach(el => {
+      el.classList.add("active");
+    });
+    if (typeof ScrollTrigger !== 'undefined') {
+      ScrollTrigger.refresh();
+    }
+  }
+  window.processScrollReveal = processScrollReveal;
+
   if ('IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -887,14 +897,17 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, {
       root: null,
-      threshold: 0.05,
-      rootMargin: "0px 0px -40px 0px"
+      threshold: 0.01,
+      rootMargin: "0px 0px 120px 0px"
     });
 
     scrollingReveals.forEach(el => revealObserver.observe(el));
   } else {
     scrollingReveals.forEach(el => el.classList.add("active"));
   }
+
+  // Guarantee all sections are active
+  processScrollReveal();
 
   /* ================= 13. ASYNCHRONOUS FORMSPREE ENGINE ================= */
   const contactForm = document.getElementById("contactForm");
