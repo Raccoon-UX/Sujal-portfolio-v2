@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <link rel="stylesheet" href="style.css?v=4.2" />
+  <link rel="stylesheet" href="style.css?v=4.3" />
   <style id="contact-critical-styles">
     /* ================= 1:1 Image 2 Reference Contact Showcase ================= */
     .contact-section {
@@ -652,14 +652,21 @@
     </div>
   </section>
 
-  <!-- About Section (Bento Grid Layout) -->
+  <!-- About Section (1:1 Reference Layout) -->
   <section class="about-section reveal" id="about">
-    <div class="container">
+    <!-- Ambient Subtle Decorative Background Elements -->
+    <div class="about-bg-orb orb-top-left"></div>
+    <div class="about-bg-orb orb-top-right"></div>
+    <div class="about-dot-grid dot-top-right"></div>
+    <div class="about-dot-grid dot-bottom-left"></div>
+    <div class="about-dot-grid dot-bottom-right"></div>
+
+    <div class="container about-main-container">
       
-      <!-- Section Eyebrow Header -->
+      <!-- Section Header -->
       <div class="section-header-block">
         <div class="section-eyebrow-pill">
-          <i class="fa-solid fa-user"></i> About Me
+          <i class="fa-regular fa-user"></i> About Me
         </div>
         
         <div class="section-title-with-sparks">
@@ -681,90 +688,201 @@
         <p class="section-sub">Bridging the gap between robust system pipelines, scalable databases, and intuitive interfaces.</p>
       </div>
       
-      <div class="about-bento-grid">
-        <!-- Card 1: My Story -->
-        <div class="bento-card bento-wide bento-story">
-          <div class="bento-card-glow"></div>
-          <h3>Engineering Background &amp; Focus</h3>
-          <p class="paragraph">I am an Information Technology Engineering student at <strong>Shree L.R. Tiwari College of Engineering (BE IT, SGPA: 7.83)</strong> specializing in architecting modern full-stack applications, real-time distributed pipelines, and secure backend systems.</p>
-          <p class="paragraph">My development approach centers on building scalable software from end to end — combining modern frontend frameworks (<strong>Next.js 14, React.js, TypeScript</strong>) with resilient backend microservices and databases (<strong>Node.js, Express, PostgreSQL, Prisma, MongoDB</strong>), integrated with real-time WebSockets and cloud APIs.</p>
-        </div>
+      <!-- About Cards Layout Container -->
+      <div class="about-cards-stack">
         
-        <!-- Card 2: Refined Workspace IDE Mockup -->
-        <div class="bento-card bento-workspace">
-          <div class="bento-card-glow"></div>
-          <div class="workspace-mock">
-            <div class="workspace-header-bar">
-              <div class="header-dots">
-                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-              </div>
-              <span class="workspace-tab active-tab"><i class="fa-solid fa-file-code"></i> developer.ts</span>
+        <!-- CARD 1 (TOP FULL-WIDTH): Engineering Background & Focus -->
+        <div class="about-card about-card-top bento-card">
+          <div class="about-card-header">
+            <div class="about-icon-circle">
+              <i class="fa-solid fa-code"></i>
             </div>
-            <div class="workspace-body">
-              <div class="file-sidebar">
-                <div class="sidebar-title">WORKSPACE</div>
-                <div class="sidebar-item active-file"><i class="fa-solid fa-file-code text-blue-file"></i> developer.ts</div>
-                <div class="sidebar-item"><i class="fa-solid fa-database text-purple-file"></i> schema.prisma</div>
-                <div class="sidebar-item"><i class="fa-solid fa-gear text-muted-file"></i> .env</div>
+            <h3 class="about-card-title">Engineering Background &amp; Focus</h3>
+          </div>
+          
+          <div class="about-card-body">
+            <p class="about-paragraph">
+              I am an Information Technology Engineering student at <strong>Shree L.R. Tiwari College of Engineering (BE IT, SGPA: 7.83)</strong> specializing in architecting modern full-stack applications, real-time distributed pipelines, and secure backend systems.
+            </p>
+            <p class="about-paragraph">
+              My development approach centers on building scalable software from end to end &mdash; combining modern frontend frameworks (<strong>Next.js 14, React.js, TypeScript</strong>) with resilient backend microservices and databases (<strong>Node.js, Express, PostgreSQL, Prisma, MongoDB</strong>), integrated with real-time WebSockets and cloud APIs.
+            </p>
+          </div>
+          
+          <!-- Subtle Decorative Dot Matrix in Bottom-Right -->
+          <div class="card-inner-dots"></div>
+        </div>
+
+        <!-- ROW 2: SPLIT 2-COLUMN (Developer Profile Card + Track Record) -->
+        <div class="about-middle-grid">
+          
+          <!-- CARD 2 (LEFT): Developer Profile / Code Editor IDE Card -->
+          <div class="about-card about-editor-card bento-card">
+            
+            <!-- Editor Top Bar -->
+            <div class="editor-header-bar">
+              <div class="editor-tab-pill">
+                <i class="fa-regular fa-file-code editor-tab-icon"></i>
+                <span class="editor-tab-name">developer.ts</span>
               </div>
-              <div class="code-editor-area">
-                <pre class="code-output"><code><span class="keyword">interface</span> <span class="type-name">EngineerProfile</span> {
-  name: <span class="string">"Sujal Verma"</span>;
-  role: <span class="string">"Full-Stack Developer & SDE"</span>;
-  specialization: [<span class="string">"Next.js"</span>, <span class="string">"MERN"</span>, <span class="string">"TypeScript"</span>];
-  databases: [<span class="string">"PostgreSQL"</span>, <span class="string">"MongoDB"</span>, <span class="string">"MySQL"</span>];
-  location: <span class="string">"Mumbai, Maharashtra, IN"</span>;
-  status: <span class="string">"Available for Roles & Internships"</span>;
-}</code></pre>
+              <div class="editor-window-dots">
+                <span class="window-dot dot-red"></span>
+                <span class="window-dot dot-yellow"></span>
+                <span class="window-dot dot-green"></span>
+              </div>
+            </div>
+
+            <!-- Editor Inner Split -->
+            <div class="editor-inner-split">
+              <!-- Left Mini Workspace Sidebar -->
+              <div class="editor-mini-sidebar">
+                <span class="mini-sidebar-heading">WORKSPACE</span>
+                <div class="mini-file-item active">
+                  <i class="fa-regular fa-file-code file-icon-blue"></i>
+                  <span>developer.ts</span>
+                </div>
+                <div class="mini-file-item">
+                  <i class="fa-solid fa-database file-icon-slate"></i>
+                  <span>schema.prisma</span>
+                </div>
+                <div class="mini-file-item">
+                  <i class="fa-solid fa-gear file-icon-slate"></i>
+                  <span>.env</span>
+                </div>
+              </div>
+
+              <!-- Right Code Area with Line Numbers -->
+              <div class="editor-code-container">
+                <div class="editor-line-numbers">
+                  <span>1</span>
+                  <span>2</span>
+                  <span>3</span>
+                  <span>4</span>
+                  <span>5</span>
+                  <span>6</span>
+                  <span>7</span>
+                  <span>8</span>
+                </div>
+                <div class="editor-code-text">
+                  <div class="code-line"><span class="token-keyword">interface</span> <span class="token-type">EngineerProfile</span> {</div>
+                  <div class="code-line indent">&nbsp;&nbsp;name: <span class="token-string">"Sujal Verma"</span>;</div>
+                  <div class="code-line indent">&nbsp;&nbsp;role: <span class="token-string">"Full-Stack Developer &amp; SDE"</span>;</div>
+                  <div class="code-line indent">&nbsp;&nbsp;specialization: [<span class="token-string">"Next.js"</span>, <span class="token-string">"MERN"</span>, <span class="token-string">"TypeScript"</span>];</div>
+                  <div class="code-line indent">&nbsp;&nbsp;databases: [<span class="token-string">"PostgreSQL"</span>, <span class="token-string">"MongoDB"</span>, <span class="token-string">"MySQL"</span>];</div>
+                  <div class="code-line indent">&nbsp;&nbsp;location: <span class="token-string">"Mumbai, Maharashtra, IN"</span>;</div>
+                  <div class="code-line indent">&nbsp;&nbsp;status: <span class="token-string">"Available for Roles &amp; Internships"</span>;</div>
+                  <div class="code-line">}</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- CARD 3 (RIGHT): Track Record Statistics Card -->
+          <div class="about-card about-stats-card bento-card bento-stats-box">
+            <div class="about-card-header">
+              <div class="about-icon-circle">
+                <i class="fa-solid fa-chart-simple"></i>
+              </div>
+              <h3 class="about-card-title">Track Record</h3>
+            </div>
+
+            <div class="about-stats-2x2-grid">
+              <!-- Stat 1 -->
+              <div class="about-stat-box bento-stat-item">
+                <div class="stat-number-row num-wrap">
+                  <span class="stat-main-figure stat-num" data-target="6">6</span><span class="stat-plus-sign">+</span>
+                </div>
+                <span class="stat-legend-label">PROJECTS &amp; PILOTS</span>
+              </div>
+
+              <!-- Stat 2 -->
+              <div class="about-stat-box bento-stat-item">
+                <div class="stat-number-row num-wrap">
+                  <span class="stat-main-figure stat-num" data-target="5">5</span><span class="stat-plus-sign">+</span>
+                </div>
+                <span class="stat-legend-label">HACKATHONS</span>
+              </div>
+
+              <!-- Stat 3 -->
+              <div class="about-stat-box bento-stat-item">
+                <div class="stat-number-row num-wrap">
+                  <span class="stat-main-figure stat-num" data-target="1">1</span>
+                </div>
+                <span class="stat-legend-label">FULL-STACK INTERNSHIP</span>
+              </div>
+
+              <!-- Stat 4 -->
+              <div class="about-stat-box bento-stat-item">
+                <div class="stat-number-row num-wrap">
+                  <span class="stat-main-figure stat-num" data-target="7">7</span><span class="stat-plus-sign">+</span>
+                </div>
+                <span class="stat-legend-label">CERTIFICATIONS</span>
               </div>
             </div>
           </div>
+
         </div>
-        
-        <!-- Card 3: Metrics & Stats (Achievements Counters) -->
-        <div class="bento-card bento-stats-box">
-          <div class="bento-card-glow"></div>
-          <h3>Track Record</h3>
-          <div class="bento-stats-grid">
-            <div class="bento-stat-item">
-              <div class="num-wrap">
-                <span class="stat-num" data-target="6">0</span><span class="stat-plus">+</span>
-              </div>
-              <span class="stat-label">Projects &amp; Pilots</span>
+
+        <!-- CARD 4 (BOTTOM FULL-WIDTH): Leadership & Availability -->
+        <div class="about-card about-card-bottom bento-card">
+          <div class="about-card-header">
+            <div class="about-icon-circle">
+              <i class="fa-solid fa-user-gear"></i>
             </div>
-            <div class="bento-stat-item">
-              <div class="num-wrap">
-                <span class="stat-num" data-target="5">0</span><span class="stat-plus">+</span>
+            <h3 class="about-card-title">Leadership &amp; Availability</h3>
+          </div>
+
+          <div class="about-quad-grid">
+            <!-- Quad Item 1: ITSA -->
+            <div class="about-quad-item">
+              <div class="quad-icon-bubble">
+                <i class="fa-solid fa-users"></i>
               </div>
-              <span class="stat-label">Hackathons</span>
+              <div class="quad-info-meta">
+                <h4 class="quad-title">ITSA Committee Member</h4>
+                <p class="quad-sub">Information Technology<br>Student Association</p>
+              </div>
             </div>
-            <div class="bento-stat-item">
-              <div class="num-wrap">
-                <span class="stat-num" data-target="1">0</span><span class="stat-plus"></span>
+
+            <!-- Quad Item 2: Open to Opportunities -->
+            <div class="about-quad-item">
+              <div class="quad-icon-bubble">
+                <i class="fa-solid fa-rocket"></i>
               </div>
-              <span class="stat-label">Full-Stack Internship</span>
+              <div class="quad-info-meta">
+                <h4 class="quad-title">Open to Opportunities</h4>
+                <p class="quad-sub">SDE Roles &amp; Full-Stack<br>Internships</p>
+              </div>
             </div>
-            <div class="bento-stat-item">
-              <div class="num-wrap">
-                <span class="stat-num" data-target="7">0</span><span class="stat-plus">+</span>
+
+            <!-- Quad Item 3: Active Expansion -->
+            <div class="about-quad-item">
+              <div class="quad-icon-bubble">
+                <i class="fa-solid fa-bolt"></i>
               </div>
-              <span class="stat-label">Certifications</span>
+              <div class="quad-info-meta">
+                <h4 class="quad-title">Active Expansion</h4>
+                <p class="quad-sub">Next.js 14, Cloud Microservices &amp;<br>Distributed Systems</p>
+              </div>
+            </div>
+
+            <!-- Quad Item 4: Location -->
+            <div class="about-quad-item">
+              <div class="quad-icon-bubble">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="quad-info-meta">
+                <h4 class="quad-title">Based in</h4>
+                <p class="quad-sub">Mumbai, Maharashtra, India</p>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Card 4: Position of Responsibility & Current Status -->
-        <div class="bento-card bento-stance">
-          <div class="bento-card-glow"></div>
-          <h3>Leadership &amp; Availability</h3>
-          <ul class="stance-list">
-            <li><span class="stance-bullet">🏛️</span> <strong>ITSA Committee Member</strong> &ndash; Information Technology Student Association</li>
-            <li><span class="stance-bullet">⚡</span> <strong>Open to Opportunities:</strong> SDE Roles &amp; Full-Stack Internships</li>
-            <li><span class="stance-bullet">🧠</span> <strong>Active Expansion:</strong> Next.js 14, Cloud Microservices &amp; Distributed Systems</li>
-            <li><span class="stance-bullet">📍</span> <strong>Based in:</strong> Mumbai, Maharashtra, India</li>
-          </ul>
-        </div>
       </div>
+    </div>
+  </section>
     </div>
   </section>
 
@@ -2278,6 +2396,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script src="script.js?v=4.2"></script>
+  <script src="script.js?v=4.3"></script>
 </body>
 </html>
