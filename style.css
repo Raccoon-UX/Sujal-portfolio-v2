@@ -643,10 +643,11 @@ body {
   left: 0;
   width: 100%;
   height: 80px;
-  background: var(--card-glass);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--card-border);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03);
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -655,10 +656,13 @@ body {
 
 .nav-container {
   width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
+  height: 100%;
 }
 
 .logo {
@@ -669,10 +673,12 @@ body {
   font-weight: 800;
   font-size: 1.4rem;
   color: var(--text-main);
+  letter-spacing: -0.3px;
 }
 
 .logo-icon {
   color: var(--accent-blue);
+  font-weight: 800;
 }
 
 .logo .highlight {
@@ -681,23 +687,24 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 30px;
+  gap: 32px;
   list-style: none;
   align-items: center;
 }
 
 .nav-link {
   text-decoration: none;
-  color: var(--text-main);
+  color: #475569;
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   padding: 8px 0;
   position: relative;
-  transition: color 0.3s;
+  transition: color 0.25s ease;
 }
 
 .nav-link:hover, .nav-link.active {
   color: var(--accent-blue);
+  font-weight: 600;
 }
 
 .nav-link::after {
@@ -708,6 +715,7 @@ body {
   width: 0;
   height: 2px;
   background: var(--gradient-primary);
+  border-radius: 2px;
   transition: width 0.3s ease;
 }
 
@@ -4615,12 +4623,14 @@ html.modal-open {
     justify-content: center;
   }
 
+  .nav-container { padding: 0 24px; }
   .menu-btn { display: flex; }
   .nav-links {
     position: absolute; top: 80px; left: 0; width: 100%; background: #ffffff;
-    flex-direction: column; padding: 30px 0; border-bottom: 1px solid var(--card-border);
+    flex-direction: column; padding: 24px 0; border-bottom: 1px solid var(--card-border);
     display: none;
     box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    gap: 18px;
   }
   .nav-links.active { display: flex; }
 
@@ -4694,6 +4704,7 @@ html.modal-open {
 }
 
 @media (max-width: 768px) {
+  .nav-container { padding: 0 20px; }
   .hero-section, .hero { padding: 110px 0 40px 0; }
   .hero-main-title { font-size: 2.35rem; }
   .hero-card-frame { max-width: 290px; }
