@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <link rel="stylesheet" href="style.css?v=3.8" />
+  <link rel="stylesheet" href="style.css?v=3.9" />
   <style id="contact-critical-styles">
     /* ================= 1:1 Image 2 Reference Contact Showcase ================= */
     .contact-section {
@@ -92,14 +92,20 @@
       visibility: visible !important;
     }
 
-    /* Header Block */
-    .contact-header-block {
+    /* Unified Section Headers (Image 2 Reference Design with Radiant Sparks) */
+    .section-header-block {
       text-align: center;
-      margin-bottom: 36px;
+      margin-bottom: 38px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
+      z-index: 5;
     }
+    .section-eyebrow-pill,
+    .skills-eyebrow,
+    .experience-eyebrow,
+    .achieve-eyebrow,
     .contact-eyebrow {
       display: inline-flex;
       align-items: center;
@@ -114,6 +120,7 @@
       margin-bottom: 12px;
       box-shadow: 0 2px 10px rgba(37, 99, 235, 0.08);
     }
+    .section-title-with-sparks,
     .contact-title-with-sparks {
       display: inline-flex;
       align-items: center;
@@ -121,6 +128,7 @@
       gap: 16px;
       position: relative;
     }
+    .section-title,
     .contact-heading-title {
       margin: 0;
       font-size: 2.75rem;
@@ -129,17 +137,22 @@
       line-height: 1.15;
       color: #0f172a !important;
       -webkit-text-fill-color: #0f172a !important;
+      text-align: center;
+      background: none;
     }
+    .section-title .text-blue-accent,
     .contact-heading-title .text-blue-accent {
       color: #2563eb !important;
       -webkit-text-fill-color: #2563eb !important;
     }
+    .section-spark-svg,
     .contact-spark-svg {
       width: 40px;
       height: 40px;
       flex-shrink: 0;
       filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
     }
+    .section-sub,
     .contact-sub-text {
       max-width: 640px;
       margin: 10px auto 0 auto;
@@ -642,8 +655,31 @@
   <!-- About Section (Bento Grid Layout) -->
   <section class="about-section reveal" id="about">
     <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <p class="section-sub">Bridging the gap between robust system pipelines, scalable databases, and intuitive interfaces.</p>
+      
+      <!-- Section Eyebrow Header -->
+      <div class="section-header-block">
+        <div class="section-eyebrow-pill">
+          <i class="fa-solid fa-user"></i> About Me
+        </div>
+        
+        <div class="section-title-with-sparks">
+          <svg class="section-spark-svg spark-left" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M28 8L15 3" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M30 19L12 19" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M28 30L15 35" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+
+          <h2 class="section-title">About <span class="text-blue-accent">Me</span></h2>
+
+          <svg class="section-spark-svg spark-right" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 8L23 3" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M8 19L26 19" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M10 30L23 35" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <p class="section-sub">Bridging the gap between robust system pipelines, scalable databases, and intuitive interfaces.</p>
+      </div>
       
       <div class="about-bento-grid">
         <!-- Card 1: My Story -->
@@ -737,11 +773,27 @@
     <div class="container">
       
       <!-- Section Eyebrow Header -->
-      <div class="skills-header-block">
-        <div class="skills-eyebrow">
+      <div class="section-header-block">
+        <div class="section-eyebrow-pill">
           <i class="fa-solid fa-code"></i> My Skills
         </div>
-        <h2 class="section-title">Skills &amp; Toolkit</h2>
+        
+        <div class="section-title-with-sparks">
+          <svg class="section-spark-svg spark-left" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M28 8L15 3" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M30 19L12 19" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M28 30L15 35" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+
+          <h2 class="section-title">Skills &amp; <span class="text-blue-accent">Toolkit</span></h2>
+
+          <svg class="section-spark-svg spark-right" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 8L23 3" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M8 19L26 19" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M10 30L23 35" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+
         <p class="section-sub">A quick overview of the technologies, tools and concepts I work with to build scalable and impactful solutions.</p>
       </div>
 
@@ -1045,8 +1097,31 @@
   <!-- Projects Section (Resume 4.2 Verified) -->
   <section class="projects-section reveal" id="projects">
     <div class="container">
-      <h2 class="section-title">Featured Projects</h2>
-      <p class="section-sub">Production-grade applications and architectural implementations engineered for real-world reliability.</p>
+      
+      <!-- Section Eyebrow Header -->
+      <div class="section-header-block">
+        <div class="section-eyebrow-pill">
+          <i class="fa-solid fa-layer-group"></i> Portfolio Showcase
+        </div>
+        
+        <div class="section-title-with-sparks">
+          <svg class="section-spark-svg spark-left" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M28 8L15 3" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M30 19L12 19" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M28 30L15 35" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+
+          <h2 class="section-title">Featured <span class="text-blue-accent">Projects</span></h2>
+
+          <svg class="section-spark-svg spark-right" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 8L23 3" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M8 19L26 19" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M10 30L23 35" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <p class="section-sub">Production-grade applications and architectural implementations engineered for real-world reliability.</p>
+      </div>
 
       <!-- Filter Controls Array -->
       <div class="filter-controls">
@@ -1134,11 +1209,27 @@
     <div class="container">
       
       <!-- Section Eyebrow Header -->
-      <div class="experience-header-block">
-        <div class="experience-eyebrow">
+      <div class="section-header-block">
+        <div class="section-eyebrow-pill">
           <i class="fa-solid fa-briefcase"></i> Career Journey
         </div>
-        <h2 class="section-title">Work Experience &amp; <span class="text-blue-accent">Leadership</span></h2>
+        
+        <div class="section-title-with-sparks">
+          <svg class="section-spark-svg spark-left" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M28 8L15 3" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M30 19L12 19" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M28 30L15 35" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+
+          <h2 class="section-title">Work Experience &amp; <span class="text-blue-accent">Leadership</span></h2>
+
+          <svg class="section-spark-svg spark-right" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 8L23 3" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M8 19L26 19" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M10 30L23 35" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+
         <p class="section-sub">My professional journey, hands-on experience and leadership roles that have shaped my skills and passion for building impactful solutions.</p>
       </div>
 
@@ -1330,11 +1421,27 @@
     <div class="container">
       
       <!-- Section Eyebrow Header -->
-      <div class="achieve-header-block">
-        <div class="achieve-eyebrow">
+      <div class="section-header-block">
+        <div class="section-eyebrow-pill">
           <i class="fa-solid fa-trophy"></i> Achievements &amp; Accreditations
         </div>
-        <h2 class="section-title">Certifications &amp; <span class="text-blue-accent">Hackathons</span></h2>
+        
+        <div class="section-title-with-sparks">
+          <svg class="section-spark-svg spark-left" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M28 8L15 3" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M30 19L12 19" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M28 30L15 35" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+
+          <h2 class="section-title">Certifications &amp; <span class="text-blue-accent">Hackathons</span></h2>
+
+          <svg class="section-spark-svg spark-right" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 8L23 3" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M8 19L26 19" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M10 30L23 35" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+
         <p class="section-sub">A showcase of 9 verified certifications, hackathons and engineering milestones that have shaped my technical journey.</p>
       </div>
 
@@ -2073,6 +2180,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script src="script.js?v=3.8"></script>
+  <script src="script.js?v=3.9"></script>
 </body>
 </html>
