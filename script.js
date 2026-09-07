@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(tickCursor);
 
     // Dynamic Hover classes trigger
-    const interactiveElements = document.querySelectorAll('a, button, .view-trigger, .case-study-btn, .filter-btn, .skills-pill-btn, .toolkit-chip, .career-tab-btn, .career-card, .career-avatar-box');
+    const interactiveElements = document.querySelectorAll('a, button, .view-trigger, .case-study-btn, .filter-btn, .skills-pill-btn, .toolkit-chip, .career-tab-btn, .career-card, .career-avatar-box, .achieve-pill-btn, .featured-achieve-card, .achieve-card, .achieve-view-btn');
     interactiveElements.forEach(el => {
       el.addEventListener('mouseenter', () => {
         if (!isMagneticLocked && typeof gsap !== 'undefined') {
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Magnetic Attraction Mechanics
-    const magneticElements = document.querySelectorAll('.nav-link, .logo, .social-icon, .execute-btn, .btn, .filter-btn, .skills-pill-btn, .career-tab-btn');
+    const magneticElements = document.querySelectorAll('.nav-link, .logo, .social-icon, .execute-btn, .btn, .filter-btn, .skills-pill-btn, .career-tab-btn, .achieve-pill-btn');
     magneticElements.forEach(el => {
       el.addEventListener('mousemove', (e) => {
         isMagneticLocked = true;
@@ -379,17 +379,18 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Certifications Slider Entrance
-    gsap.from(".certifications-swiper-container", {
+    // Certifications & Hackathons Showcase Cards Entrance
+    gsap.from(".featured-achieve-card, .achieve-card", {
       scrollTrigger: {
         trigger: "#achievements",
         start: "top 85%",
         once: true
       },
       opacity: 0,
-      y: 35,
-      duration: 0.8,
+      y: 30,
+      duration: 0.6,
       ease: "power2.out",
+      stagger: 0.08,
       clearProps: "all"
     });
   }
@@ -505,6 +506,47 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Trigger ScrollTrigger refresh to maintain scroll sync and Lenis harmony
+        if (typeof ScrollTrigger !== 'undefined') {
+          ScrollTrigger.refresh();
+        }
+      });
+    });
+  }
+
+  /* ================= 8.6 DYNAMIC ACHIEVEMENTS & CERTIFICATIONS FILTER ================= */
+  const achieveFilterBtns = document.querySelectorAll('.achieve-pill-btn');
+  const featuredAchieveCard = document.querySelector('.featured-achieve-card');
+  const standardAchieveCards = document.querySelectorAll('.achieve-card');
+
+  if (achieveFilterBtns.length > 0) {
+    achieveFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        achieveFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const activeFilter = btn.getAttribute('data-achieve-filter');
+
+        // Filter featured card
+        if (featuredAchieveCard) {
+          const featCats = (featuredAchieveCard.getAttribute('data-achieve-category') || '').split(' ');
+          if (activeFilter === 'all' || featCats.includes(activeFilter)) {
+            featuredAchieveCard.classList.remove('hide');
+          } else {
+            featuredAchieveCard.classList.add('hide');
+          }
+        }
+
+        // Filter standard cards
+        standardAchieveCards.forEach(card => {
+          const cardCats = (card.getAttribute('data-achieve-category') || '').split(' ');
+          if (activeFilter === 'all' || cardCats.includes(activeFilter)) {
+            card.classList.remove('hide');
+          } else {
+            card.classList.add('hide');
+          }
+        });
+
+        // Trigger ScrollTrigger refresh to maintain accurate scroll measurements
         if (typeof ScrollTrigger !== 'undefined') {
           ScrollTrigger.refresh();
         }
@@ -715,9 +757,12 @@ document.addEventListener('DOMContentLoaded', () => {
       trigger.addEventListener("click", function (e) {
         e.preventDefault();
         
-        const innerImg = this.querySelector("img");
-        const parentCard = this.closest(".carousel-card-wide, .timeline-item, .certificate-preview-box");
-        const entryTitle = parentCard ? parentCard.querySelector("h3") : null;
+        let innerImg = this.querySelector("img");
+        const parentCard = this.closest(".featured-achieve-card, .achieve-card, .carousel-card-wide, .timeline-item, .career-card, .certificate-preview-box");
+        if (!innerImg && parentCard) {
+          innerImg = parentCard.querySelector("img");
+        }
+        const entryTitle = parentCard ? parentCard.querySelector("h3, .featured-title") : null;
 
         // Stop Lenis & Lock Body
         if (window.lenis) {
@@ -801,7 +846,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ================= 11. SWIPER ACCREDITATION CAROUSEL ================= */
-  if (typeof Swiper !== 'undefined') {
+  if (typeof Swiper !== 'undefined' && document.querySelector(".certifications-swiper-container")) {
     new Swiper(".certifications-swiper-container", {
       slidesPerView: 1,
       spaceBetween: 25,

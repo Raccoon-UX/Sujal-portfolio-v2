@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <link rel="stylesheet" href="style.css?v=2.5" />
+  <link rel="stylesheet" href="style.css?v=2.6" />
 </head>
 <body> 
   <!-- Custom Premium Cursor -->
@@ -825,149 +825,276 @@
     </div>
   </section>
 
-  <!-- Certifications & Hackathons Slider Section -->
-  <section class="certifications-slider reveal" id="achievements">
+  <!-- Certifications & Hackathons Showcase Section (Redesigned from Reference) -->
+  <section class="certifications-section reveal" id="achievements">
     <div class="container">
-      <h2 class="section-title">Certifications &amp; Hackathons</h2>
-      <p class="section-sub">Verified achievements, hackathon submissions, and technical accreditations from Resume 4.2.</p>
       
-      <div class="swiper certifications-swiper-container">
-        <div class="swiper-wrapper">
+      <!-- Section Eyebrow Header -->
+      <div class="achieve-header-block">
+        <div class="achieve-eyebrow">
+          <i class="fa-solid fa-trophy"></i> Achievements
+        </div>
+        <h2 class="section-title">Certifications &amp; <span class="text-blue-accent">Hackathons</span></h2>
+        <p class="section-sub">A collection of certifications, hackathons and achievements that have helped me learn, build and grow as a developer.</p>
+      </div>
+
+      <!-- Filter Pills -->
+      <div class="achieve-filter-pills">
+        <button class="achieve-pill-btn active" data-achieve-filter="all">
+          <i class="fa-solid fa-table-cells-large"></i> All
+        </button>
+        <button class="achieve-pill-btn" data-achieve-filter="certification">
+          <i class="fa-solid fa-certificate"></i> Certifications
+        </button>
+        <button class="achieve-pill-btn" data-achieve-filter="hackathon">
+          <i class="fa-solid fa-code"></i> Hackathons
+        </button>
+        <button class="achieve-pill-btn" data-achieve-filter="achievement">
+          <i class="fa-solid fa-star"></i> Achievements
+        </button>
+      </div>
+
+      <!-- Main Showcase Grid Layout -->
+      <div class="achieve-showcase-grid">
+        
+        <!-- Left Featured Card: ISRO 2026 (Spans 2 rows on desktop) -->
+        <div class="featured-achieve-card tilt" data-achieve-category="achievement hackathon">
+          <div class="featured-visual-frame view-trigger">
+            <img src="assets/Achievements/ISRO 2026H2S06BAH-P02709.jpg" alt="ISRO Bharatiya Antariksh Hackathon 2026 Certificate" />
+            <div class="visual-badge-overlay">
+              <i class="fa-solid fa-star"></i> Achievement
+            </div>
+            <div class="featured-hover-overlay">
+              <span class="badge-cta"><i class="fa-solid fa-magnifying-glass-plus"></i> Expand Certificate</span>
+            </div>
+          </div>
           
-          <!-- Slide 1: ISRO Bharatiya Antariksh Hackathon 2026 -->
-          <div class="swiper-slide">
-            <div class="carousel-card-wide tilt">
-              <div class="carousel-visual-frame view-trigger">
-                <img src="assets/Achievements/ISRO 2026H2S06BAH-P02709.jpg" alt="ISRO Bharatiya Antariksh Hackathon 2026 Certificate" />
-                <div class="doc-avatar-box"><i class="fa-solid fa-satellite" style="color: #0284c7;"></i></div>
-                <div class="carousel-hover-overlay"><span class="badge-cta">Expand Certificate</span></div>
+          <div class="featured-meta-body">
+            <div class="achieve-badge-pill pill-achievement">
+              <i class="fa-solid fa-star"></i> Achievement
+            </div>
+            <h3 class="featured-title">ISRO Bharatiya Antariksh Hackathon 2026</h3>
+            <div class="achieve-date-row">
+              <i class="fa-regular fa-calendar"></i> Aug 2026
+            </div>
+            <p class="achieve-desc">Participated in the ISRO Bharatiya Antariksh Hackathon 2026, contributing to innovative solutions for space and technology.</p>
+            
+            <button class="achieve-view-btn view-trigger">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Side Cards Grid (Standard Cards) -->
+        <div class="achieve-cards-grid">
+          
+          <!-- Card 2: Build with AI Bootcamp (Google) -->
+          <div class="achieve-card tilt" data-achieve-category="certification">
+            <div class="achieve-visual-banner view-trigger">
+              <img src="assets/Achievements/Build With AI Bootcamp.jpg" alt="Build with AI Bootcamp Certificate" />
+              <div class="card-badge-tag tag-cert">
+                <i class="fa-solid fa-certificate"></i> Certification
               </div>
-              <div class="carousel-meta-content">
-                <h3>ISRO Bharatiya Antariksh Hackathon 2026</h3>
-                <p class="credential-issuer">ISRO &middot; Indian Space Research Organisation</p>
-                <p class="credential-date">August &mdash; 2026</p>
+              <div class="card-hover-overlay">
+                <span class="badge-cta"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
               </div>
+            </div>
+            <div class="achieve-card-content">
+              <h3>Build with AI Bootcamp &ndash; Google for Developers</h3>
+              <div class="achieve-date-row">
+                <i class="fa-regular fa-calendar"></i> Apr 2026
+              </div>
+              <p class="achieve-desc">Completed the Build with AI Bootcamp by Google for Developers, focusing on AI tools, LLMs and real-world applications.</p>
+              <button class="achieve-view-btn view-trigger">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate &rarr;
+              </button>
             </div>
           </div>
 
-          <!-- Slide 2: Build with AI Bootcamp -->
-          <div class="swiper-slide">
-            <div class="carousel-card-wide tilt">
-              <div class="carousel-visual-frame view-trigger">
-                <img src="assets/Achievements/Build With AI Bootcamp.jpg" alt="Build with AI Bootcamp" />
-                <div class="doc-avatar-box"><i class="fa-solid fa-laptop-code" style="color: #2563eb;"></i></div>
-                <div class="carousel-hover-overlay"><span class="badge-cta">Expand Certificate</span></div>
+          <!-- Card 3: H.E.A.T 1.0 -->
+          <div class="achieve-card tilt" data-achieve-category="hackathon">
+            <div class="achieve-visual-banner view-trigger">
+              <img src="assets/Achievements/H.E.A.T.png" alt="H.E.A.T 1.0 Hackathon" />
+              <div class="card-badge-tag tag-hackathon">
+                <i class="fa-solid fa-code"></i> Hackathon
               </div>
-              <div class="carousel-meta-content">
-                <h3>Build with AI Bootcamp</h3>
-                <p class="credential-issuer">Google for Developers (H2S)</p>
-                <p class="credential-date">April &mdash; 2026</p>
+              <div class="card-hover-overlay">
+                <span class="badge-cta"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
               </div>
+            </div>
+            <div class="achieve-card-content">
+              <h3>H.E.A.T 1.0 &ndash; 24-Hour Hackathon</h3>
+              <div class="achieve-date-row">
+                <i class="fa-regular fa-calendar"></i> Mar 2026
+              </div>
+              <p class="achieve-desc">Participated in the 24-hour hackathon organized by Atlas SkillTech University.</p>
+              <button class="achieve-view-btn view-trigger">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate &rarr;
+              </button>
             </div>
           </div>
 
-          <!-- Slide 3: H.E.A.T 1.0 Hackathon -->
-          <div class="swiper-slide">
-            <div class="carousel-card-wide tilt">
-              <div class="carousel-visual-frame view-trigger">
-                <img src="assets/Achievements/H.E.A.T.png" alt="H.E.A.T 1.0 Hackathon" />
-                <div class="doc-avatar-box"><i class="fa-solid fa-fire" style="color: #ea580c;"></i></div>
-                <div class="carousel-hover-overlay"><span class="badge-cta">Expand Certificate</span></div>
+          <!-- Card 4: Build & Grow AI Hackathon 2.0 -->
+          <div class="achieve-card tilt" data-achieve-category="hackathon">
+            <div class="achieve-visual-banner view-trigger">
+              <img src="assets/Achievements/GDG NMIMS.png" alt="Build & Grow AI Hackathon" />
+              <div class="card-badge-tag tag-hackathon">
+                <i class="fa-solid fa-code"></i> Hackathon
               </div>
-              <div class="carousel-meta-content">
-                <h3>H.E.A.T 1.0 &ndash; 24-Hr Hackathon</h3>
-                <p class="credential-issuer">Atlas SkillTech University</p>
-                <p class="credential-date">March &mdash; 2026</p>
+              <div class="card-hover-overlay">
+                <span class="badge-cta"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
               </div>
+            </div>
+            <div class="achieve-card-content">
+              <h3>Build &amp; Grow AI Hackathon 2.0 &ndash; Shortlisted</h3>
+              <div class="achieve-date-row">
+                <i class="fa-regular fa-calendar"></i> Jan 2026
+              </div>
+              <p class="achieve-desc">Shortlisted for Build &amp; Grow AI Hackathon 2.0 organized by NMIMS GDG Cloud.</p>
+              <button class="achieve-view-btn view-trigger">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate &rarr;
+              </button>
             </div>
           </div>
 
-          <!-- Slide 4: Build & Grow AI Hackathon 2.0 -->
-          <div class="swiper-slide">
-            <div class="carousel-card-wide tilt">
-              <div class="carousel-visual-frame view-trigger">
-                <img src="assets/Achievements/GDG NMIMS.png" alt="Build &amp; Grow AI Hackathon" />
-                <div class="doc-avatar-box"><i class="fa-solid fa-trophy" style="color: #eab308;"></i></div>
-                <div class="carousel-hover-overlay"><span class="badge-cta">Expand Certificate</span></div>
+          <!-- Card 5: SuperHack 2025 -->
+          <div class="achieve-card tilt" data-achieve-category="hackathon">
+            <div class="achieve-visual-banner view-trigger">
+              <img src="assets/Achievements/AWS.png" alt="SuperHack 2025 Certificate" />
+              <div class="card-badge-tag tag-hackathon">
+                <i class="fa-solid fa-code"></i> Hackathon
               </div>
-              <div class="carousel-meta-content">
-                <h3>Build &amp; Grow AI Hackathon 2.0 &ndash; Shortlisted</h3>
-                <p class="credential-issuer">NMIMS, GDG Cloud Mumbai</p>
-                <p class="credential-date">January &mdash; 2026</p>
+              <div class="card-hover-overlay">
+                <span class="badge-cta"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
               </div>
+            </div>
+            <div class="achieve-card-content">
+              <h3>SuperHack 2025 &ndash; Global AI Hackathon</h3>
+              <div class="achieve-date-row">
+                <i class="fa-regular fa-calendar"></i> Jan 2026
+              </div>
+              <p class="achieve-desc">Participated in the Global AI Hackathon organized by SuperOps, AWS and Hack2Skill.</p>
+              <button class="achieve-view-btn view-trigger">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate &rarr;
+              </button>
             </div>
           </div>
 
-          <!-- Slide 5: SuperHack 2025 -->
-          <div class="swiper-slide">
-            <div class="carousel-card-wide tilt">
-              <div class="carousel-visual-frame view-trigger">
-                <img src="assets/Achievements/AWS.png" alt="SuperHack 2025" />
-                <div class="doc-avatar-box"><i class="fa-solid fa-bolt" style="color: #d97706;"></i></div>
-                <div class="carousel-hover-overlay"><span class="badge-cta">Expand Certificate</span></div>
+          <!-- Card 6: Walmart Global Tech -->
+          <div class="achieve-card tilt" data-achieve-category="certification">
+            <div class="achieve-visual-banner view-trigger">
+              <img src="assets/Achievements/Walmart Global Tech_page-0001.jpg" alt="Walmart Global Tech Job Simulation" />
+              <div class="card-badge-tag tag-cert">
+                <i class="fa-solid fa-certificate"></i> Certification
               </div>
-              <div class="carousel-meta-content">
-                <h3>SuperHack 2025 &ndash; Global AI Hackathon</h3>
-                <p class="credential-issuer">SuperOps &times; AWS &times; Hack2Skill</p>
-                <p class="credential-date">January &mdash; 2026</p>
+              <div class="card-hover-overlay">
+                <span class="badge-cta"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
               </div>
+            </div>
+            <div class="achieve-card-content">
+              <h3>Walmart Global Tech &ndash; ASE Job Simulation</h3>
+              <div class="achieve-date-row">
+                <i class="fa-regular fa-calendar"></i> Jan 2026
+              </div>
+              <p class="achieve-desc">Completed the Advanced Software Engineering Job Simulation by Walmart Global Tech (Forage).</p>
+              <button class="achieve-view-btn view-trigger">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate &rarr;
+              </button>
             </div>
           </div>
 
-          <!-- Slide 6: Walmart Global Tech -->
-          <div class="swiper-slide">
-            <div class="carousel-card-wide tilt">
-              <div class="carousel-visual-frame view-trigger">
-                <img src="assets/Achievements/Walmart Global Tech_page-0001.jpg" alt="Walmart Job Simulation" />
-                <div class="doc-avatar-box"><i class="fa-solid fa-building-columns" style="color: #0284c7;"></i></div>
-                <div class="carousel-hover-overlay"><span class="badge-cta">Expand Certificate</span></div>
+          <!-- Card 7: Smart India Hackathon -->
+          <div class="achieve-card tilt" data-achieve-category="hackathon">
+            <div class="achieve-visual-banner view-trigger">
+              <img src="assets/Achievements/HACKSAGON_page-0001.jpg" alt="Smart India Hackathon Certificate" />
+              <div class="card-badge-tag tag-hackathon">
+                <i class="fa-solid fa-code"></i> Hackathon
               </div>
-              <div class="carousel-meta-content">
-                <h3>Advanced Software Engineering Job Simulation</h3>
-                <p class="credential-issuer">Walmart Global Tech (Forage)</p>
-                <p class="credential-date">January &mdash; 2026</p>
+              <div class="card-hover-overlay">
+                <span class="badge-cta"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
               </div>
+            </div>
+            <div class="achieve-card-content">
+              <h3>Smart India Hackathon &ndash; Hack the Web</h3>
+              <div class="achieve-date-row">
+                <i class="fa-regular fa-calendar"></i> Sep 2025
+              </div>
+              <p class="achieve-desc">Participated in Smart India Hackathon (Hack the Web) organized by Unstop.</p>
+              <button class="achieve-view-btn view-trigger">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate &rarr;
+              </button>
             </div>
           </div>
 
-          <!-- Slide 7: Smart India Hackathon -->
-          <div class="swiper-slide">
-            <div class="carousel-card-wide tilt">
-              <div class="carousel-visual-frame view-trigger">
-                <img src="assets/Achievements/HACKSAGON_page-0001.jpg" alt="Smart India Hackathon Certificate" />
-                <div class="doc-avatar-box"><i class="fa-solid fa-lightbulb" style="color: #2563eb;"></i></div>
-                <div class="carousel-hover-overlay"><span class="badge-cta">Expand Certificate</span></div>
+          <!-- Card 8: TechBlitz 2026 -->
+          <div class="achieve-card tilt" data-achieve-category="hackathon">
+            <div class="achieve-visual-banner view-trigger">
+              <img src="assets/Achievements/Sujal-Verma.png" alt="TechBlitz 2026 Certificate" />
+              <div class="card-badge-tag tag-hackathon">
+                <i class="fa-solid fa-code"></i> Hackathon
               </div>
-              <div class="carousel-meta-content">
-                <h3>Smart India Hackathon | Hack the Web</h3>
-                <p class="credential-issuer">Smart India Hackathon (Unstop)</p>
-                <p class="credential-date">September &mdash; 2025</p>
+              <div class="card-hover-overlay">
+                <span class="badge-cta"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
               </div>
             </div>
-          </div>
-
-          <!-- Slide 8: TechBlitz 2026 -->
-          <div class="swiper-slide">
-            <div class="carousel-card-wide tilt">
-              <div class="carousel-visual-frame view-trigger">
-                <img src="assets/Achievements/Sujal-Verma.png" alt="TechBlitz 2026 Certificate" />
-                <div class="doc-avatar-box"><i class="fa-solid fa-shield-halved" style="color: #dc2626;"></i></div>
-                <div class="carousel-hover-overlay"><span class="badge-cta">Expand Certificate</span></div>
+            <div class="achieve-card-content">
+              <h3>TechBlitz 2026 &ndash; Trident AI</h3>
+              <div class="achieve-date-row">
+                <i class="fa-regular fa-calendar"></i> 2026
               </div>
-              <div class="carousel-meta-content">
-                <h3>TechBlitz 2026 &ndash; Trident AI</h3>
-                <p class="credential-issuer">Vidyavardhini's College of Engineering</p>
-                <p class="credential-date">2026</p>
-              </div>
+              <p class="achieve-desc">National Level Technical Symposium &amp; Hackathon submission at VCET.</p>
+              <button class="achieve-view-btn view-trigger">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate &rarr;
+              </button>
             </div>
           </div>
 
         </div>
-        <!-- Swiper Controls -->
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next" aria-label="Next Certificate"></div>
-        <div class="swiper-button-prev" aria-label="Previous Certificate"></div>
       </div>
+
+      <!-- Bottom Stats Strip (From Reference Image) -->
+      <div class="achieve-stats-strip">
+        <div class="achieve-stat-item">
+          <div class="achieve-stat-icon icon-blue">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div class="achieve-stat-meta">
+            <span class="stat-main-num">7+</span>
+            <span class="stat-main-label">Certifications &amp; Hackathons</span>
+          </div>
+        </div>
+
+        <div class="achieve-stat-item">
+          <div class="achieve-stat-icon icon-purple">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+          <div class="achieve-stat-meta">
+            <span class="stat-main-num">1</span>
+            <span class="stat-main-label">Major Achievement</span>
+          </div>
+        </div>
+
+        <div class="achieve-stat-item">
+          <div class="achieve-stat-icon icon-cyan">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="achieve-stat-meta">
+            <span class="stat-main-num">Continuous Learning</span>
+            <span class="stat-main-label">Building a Stronger Tomorrow</span>
+          </div>
+        </div>
+
+        <div class="achieve-stat-item">
+          <div class="achieve-stat-icon icon-emerald">
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <div class="achieve-stat-meta">
+            <span class="stat-main-num">Innovation</span>
+            <span class="stat-main-label">Through Challenges</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1207,6 +1334,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script src="script.js?v=2.5"></script>
+  <script src="script.js?v=2.6"></script>
 </body>
 </html>
