@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(tickCursor);
 
     // Dynamic Hover classes trigger
-    const interactiveElements = document.querySelectorAll('a, button, .view-trigger, .case-study-btn, .filter-btn, .skills-filter-btn');
+    const interactiveElements = document.querySelectorAll('a, button, .view-trigger, .case-study-btn, .filter-btn, .skills-pill-btn, .toolkit-chip');
     interactiveElements.forEach(el => {
       el.addEventListener('mouseenter', () => {
         if (!isMagneticLocked && typeof gsap !== 'undefined') {
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Magnetic Attraction Mechanics
-    const magneticElements = document.querySelectorAll('.nav-link, .logo, .social-icon, .execute-btn, .btn, .filter-btn, .skills-filter-btn');
+    const magneticElements = document.querySelectorAll('.nav-link, .logo, .social-icon, .execute-btn, .btn, .filter-btn, .skills-pill-btn');
     magneticElements.forEach(el => {
       el.addEventListener('mousemove', (e) => {
         isMagneticLocked = true;
