@@ -28,6 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (typeof window.heroTl !== 'undefined' && window.heroTl) {
               window.heroTl.play();
             }
+            if (typeof ScrollTrigger !== 'undefined') {
+              ScrollTrigger.refresh();
+            }
+            if (typeof processScrollReveal === 'function') {
+              processScrollReveal();
+            }
           }, 600);
         }, 200);
       }
@@ -252,14 +258,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Bento Story Cards Staggered Entry
     gsap.from(".bento-card", {
       scrollTrigger: {
-        trigger: ".about-section",
-        start: "top 75%",
+        trigger: "#about",
+        start: "top 85%",
+        once: true
       },
       opacity: 0,
-      y: 40,
-      duration: 0.8,
+      y: 35,
+      duration: 0.7,
       ease: "power2.out",
-      stagger: 0.15
+      stagger: 0.12,
+      clearProps: "all"
     });
 
     // Statistics Increment Counters
@@ -267,7 +275,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (statNums.length > 0) {
       ScrollTrigger.create({
         trigger: ".bento-stats-box",
-        start: "top 80%",
+        start: "top 85%",
+        once: true,
         onEnter: () => {
           statNums.forEach(num => {
             const target = parseInt(num.getAttribute('data-target'));
@@ -285,17 +294,19 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Skills Grid Cards Reveal
+    // Skills Grid Cards Reveal (Smooth Stagger & Auto-Clear to Guarantee Visibility)
     gsap.from(".skill-card-v2", {
       scrollTrigger: {
-        trigger: ".skills-section",
-        start: "top 75%",
+        trigger: "#skills",
+        start: "top 85%",
+        once: true
       },
       opacity: 0,
-      y: 30,
-      duration: 0.6,
+      y: 25,
+      duration: 0.5,
       ease: "power2.out",
-      stagger: 0.06
+      stagger: 0.03,
+      clearProps: "all"
     });
 
     // Project Cards Reveal
@@ -304,22 +315,26 @@ document.addEventListener('DOMContentLoaded', () => {
       gsap.from(card.querySelector('.project-visual-side'), {
         scrollTrigger: {
           trigger: card,
-          start: "top 80%",
+          start: "top 85%",
+          once: true
         },
         opacity: 0,
-        x: card.classList.contains('reverse') ? 40 : -40,
-        duration: 0.8,
-        ease: "power2.out"
+        x: card.classList.contains('reverse') ? 35 : -35,
+        duration: 0.7,
+        ease: "power2.out",
+        clearProps: "all"
       });
       gsap.from(card.querySelector('.project-narrative-side'), {
         scrollTrigger: {
           trigger: card,
-          start: "top 80%",
+          start: "top 85%",
+          once: true
         },
         opacity: 0,
-        x: card.classList.contains('reverse') ? -40 : 40,
-        duration: 0.8,
-        ease: "power2.out"
+        x: card.classList.contains('reverse') ? -35 : 35,
+        duration: 0.7,
+        ease: "power2.out",
+        clearProps: "all"
       });
     });
 
@@ -341,35 +356,41 @@ document.addEventListener('DOMContentLoaded', () => {
       gsap.from(item.querySelector('.timeline-card-content'), {
         scrollTrigger: {
           trigger: item,
-          start: "top 80%",
+          start: "top 85%",
+          once: true
         },
         opacity: 0,
-        y: 40,
-        duration: 0.8,
-        ease: "power2.out"
+        y: 30,
+        duration: 0.7,
+        ease: "power2.out",
+        clearProps: "all"
       });
       gsap.from(item.querySelector('.timeline-dot-marker'), {
         scrollTrigger: {
           trigger: item,
-          start: "top 80%",
+          start: "top 85%",
+          once: true
         },
         scale: 0,
         opacity: 0,
-        duration: 0.5,
-        ease: "back.out(2)"
+        duration: 0.4,
+        ease: "back.out(2)",
+        clearProps: "all"
       });
     });
 
     // Certifications Slider Entrance
     gsap.from(".certifications-swiper-container", {
       scrollTrigger: {
-        trigger: ".certifications-slider",
-        start: "top 75%",
+        trigger: "#achievements",
+        start: "top 85%",
+        once: true
       },
       opacity: 0,
-      y: 40,
-      duration: 1,
-      ease: "power2.out"
+      y: 35,
+      duration: 0.8,
+      ease: "power2.out",
+      clearProps: "all"
     });
   }
 
@@ -432,17 +453,9 @@ document.addEventListener('DOMContentLoaded', () => {
         skillCards.forEach(card => {
           const cardCats = card.getAttribute('data-skill-cat').split(' ');
           if (activeFilter === 'all' || cardCats.includes(activeFilter)) {
-            card.style.display = "flex";
-            setTimeout(() => { 
-              card.style.opacity = "1"; 
-              card.style.transform = "scale(1)"; 
-            }, 50);
+            card.classList.remove('hide');
           } else {
-            card.style.opacity = "0";
-            card.style.transform = "scale(0.95)";
-            setTimeout(() => { 
-              card.style.display = "none"; 
-            }, 250);
+            card.classList.add('hide');
           }
         });
       });
@@ -646,23 +659,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ================= 12. GLOBAL SCROLL REVEALS ================= */
+  /* ================= 12. GLOBAL SCROLL REVEALS (INTERSECTION OBSERVER + SCROLL) ================= */
   const scrollingReveals = document.querySelectorAll(".reveal");
 
-  function processScrollReveal() {
+  window.processScrollReveal = function() {
+    const windowViewportHeight = window.innerHeight;
     scrollingReveals.forEach((element) => {
-      const windowViewportHeight = window.innerHeight;
       const elementTopPosition = element.getBoundingClientRect().top;
-      const injectionTriggerPoint = 60;
+      const injectionTriggerPoint = 100;
 
       if (elementTopPosition < windowViewportHeight - injectionTriggerPoint) {
         element.classList.add("active");
       }
     });
+  };
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          if (typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.refresh();
+          }
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.05,
+      rootMargin: "0px 0px -40px 0px"
+    });
+
+    scrollingReveals.forEach(el => revealObserver.observe(el));
   }
 
-  window.addEventListener("scroll", processScrollReveal);
-  processScrollReveal();
+  window.addEventListener("scroll", window.processScrollReveal, { passive: true });
+  window.processScrollReveal();
 
   /* ================= 13. ASYNCHRONOUS FORMSPREE ENGINE ================= */
   const contactForm = document.getElementById("contactForm");
@@ -715,13 +747,20 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ================= 14. LENIS SMOOTH SCROLL ================= */
   if (typeof Lenis !== 'undefined') {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.0,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smooth: true,
       infinite: false,
     });
 
-    lenis.on('scroll', ScrollTrigger.update);
+    lenis.on('scroll', () => {
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.update();
+      }
+      if (typeof window.processScrollReveal === 'function') {
+        window.processScrollReveal();
+      }
+    });
 
     if (typeof gsap !== 'undefined') {
       gsap.ticker.add((time) => {

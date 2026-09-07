@@ -982,6 +982,11 @@ body {
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s, box-shadow 0.4s, opacity 0.3s ease;
 }
 
+.skill-card-v2.hide {
+  display: none !important;
+  opacity: 0 !important;
+}
+
 .skill-card-v2:hover {
   transform: translateY(-4px);
   border-color: var(--card-border-glow);
@@ -2378,8 +2383,16 @@ body {
 }
 
 /* ================= 15. SCROLL REVEAL CLASS ================= */
-.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s, transform 0.8s; }
-.reveal.active { opacity: 1; transform: translateY(0); }
+.reveal { 
+  opacity: 0; 
+  transform: translateY(24px); 
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); 
+  will-change: opacity, transform;
+}
+.reveal.active { 
+  opacity: 1; 
+  transform: translateY(0); 
+}
 
 /* ================= 16. RESPONSIVE MEDIA QUERIES ================= */
 @media (max-width: 1024px) {
