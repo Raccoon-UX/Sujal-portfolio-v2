@@ -23,13 +23,13 @@
   <!-- Premium Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Stylesheet Dependencies -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <link rel="stylesheet" href="style.css?v=3.3" />
+  <link rel="stylesheet" href="style.css?v=3.4" />
 </head>
 <body> 
   <!-- Custom Premium Cursor -->
@@ -1251,75 +1251,145 @@
     </div>
   </section>
 
-  <!-- Contact Portal Section -->
+  <!-- Contact Portal Section (3-Column Layout Matching Reference Image) -->
   <section class="contact-section reveal" id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact Me</h2>
-      <p class="section-sub">Let's discuss full-stack software opportunities, engineering collaboration, or new initiatives.</p>
+    <!-- Ambient Subtle Glow Orbs & Dot Matrices -->
+    <div class="contact-bg-orb orb-top-left"></div>
+    <div class="contact-bg-orb orb-top-right"></div>
+    <div class="contact-dot-matrix matrix-left"></div>
+    <div class="contact-dot-matrix matrix-right"></div>
+    <div class="contact-dot-matrix matrix-bottom-left"></div>
+    <div class="contact-dot-matrix matrix-bottom-right"></div>
+
+    <div class="container contact-main-container">
       
-      <div class="contact-container-grid">
-        <!-- Left Side Visual Banner Frame -->
-        <div class="contact-visual-frame">
-          <img src="assets/contact.png" alt="Sujal Verma | Engineering Workspace" class="contact-side-img" />
+      <!-- Top Centered Header -->
+      <div class="contact-header-block">
+        <div class="contact-eyebrow">
+          <i class="fa-regular fa-envelope"></i> Get In Touch
         </div>
+        <h2 class="section-title">Contact <span class="text-blue-accent">Me</span></h2>
+        <p class="section-sub">Let's discuss full-stack software opportunities, engineering collaboration, or new initiatives.</p>
+      </div>
+      
+      <!-- 3-Column Balanced Composition -->
+      <div class="contact-3col-grid">
+        
+        <!-- COLUMN 1 (LEFT): Large Visual Image Card -->
+        <div class="contact-card-visual">
+          <div class="contact-connect-pill">
+            <span class="blue-pulse-dot"></span> Let's Connect
+          </div>
+          
+          <div class="contact-img-frame">
+            <img src="assets/contact.png" alt="Sujal Verma | Engineering Workspace" class="contact-side-img" />
+          </div>
 
-        <!-- Right Side Form & Coordinates -->
-        <div class="contact-content-side">
-          <div class="contact-split-body">
-            
-            <!-- Asynchronous Formspree Form -->
-            <form class="async-contact-form" id="contactForm" action="https://formspree.io/f/mgojyoww" method="POST">
-              <div class="input-component floating-input-group">
-                <input type="text" id="form-name" name="name" required class="floating-input" placeholder=" " />
-                <label for="form-name" class="floating-label">Full Name</label>
-                <div class="input-glow-line"></div>
-              </div>
-              <div class="input-component floating-input-group">
-                <input type="email" id="form-email" name="email" required class="floating-input" placeholder=" " />
-                <label for="form-email" class="floating-label">E-mail Address</label>
-                <div class="input-glow-line"></div>
-              </div>
-              <div class="input-component floating-input-group">
-                <textarea id="form-message" name="message" rows="3" required class="floating-input" placeholder=" "></textarea>
-                <label for="form-message" class="floating-label">Your Message</label>
-                <div class="input-glow-line"></div>
-              </div>
-              <button type="submit" class="execute-btn">Send Message</button>
-              <div class="execution-status" id="formStatus"></div>
-            </form>
-
-            <!-- Information Coordinates -->
-            <div class="contact-meta-coordinates">
-              <div class="meta-coordinate-item">
-                <h4>Direct Email</h4>
-                <p class="primary-detail"><a href="mailto:vsujal956@gmail.com" style="color: inherit; text-decoration: none;">vsujal956@gmail.com</a></p>
-              </div>
-              <div class="meta-coordinate-item">
-                <h4>Location</h4>
-                <p>Mumbai, Maharashtra,<br>India</p>
-              </div>
-              
-              <!-- Social Icon Grid -->
-              <div class="contact-inline-socials">
-                <a href="https://www.linkedin.com/in/sujalverma456/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon linkedin-brand">
-                  <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/Raccoon-UX" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-icon github-brand">
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="mailto:vsujal956@gmail.com" aria-label="Gmail" class="social-icon gmail-brand">
-                  <i class="fa-solid fa-envelope"></i>
-                </a>
-                <a href="https://wa.me/917710893839" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-icon whatsapp-brand">
-                  <i class="fa-brands fa-whatsapp"></i>
-                </a>
-              </div>
-            </div>
-
+          <div class="contact-visual-script-overlay">
+            <span class="visual-script-text">Ideas &rarr; Code &rarr; Impact</span>
+            <svg class="visual-underline-svg" width="130" height="14" viewBox="0 0 130 14" fill="none">
+              <path d="M4 10C40 3 90 4 126 11" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
           </div>
         </div>
 
+        <!-- COLUMN 2 (CENTER): "Send Me a Message" Form Card -->
+        <div class="contact-card-form">
+          <div class="form-card-header">
+            <div class="form-header-icon">
+              <i class="fa-regular fa-comment-dots"></i>
+            </div>
+            <h3 class="form-card-title">Send Me a Message</h3>
+            <p class="form-card-sub">I'd love to hear from you. Whether it's a project, opportunity, or just to say hello &mdash; feel free to reach out!</p>
+          </div>
+
+          <!-- Asynchronous Formspree Form (Preserves exact action, method, IDs, inputs) -->
+          <form class="contact-modern-form" id="contactForm" action="https://formspree.io/f/mgojyoww" method="POST">
+            
+            <!-- Full Name Input -->
+            <div class="form-input-box">
+              <i class="fa-regular fa-user form-input-icon"></i>
+              <input type="text" id="form-name" name="name" required class="modern-input" placeholder="Full Name" />
+            </div>
+
+            <!-- E-mail Address Input -->
+            <div class="form-input-box">
+              <i class="fa-regular fa-envelope form-input-icon"></i>
+              <input type="email" id="form-email" name="email" required class="modern-input" placeholder="E-mail Address" />
+            </div>
+
+            <!-- Your Message Textarea -->
+            <div class="form-input-box form-textarea-box">
+              <i class="fa-regular fa-comment form-input-icon textarea-icon"></i>
+              <textarea id="form-message" name="message" rows="3" required class="modern-input modern-textarea" placeholder="Your Message"></textarea>
+            </div>
+
+            <!-- Submit Button & Status -->
+            <button type="submit" class="contact-send-btn execute-btn">
+              <i class="fa-solid fa-paper-plane"></i> Send Message &rarr;
+            </button>
+            <div class="execution-status" id="formStatus"></div>
+          </form>
+        </div>
+
+        <!-- COLUMN 3 (RIGHT): Contact Information & Socials Card -->
+        <div class="contact-card-info">
+          
+          <div class="contact-info-top-group">
+            <!-- Direct Email Row -->
+            <div class="contact-info-item">
+              <div class="info-icon-bubble">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="info-content-meta">
+                <h4>Direct Email</h4>
+                <a href="mailto:vsujal956@gmail.com" class="info-contact-link">vsujal956@gmail.com</a>
+              </div>
+            </div>
+
+            <!-- Location Row -->
+            <div class="contact-info-item">
+              <div class="info-icon-bubble">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="info-content-meta">
+                <h4>Location</h4>
+                <p class="info-location-val">Mumbai, Maharashtra,<br>India</p>
+              </div>
+            </div>
+
+            <!-- Subtle Divider -->
+            <div class="contact-info-divider"></div>
+
+            <!-- Social Media Icon Buttons (Preserving exact URLs and targets) -->
+            <div class="contact-social-icons-row">
+              <a href="https://www.linkedin.com/in/sujalverma456/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-bubble-btn linkedin-brand">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/Raccoon-UX" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-bubble-btn github-brand">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="mailto:vsujal956@gmail.com" aria-label="Gmail" class="social-bubble-btn gmail-brand">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+              <a href="https://wa.me/917710893839" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-bubble-btn whatsapp-brand">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bottom Decorative Script Phrase -->
+          <div class="contact-script-signature">
+            <p class="script-phrase">Let's build<br>something amazing<br>together!</p>
+            <svg class="script-curve-svg" width="125" height="18" viewBox="0 0 125 18" fill="none">
+              <path d="M4 13C36 4 88 5 121 14" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+        </div>
+
       </div>
+
     </div>
   </section>
 
@@ -1487,6 +1557,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script src="script.js?v=3.3"></script>
+  <script src="script.js?v=3.4"></script>
 </body>
 </html>
