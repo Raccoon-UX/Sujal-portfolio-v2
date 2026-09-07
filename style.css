@@ -1900,7 +1900,7 @@ body {
 
 /* ================= 10. CERTIFICATIONS & HACKATHONS SHOWCASE ================= */
 .certifications-section {
-  padding: 56px 0 0px;
+  padding: 60px 0 28px;
   width: 100%;
   position: relative;
   z-index: 2;
@@ -2372,8 +2372,12 @@ body {
 /* ================= 11. CONTACT SECTION (3-COLUMN PREMIUM BENTO SHOWCASE) ================= */
 .contact-section {
   position: relative;
-  overflow: hidden;
-  padding: 12px 0 70px;
+  overflow: visible;
+  padding: 34px 0 80px;
+  width: 100%;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* Ambient Subtle Glow Orbs & Dot Matrices */
@@ -2433,14 +2437,19 @@ body {
 
 .contact-main-container {
   position: relative;
-  z-index: 2;
+  z-index: 5;
   max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* Header Block (Image 2 Reference Design with Radiant Sparks) */
 .contact-header-block {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 34px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2494,11 +2503,15 @@ body {
 
 /* 3-Column Balanced Composition */
 .contact-3col-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.22fr 0.92fr;
+  display: grid !important;
+  grid-template-columns: 1fr 1.25fr 0.95fr;
   gap: 24px;
   align-items: stretch;
   width: 100%;
+  position: relative;
+  z-index: 5;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* CARD 1 (LEFT): Large Visual Image Card */
@@ -2510,8 +2523,10 @@ body {
   overflow: hidden;
   box-shadow: 0 16px 40px rgba(37, 99, 235, 0.12);
   min-height: 480px;
-  display: flex;
+  display: flex !important;
   flex-direction: column;
+  opacity: 1 !important;
+  visibility: visible !important;
   transition: transform 0.45s cubic-bezier(0.2, 0.9, 0.25, 1), 
               box-shadow 0.45s cubic-bezier(0.2, 0.9, 0.25, 1), 
               border-color 0.45s ease;
@@ -2613,10 +2628,12 @@ body {
   border-radius: 28px;
   padding: 34px 30px;
   box-shadow: 0 16px 40px rgba(15, 23, 42, 0.05);
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  opacity: 1 !important;
+  visibility: visible !important;
   transition: transform 0.45s cubic-bezier(0.2, 0.9, 0.25, 1), 
               box-shadow 0.45s cubic-bezier(0.2, 0.9, 0.25, 1);
 }
@@ -2754,7 +2771,9 @@ body {
   border-radius: 28px;
   padding: 34px 28px;
   box-shadow: 0 16px 40px rgba(15, 23, 42, 0.05);
-  display: flex;
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
