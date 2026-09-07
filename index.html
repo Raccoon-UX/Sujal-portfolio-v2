@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <link rel="stylesheet" href="style.css?v=3.0" />
+  <link rel="stylesheet" href="style.css?v=3.1" />
 </head>
 <body> 
   <!-- Custom Premium Cursor -->
@@ -825,265 +825,376 @@
     </div>
   </section>
 
-  <!-- Certifications & Hackathons Showcase Section (Redesigned from Reference) -->
+  <!-- Certifications & Hackathons Showcase Section -->
   <section class="certifications-section" id="achievements">
     <div class="container">
       
       <!-- Section Eyebrow Header -->
       <div class="achieve-header-block">
         <div class="achieve-eyebrow">
-          <i class="fa-solid fa-trophy"></i> Achievements
+          <i class="fa-solid fa-trophy"></i> Achievements &amp; Accreditations
         </div>
         <h2 class="section-title">Certifications &amp; <span class="text-blue-accent">Hackathons</span></h2>
-        <p class="section-sub">A collection of certifications, hackathons and achievements that have helped me learn, build and grow as a developer.</p>
+        <p class="section-sub">A showcase of 9 verified certifications, hackathons and engineering milestones that have shaped my technical journey.</p>
       </div>
 
-      <!-- Filter Pills & Carousel Navigation Controls -->
+      <!-- Filter Pills Bar -->
       <div class="achieve-filter-bar-wrapper">
         <div class="achieve-filter-pills">
           <button class="achieve-pill-btn active" data-achieve-filter="all">
-            <i class="fa-solid fa-table-cells-large"></i> All
+            <i class="fa-solid fa-table-cells-large"></i> All (9)
           </button>
           <button class="achieve-pill-btn" data-achieve-filter="certification">
-            <i class="fa-solid fa-certificate"></i> Certifications
+            <i class="fa-solid fa-certificate"></i> Certifications (3)
           </button>
           <button class="achieve-pill-btn" data-achieve-filter="hackathon">
-            <i class="fa-solid fa-code"></i> Hackathons
+            <i class="fa-solid fa-code"></i> Hackathons (6)
           </button>
           <button class="achieve-pill-btn" data-achieve-filter="achievement">
-            <i class="fa-regular fa-star"></i> Achievements
-          </button>
-        </div>
-
-        <!-- Carousel Navigation Arrows -->
-        <div class="achieve-carousel-controls">
-          <button class="achieve-nav-btn prev-btn" id="achievePrevBtn" aria-label="Previous Slide">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button class="achieve-nav-btn next-btn" id="achieveNextBtn" aria-label="Next Slide">
-            <i class="fa-solid fa-chevron-right"></i>
+            <i class="fa-regular fa-star"></i> Achievements (3)
           </button>
         </div>
       </div>
 
-      <!-- Main Showcase Grid Layout -->
-      <div class="achieve-showcase-grid">
+      <!-- 9-Card Expanding Accordion Showcase Deck -->
+      <div class="cert-accordion-deck" id="certAccordionDeck">
         
-        <!-- Left Featured Card: ISRO 2026 (Spans 2 rows on desktop) -->
-        <div class="featured-achieve-card tilt" data-achieve-category="achievement hackathon">
-          <div class="featured-visual-frame view-trigger">
-            <img src="assets/Achievements/ISRO 2026H2S06BAH-P02709.jpg" alt="ISRO Bharatiya Antariksh Hackathon 2026 Certificate" />
-            <div class="visual-badge-overlay">
-              <i class="fa-solid fa-star"></i> Achievement
+        <!-- Card 1: ISRO 2026 (Active by default) -->
+        <div class="cert-panel panel-blue active" data-index="0" data-achieve-category="achievement hackathon">
+          <div class="panel-top-row">
+            <div class="panel-icon-circle">
+              <i class="fa-solid fa-satellite"></i>
             </div>
-            <div class="featured-hover-overlay">
-              <span class="badge-cta"><i class="fa-solid fa-magnifying-glass-plus"></i> Expand Certificate</span>
+            <span class="panel-badge-pill"><i class="fa-solid fa-star"></i> Achievement</span>
+          </div>
+
+          <div class="panel-collapsed-view">
+            <h4>ISRO Antariksh Hackathon</h4>
+            <p>ISRO Bharatiya Antariksh Hackathon 2026 space innovation...</p>
+          </div>
+
+          <div class="panel-expanded-view">
+            <div class="cert-preview-frame view-trigger">
+              <img src="assets/Achievements/ISRO 2026H2S06BAH-P02709.jpg" alt="ISRO Bharatiya Antariksh Hackathon 2026" />
+              <div class="preview-zoom-badge">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Expand
+              </div>
+            </div>
+
+            <div class="cert-details-meta">
+              <h3 class="cert-full-title">ISRO Bharatiya Antariksh Hackathon 2026</h3>
+              <div class="cert-date-badge">
+                <i class="fa-regular fa-calendar"></i> Aug 2026
+              </div>
+              <p class="cert-full-desc">Participated in the ISRO Bharatiya Antariksh Hackathon 2026, contributing to innovative solutions for space and technology.</p>
+              
+              <button class="cert-action-btn view-trigger">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate &rarr;
+              </button>
             </div>
           </div>
-          
-          <div class="featured-meta-body">
-            <div class="achieve-badge-pill pill-achievement">
-              <i class="fa-solid fa-star"></i> Achievement
-            </div>
-            <h3 class="featured-title">ISRO Bharatiya Antariksh Hackathon 2026</h3>
-            <div class="achieve-date-row">
-              <i class="fa-regular fa-calendar"></i> Aug 2026
-            </div>
-            <p class="achieve-desc">Participated in the ISRO Bharatiya Antariksh Hackathon 2026, contributing to innovative solutions for space and technology.</p>
-            
-            <button class="achieve-view-btn view-trigger">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate &rarr;
-            </button>
-          </div>
+
+          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
+            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
+            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
+            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
+          </svg>
         </div>
 
-        <!-- Right Side Cards Grid (Standard Cards) -->
-        <div class="achieve-cards-grid" id="achieveCardsTrack">
-          
-          <!-- Card 2: Build with AI Bootcamp (Google) -->
-          <div class="achieve-card tilt" data-achieve-category="certification">
-            <div class="achieve-visual-banner view-trigger">
+        <!-- Card 2: Build with AI Bootcamp (Google for Developers) -->
+        <div class="cert-panel panel-rose" data-index="1" data-achieve-category="certification">
+          <div class="panel-top-row">
+            <div class="panel-icon-circle">
+              <i class="fa-brands fa-google"></i>
+            </div>
+            <span class="panel-badge-pill"><i class="fa-solid fa-certificate"></i> Certification</span>
+          </div>
+
+          <div class="panel-collapsed-view">
+            <h4>Google AI Bootcamp</h4>
+            <p>Build with AI Bootcamp by Google for Developers...</p>
+          </div>
+
+          <div class="panel-expanded-view">
+            <div class="cert-preview-frame view-trigger">
               <img src="assets/Achievements/Build With AI Bootcamp.jpg" alt="Build with AI Bootcamp Certificate" />
-              <div class="card-badge-tag tag-cert">
-                <i class="fa-solid fa-certificate"></i> Certification
-              </div>
-              <div class="card-hover-overlay">
-                <span class="badge-cta"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
+              <div class="preview-zoom-badge">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Expand
               </div>
             </div>
-            <div class="achieve-card-content">
-              <h3>Build with AI Bootcamp &ndash; Google for Developers</h3>
-              <div class="achieve-date-row">
+
+            <div class="cert-details-meta">
+              <h3 class="cert-full-title">Build with AI Bootcamp &ndash; Google for Developers</h3>
+              <div class="cert-date-badge">
                 <i class="fa-regular fa-calendar"></i> Apr 2026
               </div>
-              <p class="achieve-desc">Completed the Build with AI Bootcamp by Google for Developers, focusing on AI tools, LLMs and real-world applications.</p>
-              <button class="achieve-view-btn view-trigger">
+              <p class="cert-full-desc">Completed the Build with AI Bootcamp by Google for Developers, focusing on AI tools, LLMs and real-world applications.</p>
+              
+              <button class="cert-action-btn view-trigger">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate &rarr;
               </button>
             </div>
           </div>
 
-          <!-- Card 3: H.E.A.T 1.0 -->
-          <div class="achieve-card tilt" data-achieve-category="hackathon">
-            <div class="achieve-visual-banner view-trigger">
+          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
+            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
+            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
+            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
+          </svg>
+        </div>
+
+        <!-- Card 3: H.E.A.T 1.0 (24-Hour Hackathon) -->
+        <div class="cert-panel panel-teal" data-index="2" data-achieve-category="hackathon">
+          <div class="panel-top-row">
+            <div class="panel-icon-circle">
+              <i class="fa-solid fa-fire"></i>
+            </div>
+            <span class="panel-badge-pill"><i class="fa-solid fa-code"></i> Hackathon</span>
+          </div>
+
+          <div class="panel-collapsed-view">
+            <h4>H.E.A.T 1.0 Hackathon</h4>
+            <p>24-hour hackathon by Atlas SkillTech University...</p>
+          </div>
+
+          <div class="panel-expanded-view">
+            <div class="cert-preview-frame view-trigger">
               <img src="assets/Achievements/H.E.A.T.png" alt="H.E.A.T 1.0 Hackathon" />
-              <div class="card-badge-tag tag-hackathon">
-                <i class="fa-solid fa-code"></i> Hackathon
-              </div>
-              <div class="card-hover-overlay">
-                <span class="badge-cta"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
+              <div class="preview-zoom-badge">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Expand
               </div>
             </div>
-            <div class="achieve-card-content">
-              <h3>H.E.A.T 1.0 &ndash; 24-Hour Hackathon</h3>
-              <div class="achieve-date-row">
+
+            <div class="cert-details-meta">
+              <h3 class="cert-full-title">H.E.A.T 1.0 &ndash; 24-Hour Hackathon</h3>
+              <div class="cert-date-badge">
                 <i class="fa-regular fa-calendar"></i> Mar 2026
               </div>
-              <p class="achieve-desc">Participated in the 24-hour hackathon organized by Atlas SkillTech University.</p>
-              <button class="achieve-view-btn view-trigger">
+              <p class="cert-full-desc">Participated in the 24-hour hackathon organized by Atlas SkillTech University, engineering rapid prototypes under pressure.</p>
+              
+              <button class="cert-action-btn view-trigger">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate &rarr;
               </button>
             </div>
           </div>
 
-          <!-- Card 4: Build & Grow AI Hackathon 2.0 -->
-          <div class="achieve-card tilt" data-achieve-category="hackathon">
-            <div class="achieve-visual-banner view-trigger">
+          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
+            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
+            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
+            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
+          </svg>
+        </div>
+
+        <!-- Card 4: Build & Grow AI Hackathon 2.0 -->
+        <div class="cert-panel panel-amber" data-index="3" data-achieve-category="hackathon achievement">
+          <div class="panel-top-row">
+            <div class="panel-icon-circle">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <span class="panel-badge-pill"><i class="fa-solid fa-star"></i> Shortlisted</span>
+          </div>
+
+          <div class="panel-collapsed-view">
+            <h4>GDG AI Hackathon 2.0</h4>
+            <p>Shortlisted for Build &amp; Grow AI Hackathon 2.0...</p>
+          </div>
+
+          <div class="panel-expanded-view">
+            <div class="cert-preview-frame view-trigger">
               <img src="assets/Achievements/GDG NMIMS.png" alt="Build & Grow AI Hackathon" />
-              <div class="card-badge-tag tag-hackathon">
-                <i class="fa-solid fa-code"></i> Hackathon
-              </div>
-              <div class="card-hover-overlay">
-                <span class="badge-cta"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
+              <div class="preview-zoom-badge">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Expand
               </div>
             </div>
-            <div class="achieve-card-content">
-              <h3>Build &amp; Grow AI Hackathon 2.0 &ndash; Shortlisted</h3>
-              <div class="achieve-date-row">
+
+            <div class="cert-details-meta">
+              <h3 class="cert-full-title">Build &amp; Grow AI Hackathon 2.0 &ndash; Shortlisted</h3>
+              <div class="cert-date-badge">
                 <i class="fa-regular fa-calendar"></i> Jan 2026
               </div>
-              <p class="achieve-desc">Shortlisted for Build &amp; Grow AI Hackathon 2.0 organized by NMIMS GDG Cloud.</p>
-              <button class="achieve-view-btn view-trigger">
+              <p class="cert-full-desc">Shortlisted for Build &amp; Grow AI Hackathon 2.0 organized by NMIMS GDG Cloud for developing Verity AI hallucination detection platform.</p>
+              
+              <button class="cert-action-btn view-trigger">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate &rarr;
               </button>
             </div>
           </div>
 
-          <!-- Card 5: SuperHack 2025 -->
-          <div class="achieve-card tilt" data-achieve-category="hackathon">
-            <div class="achieve-visual-banner view-trigger">
+          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
+            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
+            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
+            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
+          </svg>
+        </div>
+
+        <!-- Card 5: SuperHack 2025 -->
+        <div class="cert-panel panel-purple" data-index="4" data-achieve-category="hackathon">
+          <div class="panel-top-row">
+            <div class="panel-icon-circle">
+              <i class="fa-brands fa-aws"></i>
+            </div>
+            <span class="panel-badge-pill"><i class="fa-solid fa-code"></i> Hackathon</span>
+          </div>
+
+          <div class="panel-collapsed-view">
+            <h4>SuperHack 2025 AWS</h4>
+            <p>Global AI Hackathon by SuperOps, AWS and Hack2Skill...</p>
+          </div>
+
+          <div class="panel-expanded-view">
+            <div class="cert-preview-frame view-trigger">
               <img src="assets/Achievements/AWS.png" alt="SuperHack 2025 Certificate" />
-              <div class="card-badge-tag tag-hackathon">
-                <i class="fa-solid fa-code"></i> Hackathon
-              </div>
-              <div class="card-hover-overlay">
-                <span class="badge-cta"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
+              <div class="preview-zoom-badge">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Expand
               </div>
             </div>
-            <div class="achieve-card-content">
-              <h3>SuperHack 2025 &ndash; Global AI Hackathon</h3>
-              <div class="achieve-date-row">
+
+            <div class="cert-details-meta">
+              <h3 class="cert-full-title">SuperHack 2025 &ndash; Global AI Hackathon</h3>
+              <div class="cert-date-badge">
                 <i class="fa-regular fa-calendar"></i> Jan 2026
               </div>
-              <p class="achieve-desc">Participated in the Global AI Hackathon organized by SuperOps, AWS and Hack2Skill.</p>
-              <button class="achieve-view-btn view-trigger">
+              <p class="cert-full-desc">Participated in the Global AI Hackathon organized by SuperOps, AWS and Hack2Skill, architecting AI-powered cloud workflows.</p>
+              
+              <button class="cert-action-btn view-trigger">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate &rarr;
               </button>
             </div>
           </div>
 
-          <!-- Card 6: Walmart Global Tech -->
-          <div class="achieve-card tilt" data-achieve-category="certification">
-            <div class="achieve-visual-banner view-trigger">
+          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
+            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
+            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
+            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
+          </svg>
+        </div>
+
+        <!-- Card 6: Walmart Global Tech -->
+        <div class="cert-panel panel-cyan" data-index="5" data-achieve-category="certification">
+          <div class="panel-top-row">
+            <div class="panel-icon-circle">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <span class="panel-badge-pill"><i class="fa-solid fa-certificate"></i> Certification</span>
+          </div>
+
+          <div class="panel-collapsed-view">
+            <h4>Walmart Global Tech</h4>
+            <p>Advanced Software Engineering Job Simulation by Walmart...</p>
+          </div>
+
+          <div class="panel-expanded-view">
+            <div class="cert-preview-frame view-trigger">
               <img src="assets/Achievements/Walmart Global Tech_page-0001.jpg" alt="Walmart Global Tech Job Simulation" />
-              <div class="card-badge-tag tag-cert">
-                <i class="fa-solid fa-certificate"></i> Certification
-              </div>
-              <div class="card-hover-overlay">
-                <span class="badge-cta"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
+              <div class="preview-zoom-badge">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Expand
               </div>
             </div>
-            <div class="achieve-card-content">
-              <h3>Walmart Global Tech &ndash; ASE Job Simulation</h3>
-              <div class="achieve-date-row">
+
+            <div class="cert-details-meta">
+              <h3 class="cert-full-title">Walmart Global Tech &ndash; ASE Job Simulation</h3>
+              <div class="cert-date-badge">
                 <i class="fa-regular fa-calendar"></i> Jan 2026
               </div>
-              <p class="achieve-desc">Completed the Advanced Software Engineering Job Simulation by Walmart Global Tech (Forage).</p>
-              <button class="achieve-view-btn view-trigger">
+              <p class="cert-full-desc">Completed the Advanced Software Engineering Job Simulation by Walmart Global Tech (Forage), covering data structures, relational DB design, and optimization.</p>
+              
+              <button class="cert-action-btn view-trigger">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate &rarr;
               </button>
             </div>
           </div>
 
-          <!-- Card 7: Smart India Hackathon -->
-          <div class="achieve-card tilt" data-achieve-category="hackathon">
-            <div class="achieve-visual-banner view-trigger">
+          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
+            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
+            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
+            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
+          </svg>
+        </div>
+
+        <!-- Card 7: Smart India Hackathon -->
+        <div class="cert-panel panel-indigo" data-index="6" data-achieve-category="hackathon">
+          <div class="panel-top-row">
+            <div class="panel-icon-circle">
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <span class="panel-badge-pill"><i class="fa-solid fa-code"></i> Hackathon</span>
+          </div>
+
+          <div class="panel-collapsed-view">
+            <h4>Smart India Hackathon</h4>
+            <p>Smart India Hackathon (Hack the Web) by Unstop...</p>
+          </div>
+
+          <div class="panel-expanded-view">
+            <div class="cert-preview-frame view-trigger">
               <img src="assets/Achievements/HACKSAGON_page-0001.jpg" alt="Smart India Hackathon Certificate" />
-              <div class="card-badge-tag tag-hackathon">
-                <i class="fa-solid fa-code"></i> Hackathon
-              </div>
-              <div class="card-hover-overlay">
-                <span class="badge-cta"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
+              <div class="preview-zoom-badge">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Expand
               </div>
             </div>
-            <div class="achieve-card-content">
-              <h3>Smart India Hackathon &ndash; Hack the Web</h3>
-              <div class="achieve-date-row">
+
+            <div class="cert-details-meta">
+              <h3 class="cert-full-title">Smart India Hackathon &ndash; Hack the Web</h3>
+              <div class="cert-date-badge">
                 <i class="fa-regular fa-calendar"></i> Sep 2025
               </div>
-              <p class="achieve-desc">Participated in Smart India Hackathon (Hack the Web) organized by Unstop.</p>
-              <button class="achieve-view-btn view-trigger">
+              <p class="cert-full-desc">Participated in Smart India Hackathon (Hack the Web) organized by Unstop, solving complex public problem statements through web engineering.</p>
+              
+              <button class="cert-action-btn view-trigger">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate &rarr;
               </button>
             </div>
           </div>
 
-          <!-- Card 8: TechBlitz 2026 -->
-          <div class="achieve-card tilt" data-achieve-category="hackathon">
-            <div class="achieve-visual-banner view-trigger">
+          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
+            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
+            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
+            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
+          </svg>
+        </div>
+
+        <!-- Card 8: TechBlitz 2026 -->
+        <div class="cert-panel panel-emerald" data-index="7" data-achieve-category="hackathon">
+          <div class="panel-top-row">
+            <div class="panel-icon-circle">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <span class="panel-badge-pill"><i class="fa-solid fa-code"></i> Hackathon</span>
+          </div>
+
+          <div class="panel-collapsed-view">
+            <h4>TechBlitz 2026 Trident</h4>
+            <p>National Level Technical Symposium &amp; Hackathon VCET...</p>
+          </div>
+
+          <div class="panel-expanded-view">
+            <div class="cert-preview-frame view-trigger">
               <img src="assets/Achievements/Sujal-Verma.png" alt="TechBlitz 2026 Certificate" />
-              <div class="card-badge-tag tag-hackathon">
-                <i class="fa-solid fa-code"></i> Hackathon
-              </div>
-              <div class="card-hover-overlay">
-                <span class="badge-cta"><i class="fa-solid fa-magnifying-glass-plus"></i> View</span>
+              <div class="preview-zoom-badge">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Expand
               </div>
             </div>
-            <div class="achieve-card-content">
-              <h3>TechBlitz 2026 &ndash; Trident AI</h3>
-              <div class="achieve-date-row">
+
+            <div class="cert-details-meta">
+              <h3 class="cert-full-title">TechBlitz 2026 &ndash; Trident AI</h3>
+              <div class="cert-date-badge">
                 <i class="fa-regular fa-calendar"></i> 2026
               </div>
-              <p class="achieve-desc">National Level Technical Symposium &amp; Hackathon submission at VCET.</p>
-              <button class="achieve-view-btn view-trigger">
+              <p class="cert-full-desc">National Level Technical Symposium &amp; Hackathon submission at VCET, showcasing Trident AI automated verification architecture.</p>
+              
+              <button class="cert-action-btn view-trigger">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate &rarr;
               </button>
             </div>
           </div>
 
-        </div>
-      </div>
-
-      <!-- Pagination Dots (Responsive Carousel Support) -->
-      <div class="achieve-pagination-dots" id="achievePaginationDots">
-        <span class="achieve-dot active" data-slide="0"></span>
-        <span class="achieve-dot" data-slide="1"></span>
-        <span class="achieve-dot" data-slide="2"></span>
-        <span class="achieve-dot" data-slide="3"></span>
-      </div>
-
-      <!-- Expanding 8-Pillar Highlights Accordion Strip (From Reference Images) -->
-      <div class="achieve-accordion-strip" id="achieveAccordionStrip">
-        
-        <!-- Panel 1: Real-World Experience -->
-        <div class="accordion-panel panel-blue" data-index="0">
-          <div class="panel-icon-box">
-            <i class="fa-solid fa-briefcase"></i>
-          </div>
-          <div class="panel-text-content">
-            <h4>Real-World Experience</h4>
-            <p>Build software against real project briefs and production standards.</p>
-          </div>
           <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
             <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
@@ -1092,117 +1203,41 @@
           </svg>
         </div>
 
-        <!-- Panel 2: Industry Ready -->
-        <div class="accordion-panel panel-rose" data-index="1">
-          <div class="panel-icon-box">
-            <i class="fa-solid fa-layer-group"></i>
+        <!-- Card 9: ITSA AI Experience & Leadership -->
+        <div class="cert-panel panel-violet" data-index="8" data-achieve-category="achievement certification">
+          <div class="panel-top-row">
+            <div class="panel-icon-circle">
+              <i class="fa-solid fa-users-gear"></i>
+            </div>
+            <span class="panel-badge-pill"><i class="fa-solid fa-star"></i> Leadership</span>
           </div>
-          <div class="panel-text-content">
-            <h4>Industry Ready...</h4>
-            <p>Work on practical projects that strengthen your engineering expertise.</p>
-          </div>
-          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
-            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
-            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
-            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
-          </svg>
-        </div>
 
-        <!-- Panel 3: Verifiable Certificates (Active by default) -->
-        <div class="accordion-panel panel-teal active" data-index="2">
-          <div class="panel-icon-box">
-            <i class="fa-solid fa-award"></i>
+          <div class="panel-collapsed-view">
+            <h4>ITSA AI Experience</h4>
+            <p>Technical Leadership &amp; Workshop Coordination ITSA...</p>
           </div>
-          <div class="panel-text-content">
-            <h4>Verifiable Certificates</h4>
-            <p>Earn certificates that showcase your participation, skills and achievements.</p>
-          </div>
-          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
-            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
-            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
-            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
-          </svg>
-        </div>
 
-        <!-- Panel 4: Cash Prizes & Bounties -->
-        <div class="accordion-panel panel-yellow" data-index="3">
-          <div class="panel-icon-box">
-            <i class="fa-solid fa-trophy"></i>
-          </div>
-          <div class="panel-text-content">
-            <h4>Cash Prizes &amp; Bounties</h4>
-            <p>Compete in challenges with exciting prizes, bounties and recognition.</p>
-          </div>
-          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
-            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
-            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
-            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
-          </svg>
-        </div>
+          <div class="panel-expanded-view">
+            <div class="cert-preview-frame view-trigger">
+              <img src="assets/Achievements/ITSA AI Experience_page-0001.jpg" alt="ITSA Committee Achievement Certificate" />
+              <div class="preview-zoom-badge">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Expand
+              </div>
+            </div>
 
-        <!-- Panel 5: Global Networking -->
-        <div class="accordion-panel panel-purple" data-index="4">
-          <div class="panel-icon-box">
-            <i class="fa-solid fa-network-wired"></i>
+            <div class="cert-details-meta">
+              <h3 class="cert-full-title">ITSA &ndash; AI Experience &amp; Technical Leadership</h3>
+              <div class="cert-date-badge">
+                <i class="fa-regular fa-calendar"></i> 2025 &ndash; 2026
+              </div>
+              <p class="cert-full-desc">Awarded for leading and coordinating hands-on technical AI workshops and student hackathons as an active committee leader at ITSA SLRTCE.</p>
+              
+              <button class="cert-action-btn view-trigger">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate &rarr;
+              </button>
+            </div>
           </div>
-          <div class="panel-text-content">
-            <h4>Global Networking</h4>
-            <p>Connect with developers, mentors, teams and innovators from different communities.</p>
-          </div>
-          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
-            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
-            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
-            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
-          </svg>
-        </div>
 
-        <!-- Panel 6: Community Support -->
-        <div class="accordion-panel panel-cyan" data-index="5">
-          <div class="panel-icon-box">
-            <i class="fa-solid fa-hand-holding-heart"></i>
-          </div>
-          <div class="panel-text-content">
-            <h4>Community Support</h4>
-            <p>Get guidance, collaborate with other developers, and grow together.</p>
-          </div>
-          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
-            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
-            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
-            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
-          </svg>
-        </div>
-
-        <!-- Panel 7: Portfolio Building -->
-        <div class="accordion-panel panel-indigo" data-index="6">
-          <div class="panel-icon-box">
-            <i class="fa-solid fa-folder-open"></i>
-          </div>
-          <div class="panel-text-content">
-            <h4>Portfolio Building</h4>
-            <p>Turn hackathon work into strong, real-world projects for your developer portfolio.</p>
-          </div>
-          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
-            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
-            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
-            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
-          </svg>
-        </div>
-
-        <!-- Panel 8: Industry Recognition -->
-        <div class="accordion-panel panel-green" data-index="7">
-          <div class="panel-icon-box">
-            <i class="fa-regular fa-star"></i>
-          </div>
-          <div class="panel-text-content">
-            <h4>Industry Recognition</h4>
-            <p>Showcase your achievements and get recognized for the work you build.</p>
-          </div>
           <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
             <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
@@ -1452,6 +1487,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script src="script.js?v=3.0"></script>
+  <script src="script.js?v=3.1"></script>
 </body>
 </html>
