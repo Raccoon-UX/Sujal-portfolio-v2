@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <link rel="stylesheet" href="style.css?v=4.5" />
+  <link rel="stylesheet" href="style.css?v=4.6" />
   <style id="contact-critical-styles">
     /* ================= 1:1 Image 2 Reference Contact Showcase ================= */
     .contact-section {
@@ -566,14 +566,95 @@
     <div class="bg-noise-overlay"></div>
   </div>
 
-  <!-- Minimalist Logo Preloader -->
-  <div id="preloader">
-    <div class="minimal-loader-wrapper">
-      <div class="loader-logo">&lt;Sujal<span class="highlight">.dev</span>&gt;</div>
-      <div class="loader-progress-track">
-        <div class="loader-progress-fill" id="progressFill"></div>
+  <!-- Premium 1:1 Reference Preloader Engine (Light Mode Only) -->
+  <div id="preloader" class="preloader-overlay">
+    <!-- Ambient Background Lighting Orbs -->
+    <div class="preloader-bg-orb orb-preloader-tl"></div>
+    <div class="preloader-bg-orb orb-preloader-tr"></div>
+    <div class="preloader-bg-orb orb-preloader-bl"></div>
+    <div class="preloader-bg-orb orb-preloader-br"></div>
+
+    <!-- 4 Geometric Dot Grids -->
+    <div class="preloader-dot-grid dot-preloader-tl"></div>
+    <div class="preloader-dot-grid dot-preloader-tr"></div>
+    <div class="preloader-dot-grid dot-preloader-bl"></div>
+    <div class="preloader-dot-grid dot-preloader-br"></div>
+
+    <!-- Orbital Ring & Satellite Floating Tech Badges -->
+    <div class="preloader-orbit-wrapper">
+      
+      <!-- Faint Outer Orbit Track Line -->
+      <div class="orbit-track-ring">
+        <span class="orbit-node-dot node-dot-1"></span>
+        <span class="orbit-node-dot node-dot-2"></span>
+        <span class="orbit-node-dot node-dot-3"></span>
+        <span class="orbit-node-dot node-dot-4"></span>
       </div>
-      <div class="loader-percentage" id="progressPercent">0%</div>
+
+      <!-- 6 Floating Tech Badges in Glass Cards -->
+      <!-- 1. React (Top-Left) -->
+      <div class="preloader-tech-badge badge-pos-react" title="React">
+        <i class="fa-brands fa-react" style="color: #00d8ff;"></i>
+      </div>
+
+      <!-- 2. Node.js (Mid-Left) -->
+      <div class="preloader-tech-badge badge-pos-node" title="Node.js">
+        <i class="fa-brands fa-node-js" style="color: #16a34a;"></i>
+      </div>
+
+      <!-- 3. PostgreSQL (Bottom-Left) -->
+      <div class="preloader-tech-badge badge-pos-postgres" title="PostgreSQL">
+        <i class="devicon-postgresql-plain" style="color: #336791;"></i>
+      </div>
+
+      <!-- 4. Next.js (Top-Right) -->
+      <div class="preloader-tech-badge badge-pos-next" title="Next.js">
+        <svg width="26" height="26" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="90" cy="90" r="90" fill="#0f172a"/>
+          <path d="M149.508 157.438L69.1411 54H54V125.962H66.6575V69.9678L139.957 164.717C143.305 162.464 146.498 159.998 149.508 157.438Z" fill="white"/>
+          <rect x="115" y="54" width="13" height="72" fill="white"/>
+        </svg>
+      </div>
+
+      <!-- 5. MongoDB (Mid-Right) -->
+      <div class="preloader-tech-badge badge-pos-mongo" title="MongoDB">
+        <i class="devicon-mongodb-plain" style="color: #10aa50;"></i>
+      </div>
+
+      <!-- 6. Git (Bottom-Right) -->
+      <div class="preloader-tech-badge badge-pos-git" title="Git">
+        <i class="fa-brands fa-git-alt" style="color: #f05032;"></i>
+      </div>
+
+      <!-- Center Branding Stage -->
+      <div class="preloader-center-content">
+        
+        <!-- Concentric Circular Code Badge -->
+        <div class="preloader-concentric-badge">
+          <div class="concentric-ring-pulse">
+            <span class="satellite-orbit-dot"></span>
+            <div class="concentric-inner-bubble">
+              <span class="concentric-code-symbol">&lt;/&gt;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sujal.dev Logo -->
+        <h2 class="preloader-brand-title">Sujal<span class="text-blue-accent">.dev</span></h2>
+
+        <!-- Tagline -->
+        <p class="preloader-tagline">Building scalable web solutions...</p>
+
+        <!-- Dynamic Progress Track -->
+        <div class="preloader-progress-track">
+          <div class="preloader-progress-fill" id="progressFill"></div>
+        </div>
+
+        <!-- Percentage Counter -->
+        <div class="preloader-percent-num" id="progressPercent">0%</div>
+
+      </div>
+
     </div>
   </div>
 
@@ -2497,6 +2578,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script src="script.js?v=4.5"></script>
+  <script src="script.js?v=4.6"></script>
 </body>
 </html>

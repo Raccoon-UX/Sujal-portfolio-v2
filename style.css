@@ -282,62 +282,368 @@ body {
   z-index: 2;
 }
 
-/* ================= 3. MINIMALIST LOGO PRELOADER ================= */
-#preloader {
+/* ================= 3. PREMIUM ORBITAL PRELOADER (1:1 REFERENCE DESIGN) ================= */
+#preloader,
+.preloader-overlay {
   position: fixed;
   inset: 0;
-  background: var(--bg-primary);
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at 50% 50%, #FFFFFF 0%, #F4F9FF 60%, #EBF4FE 100%);
   z-index: 999999;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-4);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
-.minimal-loader-wrapper {
+/* Ambient Background Glow Orbs */
+.preloader-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+  opacity: 0.65;
+  z-index: 1;
+}
+
+.orb-preloader-tl {
+  top: -80px;
+  left: -80px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(191, 219, 254, 0.8) 0%, rgba(219, 234, 254, 0) 70%);
+}
+
+.orb-preloader-tr {
+  top: 30px;
+  right: 40px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(186, 230, 253, 0.7) 0%, rgba(224, 242, 254, 0) 70%);
+}
+
+.orb-preloader-bl {
+  bottom: 40px;
+  left: 30px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(186, 230, 253, 0.75) 0%, rgba(224, 242, 254, 0) 70%);
+}
+
+.orb-preloader-br {
+  bottom: -90px;
+  right: -90px;
+  width: 440px;
+  height: 440px;
+  background: radial-gradient(circle, rgba(191, 219, 254, 0.85) 0%, rgba(219, 234, 254, 0) 70%);
+}
+
+/* 4 Geometric Dot Grids */
+.preloader-dot-grid {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.45;
+  z-index: 1;
+  background-image: radial-gradient(#93C5FD 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  width: 110px;
+  height: 90px;
+}
+
+.dot-preloader-tl {
+  top: 14%;
+  left: 10%;
+}
+
+.dot-preloader-tr {
+  top: 30%;
+  right: 10%;
+}
+
+.dot-preloader-bl {
+  bottom: 35%;
+  left: 8%;
+}
+
+.dot-preloader-br {
+  bottom: 14%;
+  right: 12%;
+}
+
+/* Orbital Stage Wrapper */
+.preloader-orbit-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Faint Outer Orbital Track */
+.orbit-track-ring {
+  position: absolute;
+  width: 680px;
+  height: 360px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(191, 219, 254, 0.55);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Small Node Dots along Orbit Track */
+.orbit-node-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2563eb;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.7);
+}
+
+.node-dot-1 {
+  top: 24%;
+  left: 8%;
+}
+
+.node-dot-2 {
+  bottom: 22%;
+  left: 16%;
+}
+
+.node-dot-3 {
+  top: 15%;
+  right: 20%;
+}
+
+.node-dot-4 {
+  bottom: 30%;
+  right: 7%;
+}
+
+/* Floating Tech Badges on the Orbit */
+.preloader-tech-badge {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 30px -4px rgba(15, 23, 42, 0.08), 0 4px 10px rgba(37, 99, 235, 0.04);
+  font-size: 1.65rem;
+  z-index: 5;
+  animation: loaderBadgeFloat 4.5s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.badge-pos-react {
+  top: 10%;
+  left: 23%;
+  animation-delay: 0s;
+}
+
+.badge-pos-node {
+  top: 38%;
+  left: 14%;
+  animation-delay: 1.2s;
+}
+
+.badge-pos-postgres {
+  bottom: 14%;
+  left: 23%;
+  animation-delay: 2.4s;
+}
+
+.badge-pos-next {
+  top: 12%;
+  right: 23%;
+  animation-delay: 0.6s;
+}
+
+.badge-pos-mongo {
+  top: 38%;
+  right: 14%;
+  animation-delay: 1.8s;
+}
+
+.badge-pos-git {
+  bottom: 14%;
+  right: 23%;
+  animation-delay: 3s;
+}
+
+@keyframes loaderBadgeFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Center Content Stage */
+.preloader-center-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-3);
-  width: 100%;
-  max-width: 240px;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  gap: 12px;
 }
 
-.loader-logo {
+/* Concentric Center Code Badge */
+.preloader-concentric-badge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.concentric-ring-pulse {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(219, 234, 254, 0.6) 0%, rgba(239, 246, 255, 0.15) 70%);
+  border: 1.5px solid rgba(191, 219, 254, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 24px rgba(37, 99, 235, 0.08);
+}
+
+.satellite-orbit-dot {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2563eb;
+  top: 2px;
+  right: 14px;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.9);
+  animation: spinSatellite 5s linear infinite;
+  transform-origin: -14px 44px;
+}
+
+@keyframes spinSatellite {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.concentric-inner-bubble {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.concentric-code-symbol {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  color: var(--text-main);
+  color: #2563eb;
   letter-spacing: -0.5px;
-  margin-bottom: var(--space-1);
 }
 
-.loader-logo .highlight {
-  color: var(--accent-blue);
+/* Sujal.dev Logo */
+.preloader-brand-title {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.6px;
+  margin: 0;
+  line-height: 1.1;
 }
 
-.loader-progress-track {
-  width: 100%;
-  height: 3px;
-  background: rgba(15, 23, 42, 0.08);
-  border-radius: 10px;
+.preloader-brand-title .text-blue-accent {
+  color: #2563eb;
+  -webkit-text-fill-color: #2563eb;
+}
+
+/* Tagline */
+.preloader-tagline {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Inter', monospace;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #64748b;
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+
+/* Dynamic Progress Bar Track */
+.preloader-progress-track {
+  width: 290px;
+  height: 8px;
+  background: rgba(219, 234, 254, 0.7);
+  border: 1px solid rgba(191, 219, 254, 0.6);
+  border-radius: 9999px;
   overflow: hidden;
+  margin: 6px 0 2px 0;
+  box-shadow: inset 0 1px 3px rgba(15, 23, 42, 0.04);
 }
 
-.loader-progress-fill {
+.preloader-progress-fill {
   width: 0%;
   height: 100%;
-  background: var(--gradient-primary);
-  box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+  background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+  border-radius: 9999px;
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.6);
   transition: width 0.1s linear;
 }
 
-.loader-percentage {
+/* Percentage Number */
+.preloader-percent-num {
   font-family: var(--font-heading);
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--text-muted);
+  color: #475569;
+  letter-spacing: 0.2px;
+}
+
+/* Responsive Preloader */
+@media (max-width: 768px) {
+  .orbit-track-ring {
+    width: 320px;
+    height: 320px;
+    opacity: 0.4;
+  }
+  .preloader-tech-badge {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+    border-radius: 14px;
+  }
+  .badge-pos-react { top: 4%; left: 16%; }
+  .badge-pos-node { top: 38%; left: 4%; }
+  .badge-pos-postgres { bottom: 10%; left: 14%; }
+  .badge-pos-next { top: 6%; right: 16%; }
+  .badge-pos-mongo { top: 38%; right: 4%; }
+  .badge-pos-git { bottom: 10%; right: 14%; }
+  .preloader-brand-title { font-size: 2.2rem; }
+  .preloader-tagline { font-size: 0.82rem; }
+  .preloader-progress-track { width: 230px; height: 7px; }
+  .preloader-dot-grid { display: none; }
 }
 
 /* ================= 4. GLASSMORPHIC NAVIGATION BAR ================= */
