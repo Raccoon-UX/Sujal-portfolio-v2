@@ -295,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Skills Grid Cards Reveal (Smooth Stagger & Auto-Clear to Guarantee Visibility)
-    gsap.from(".skill-card-v2", {
+    gsap.from(".toolkit-category-card", {
       scrollTrigger: {
         trigger: "#skills",
         start: "top 85%",
@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
       y: 25,
       duration: 0.5,
       ease: "power2.out",
-      stagger: 0.03,
+      stagger: 0.08,
       clearProps: "all"
     });
 
@@ -448,10 +448,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ================= 8. DYNAMIC SKILLS CATEGORY FILTER ================= */
-  const skillFilterBtns = document.querySelectorAll('.skills-filter-btn');
-  const skillCards = document.querySelectorAll('.skill-card-v2');
+  const skillFilterBtns = document.querySelectorAll('.skills-pill-btn');
+  const toolkitCards = document.querySelectorAll('.toolkit-category-card');
 
-  if (skillFilterBtns.length > 0 && skillCards.length > 0) {
+  if (skillFilterBtns.length > 0 && toolkitCards.length > 0) {
     skillFilterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         skillFilterBtns.forEach(b => b.classList.remove('active'));
@@ -459,14 +459,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const activeFilter = btn.getAttribute('data-skill-filter');
 
-        skillCards.forEach(card => {
-          const cardCat = card.getAttribute('data-skill-cat');
+        toolkitCards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
           if (activeFilter === 'all' || cardCat === activeFilter) {
             card.classList.remove('hide');
           } else {
             card.classList.add('hide');
           }
         });
+
+        // Trigger ScrollTrigger refresh to maintain scroll sync and Lenis harmony
+        if (typeof ScrollTrigger !== 'undefined') {
+          ScrollTrigger.refresh();
+        }
       });
     });
   }

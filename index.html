@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <link rel="stylesheet" href="style.css?v=2.3" />
+  <link rel="stylesheet" href="style.css?v=2.4" />
 </head>
 <body> 
   <!-- Custom Premium Cursor -->
@@ -232,1089 +232,313 @@
     </div>
   </section>
 
-  <!-- Interactive Skills Section -->
+  <!-- Premium Skills & Toolkit Section (Redesigned from Reference) -->
   <section class="skills-section reveal" id="skills">
     <div class="container">
-      <h2 class="section-title">Skills &amp; Toolkit</h2>
-      <p class="section-sub">Comprehensive technical stack and computational tools aligned with modern engineering standards.</p>
       
-      <!-- Category Tabs Controls -->
-      <div class="skills-filter-controls">
-        <button class="skills-filter-btn active" data-skill-filter="all">All Tech</button>
-        <button class="skills-filter-btn" data-skill-filter="programming">Programming</button>
-        <button class="skills-filter-btn" data-skill-filter="frontend">Frontend</button>
-        <button class="skills-filter-btn" data-skill-filter="backend">Backend</button>
-        <button class="skills-filter-btn" data-skill-filter="databases">Databases</button>
-        <button class="skills-filter-btn" data-skill-filter="tools">Tools &amp; Cloud</button>
-        <button class="skills-filter-btn" data-skill-filter="core-cs">Core CS</button>
+      <!-- Section Eyebrow Header -->
+      <div class="skills-header-block">
+        <div class="skills-eyebrow">
+          <i class="fa-solid fa-code"></i> My Skills
+        </div>
+        <h2 class="section-title">Skills &amp; Toolkit</h2>
+        <p class="section-sub">A quick overview of the technologies, tools and concepts I work with to build scalable and impactful solutions.</p>
       </div>
 
-      <!-- Skills Cards Grid -->
-      <div class="skills-grid">
+      <!-- Category Filter Pills -->
+      <div class="skills-filter-pills">
+        <button class="skills-pill-btn active" data-skill-filter="all">
+          <i class="fa-solid fa-table-cells-large"></i> All Skills
+        </button>
+        <button class="skills-pill-btn" data-skill-filter="programming">
+          <i class="fa-solid fa-code"></i> Programming
+        </button>
+        <button class="skills-pill-btn" data-skill-filter="frontend">
+          <i class="fa-solid fa-desktop"></i> Frontend
+        </button>
+        <button class="skills-pill-btn" data-skill-filter="backend">
+          <i class="fa-solid fa-server"></i> Backend
+        </button>
+        <button class="skills-pill-btn" data-skill-filter="databases">
+          <i class="fa-solid fa-database"></i> Databases
+        </button>
+        <button class="skills-pill-btn" data-skill-filter="tools">
+          <i class="fa-solid fa-cloud"></i> Tools &amp; Cloud
+        </button>
+        <button class="skills-pill-btn" data-skill-filter="core-cs">
+          <i class="fa-solid fa-brain"></i> Core CS
+        </button>
+      </div>
+
+      <!-- 6 Category Grouped Cards Grid -->
+      <div class="toolkit-grid">
         
-        <!-- ================= 1. PROGRAMMING LANGUAGES ================= -->
-        <!-- Skill 1: TypeScript -->
-        <div class="skill-card-v2" data-skill-cat="programming">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-typescript-plain colored"></i></div>
-              <div class="skill-info">
-                <h3>TypeScript</h3>
-                <span>Type-Safe Architecture</span>
-              </div>
+        <!-- Category Card 1: Programming Languages -->
+        <div class="toolkit-category-card tilt" data-category="programming">
+          <div class="toolkit-card-header">
+            <div class="toolkit-icon-badge">
+              <i class="fa-solid fa-code"></i>
             </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>90%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 90%"></div>
-              </div>
+            <div class="toolkit-title-group">
+              <h3>Programming Languages</h3>
             </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Language</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Next.js &amp; APIs</span>
-              </div>
+            <span class="toolkit-count-badge">4 skills</span>
+          </div>
+          <p class="toolkit-card-desc">Core programming languages I use for building logic, solving problems and creating applications.</p>
+          <div class="toolkit-chips-container">
+            <div class="toolkit-chip">
+              <i class="devicon-java-plain colored"></i>
+              <span>Java</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="devicon-python-plain colored"></i>
+              <span>Python</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="devicon-javascript-plain colored"></i>
+              <span>JavaScript (ES6)</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="devicon-typescript-plain colored"></i>
+              <span>TypeScript</span>
             </div>
           </div>
         </div>
 
-        <!-- Skill 2: JavaScript (ES6) -->
-        <div class="skill-card-v2" data-skill-cat="programming">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-javascript-plain colored"></i></div>
-              <div class="skill-info">
-                <h3>JavaScript (ES6)</h3>
-                <span>Modern Web Logic</span>
-              </div>
+        <!-- Category Card 2: Frontend Development -->
+        <div class="toolkit-category-card tilt" data-category="frontend">
+          <div class="toolkit-card-header">
+            <div class="toolkit-icon-badge">
+              <i class="fa-solid fa-desktop"></i>
             </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>92%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 92%"></div>
-              </div>
+            <div class="toolkit-title-group">
+              <h3>Frontend Development</h3>
             </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Language</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Async / Event Loop</span>
-              </div>
+            <span class="toolkit-count-badge">6 skills</span>
+          </div>
+          <p class="toolkit-card-desc">Modern UI technologies and frameworks for building responsive and interactive web applications.</p>
+          <div class="toolkit-chips-container">
+            <div class="toolkit-chip">
+              <i class="devicon-react-original colored"></i>
+              <span>React.js</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="devicon-nextjs-plain" style="color: #0f172a;"></i>
+              <span>Next.js</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="devicon-html5-plain colored"></i>
+              <span>HTML5</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="devicon-css3-plain colored"></i>
+              <span>CSS3</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="devicon-tailwindcss-plain colored"></i>
+              <span>Tailwind CSS</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="devicon-bootstrap-plain colored"></i>
+              <span>Bootstrap</span>
             </div>
           </div>
         </div>
 
-        <!-- Skill 3: Java -->
-        <div class="skill-card-v2" data-skill-cat="programming">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-java-plain colored"></i></div>
-              <div class="skill-info">
-                <h3>Java</h3>
-                <span>OOP &amp; Data Structures</span>
-              </div>
+        <!-- Category Card 3: Backend Development -->
+        <div class="toolkit-category-card tilt" data-category="backend">
+          <div class="toolkit-card-header">
+            <div class="toolkit-icon-badge">
+              <i class="fa-solid fa-server"></i>
             </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>84%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 84%"></div>
-              </div>
+            <div class="toolkit-title-group">
+              <h3>Backend Development</h3>
             </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Language</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">DSA &amp; Systems</span>
-              </div>
+            <span class="toolkit-count-badge">5 skills</span>
+          </div>
+          <p class="toolkit-card-desc">Server-side technologies, APIs and real-time systems for scalable and secure applications.</p>
+          <div class="toolkit-chips-container">
+            <div class="toolkit-chip">
+              <i class="devicon-nodejs-plain colored"></i>
+              <span>Node.js</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="devicon-express-original" style="color: #0f172a;"></i>
+              <span>Express.js</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="fa-solid fa-cloud" style="color: #0284c7;"></i>
+              <span>REST APIs</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="devicon-socketio-original" style="color: #010101;"></i>
+              <span>Socket.io</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="fa-solid fa-wifi" style="color: #0284c7;"></i>
+              <span>WebSockets</span>
             </div>
           </div>
         </div>
 
-        <!-- Skill 4: Python -->
-        <div class="skill-card-v2" data-skill-cat="programming">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-python-plain colored"></i></div>
-              <div class="skill-info">
-                <h3>Python</h3>
-                <span>Backend &amp; AI Scripting</span>
-              </div>
+        <!-- Category Card 4: Databases -->
+        <div class="toolkit-category-card tilt" data-category="databases">
+          <div class="toolkit-card-header">
+            <div class="toolkit-icon-badge">
+              <i class="fa-solid fa-database"></i>
             </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>86%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 86%"></div>
-              </div>
+            <div class="toolkit-title-group">
+              <h3>Databases</h3>
             </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Language</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">AI APIs &amp; NLP</span>
-              </div>
+            <span class="toolkit-count-badge">4 skills</span>
+          </div>
+          <p class="toolkit-card-desc">Data management systems and ORM tools for efficient and reliable data handling.</p>
+          <div class="toolkit-chips-container">
+            <div class="toolkit-chip">
+              <i class="devicon-postgresql-plain colored"></i>
+              <span>PostgreSQL</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="devicon-mysql-plain colored"></i>
+              <span>MySQL</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="devicon-mongodb-plain colored"></i>
+              <span>MongoDB</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="devicon-prisma-original" style="color: #2d3748;"></i>
+              <span>Prisma ORM</span>
             </div>
           </div>
         </div>
 
-        <!-- ================= 2. FRONTEND ================= -->
-        <!-- Skill 5: React.js -->
-        <div class="skill-card-v2" data-skill-cat="frontend">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-react-original colored"></i></div>
-              <div class="skill-info">
-                <h3>React.js</h3>
-                <span>Component UI Library</span>
-              </div>
+        <!-- Category Card 5: Tools & Cloud -->
+        <div class="toolkit-category-card tilt" data-category="tools">
+          <div class="toolkit-card-header">
+            <div class="toolkit-icon-badge">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
             </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>92%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 92%"></div>
-              </div>
+            <div class="toolkit-title-group">
+              <h3>Tools &amp; Cloud</h3>
             </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Frontend</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">SPA &amp; Dashboards</span>
-              </div>
+            <span class="toolkit-count-badge">8 skills</span>
+          </div>
+          <p class="toolkit-card-desc">Development tools, platforms and cloud services that power my workflow and deployments.</p>
+          <div class="toolkit-chips-container">
+            <div class="toolkit-chip">
+              <i class="devicon-git-plain colored"></i>
+              <span>Git</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="devicon-github-original" style="color: #181717;"></i>
+              <span>GitHub</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="devicon-linux-plain colored"></i>
+              <span>Linux</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="devicon-postman-plain colored"></i>
+              <span>Postman</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="devicon-googlecloud-plain colored"></i>
+              <span>Google Cloud</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="devicon-vercel-original" style="color: #0f172a;"></i>
+              <span>Vercel</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="fa-solid fa-credit-card" style="color: #0284c7;"></i>
+              <span>Razorpay</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="devicon-google-plain colored"></i>
+              <span>Google OAuth</span>
             </div>
           </div>
         </div>
 
-        <!-- Skill 6: Next.js 14 -->
-        <div class="skill-card-v2" data-skill-cat="frontend">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-nextjs-plain" style="color: #0f172a;"></i></div>
-              <div class="skill-info">
-                <h3>Next.js 14</h3>
-                <span>App Router &amp; SSR</span>
-              </div>
+        <!-- Category Card 6: Core Computer Science -->
+        <div class="toolkit-category-card tilt" data-category="core-cs">
+          <div class="toolkit-card-header">
+            <div class="toolkit-icon-badge">
+              <i class="fa-solid fa-brain"></i>
             </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>88%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 88%"></div>
-              </div>
+            <div class="toolkit-title-group">
+              <h3>Core Computer Science</h3>
             </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Framework</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Full-Stack E-Comm</span>
-              </div>
-            </div>
+            <span class="toolkit-count-badge">5 skills</span>
           </div>
-        </div>
-
-        <!-- Skill 7: HTML5 -->
-        <div class="skill-card-v2" data-skill-cat="frontend">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-html5-plain colored"></i></div>
-              <div class="skill-info">
-                <h3>HTML5</h3>
-                <span>Semantic Web Markup</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>95%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 95%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Frontend</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Accessible DOM</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 8: CSS3 -->
-        <div class="skill-card-v2" data-skill-cat="frontend">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-css3-plain colored"></i></div>
-              <div class="skill-info">
-                <h3>CSS3</h3>
-                <span>Modern Layouts &amp; Styling</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>92%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 92%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Frontend</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Flexbox, Grid &amp; FX</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 9: Tailwind CSS -->
-        <div class="skill-card-v2" data-skill-cat="frontend">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-tailwindcss-plain colored"></i></div>
-              <div class="skill-info">
-                <h3>Tailwind CSS</h3>
-                <span>Utility-First Styling</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>90%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 90%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Frontend</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Responsive Frameworks</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 10: Bootstrap -->
-        <div class="skill-card-v2" data-skill-cat="frontend">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-bootstrap-plain colored"></i></div>
-              <div class="skill-info">
-                <h3>Bootstrap</h3>
-                <span>Responsive Grid &amp; UI</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>88%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 88%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Frontend</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Rapid Prototyping</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ================= 3. BACKEND ================= -->
-        <!-- Skill 11: Node.js -->
-        <div class="skill-card-v2" data-skill-cat="backend">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-nodejs-plain colored"></i></div>
-              <div class="skill-info">
-                <h3>Node.js</h3>
-                <span>JavaScript Runtime</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>90%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 90%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Backend</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Server Architecture</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 12: Express.js -->
-        <div class="skill-card-v2" data-skill-cat="backend">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-express-original" style="color: #0f172a;"></i></div>
-              <div class="skill-info">
-                <h3>Express.js</h3>
-                <span>Web Framework &amp; Routing</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>88%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 88%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Backend</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Microservices &amp; Middleware</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 13: REST APIs -->
-        <div class="skill-card-v2" data-skill-cat="backend">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="fa-solid fa-network-wired" style="color: #2563eb;"></i></div>
-              <div class="skill-info">
-                <h3>REST APIs</h3>
-                <span>Web Services Architecture</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>92%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 92%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Backend</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">CRUD &amp; Integrations</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 14: Socket.io -->
-        <div class="skill-card-v2" data-skill-cat="backend">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-socketio-original" style="color: #010101;"></i></div>
-              <div class="skill-info">
-                <h3>Socket.io</h3>
-                <span>Real-Time Bi-Directional Events</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>88%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 88%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Networking</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Live GPS &amp; Chats</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 15: WebSockets -->
-        <div class="skill-card-v2" data-skill-cat="backend">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="fa-solid fa-bolt-lightning" style="color: #f59e0b;"></i></div>
-              <div class="skill-info">
-                <h3>WebSockets</h3>
-                <span>Full-Duplex Protocol</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>86%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 86%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Networking</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Bi-Directional Streaming</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ================= 4. DATABASES ================= -->
-        <!-- Skill 16: PostgreSQL -->
-        <div class="skill-card-v2" data-skill-cat="databases">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-postgresql-plain colored"></i></div>
-              <div class="skill-info">
-                <h3>PostgreSQL</h3>
-                <span>Relational Database (RDBMS)</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>88%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 88%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">RDBMS</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">ACID &amp; Complex Queries</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 17: MySQL -->
-        <div class="skill-card-v2" data-skill-cat="databases">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-mysql-plain colored"></i></div>
-              <div class="skill-info">
-                <h3>MySQL</h3>
-                <span>Relational Database Management</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>86%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 86%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">RDBMS</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Structured Data Storage</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 18: MongoDB -->
-        <div class="skill-card-v2" data-skill-cat="databases">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-mongodb-plain colored"></i></div>
-              <div class="skill-info">
-                <h3>MongoDB</h3>
-                <span>NoSQL Document Database</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>90%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 90%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">NoSQL</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Atlas &amp; Document Store</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 19: Prisma ORM -->
-        <div class="skill-card-v2" data-skill-cat="databases">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-prisma-original" style="color: #2d3748;"></i></div>
-              <div class="skill-info">
-                <h3>Prisma ORM</h3>
-                <span>Type-Safe Data Modeling</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>88%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 88%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">ORM</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Migrations &amp; Schema Sync</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ================= 5. TOOLS & CLOUD ================= -->
-        <!-- Skill 20: Git -->
-        <div class="skill-card-v2" data-skill-cat="tools">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-git-plain colored"></i></div>
-              <div class="skill-info">
-                <h3>Git</h3>
-                <span>Distributed Version Control</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>92%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 92%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">VCS</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Branching &amp; Workflows</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 21: GitHub -->
-        <div class="skill-card-v2" data-skill-cat="tools">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-github-original" style="color: #181717;"></i></div>
-              <div class="skill-info">
-                <h3>GitHub &amp; Actions</h3>
-                <span>Collaboration &amp; CI/CD</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>90%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 90%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">DevOps</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">CI/CD Pipelines</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 22: Linux -->
-        <div class="skill-card-v2" data-skill-cat="tools">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-linux-plain colored"></i></div>
-              <div class="skill-info">
-                <h3>Linux</h3>
-                <span>Operating Environment</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>84%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 84%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">OS &amp; CLI</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Shell Scripting &amp; Ops</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 23: Postman -->
-        <div class="skill-card-v2" data-skill-cat="tools">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-postman-plain colored"></i></div>
-              <div class="skill-info">
-                <h3>Postman</h3>
-                <span>API Testing &amp; Debugging</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>90%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 90%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Testing</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Endpoint Collections</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 24: Google Cloud -->
-        <div class="skill-card-v2" data-skill-cat="tools">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-googlecloud-plain colored"></i></div>
-              <div class="skill-info">
-                <h3>Google Cloud</h3>
-                <span>Cloud Infrastructure &amp; APIs</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>82%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 82%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Cloud</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">GCP APIs &amp; Hosting</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 25: Vercel -->
-        <div class="skill-card-v2" data-skill-cat="tools">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-vercel-original" style="color: #0f172a;"></i></div>
-              <div class="skill-info">
-                <h3>Vercel</h3>
-                <span>Edge Deployment Platform</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>92%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 92%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Hosting</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Serverless &amp; Next.js</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 26: Razorpay -->
-        <div class="skill-card-v2" data-skill-cat="tools">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="fa-solid fa-credit-card" style="color: #0284c7;"></i></div>
-              <div class="skill-info">
-                <h3>Razorpay</h3>
-                <span>Payment Gateway Integration</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>88%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 88%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Fintech</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Webhooks &amp; Checkouts</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 27: Google OAuth -->
-        <div class="skill-card-v2" data-skill-cat="tools">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="devicon-google-plain colored"></i></div>
-              <div class="skill-info">
-                <h3>Google OAuth</h3>
-                <span>Secure Authentication</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>90%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 90%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Auth</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">SSO &amp; JWT Flows</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ================= 6. CORE CS ================= -->
-        <!-- Skill 28: Data Structures & Algorithms -->
-        <div class="skill-card-v2" data-skill-cat="core-cs">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="fa-solid fa-diagram-project" style="color: #2563eb;"></i></div>
-              <div class="skill-info">
-                <h3>Data Structures &amp; Algorithms</h3>
-                <span>Computational Efficiency</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>86%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 86%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Core CS</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Optimization &amp; DSA</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 29: Object-Oriented Programming (OOP) -->
-        <div class="skill-card-v2" data-skill-cat="core-cs">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="fa-solid fa-cubes" style="color: #7c3aed;"></i></div>
-              <div class="skill-info">
-                <h3>OOP Concepts</h3>
-                <span>Object-Oriented Design</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>90%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 90%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Core CS</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">SOLID &amp; Modular Code</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 30: DBMS -->
-        <div class="skill-card-v2" data-skill-cat="core-cs">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="fa-solid fa-database" style="color: #059669;"></i></div>
-              <div class="skill-info">
-                <h3>DBMS</h3>
-                <span>Database Management Systems</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>88%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 88%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Core CS</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">ACID, Indexing &amp; Norm</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 31: Operating Systems -->
-        <div class="skill-card-v2" data-skill-cat="core-cs">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="fa-solid fa-microchip" style="color: #d97706;"></i></div>
-              <div class="skill-info">
-                <h3>Operating Systems</h3>
-                <span>System Fundamentals</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>85%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 85%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Core CS</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">Threads, Memory &amp; I/O</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 32: Computer Networks -->
-        <div class="skill-card-v2" data-skill-cat="core-cs">
-          <div class="skill-card-glow"></div>
-          <div class="skill-card-content">
-            <div class="skill-top-row">
-              <div class="skill-icon-box"><i class="fa-solid fa-globe" style="color: #0284c7;"></i></div>
-              <div class="skill-info">
-                <h3>Computer Networks</h3>
-                <span>Protocols &amp; Architecture</span>
-              </div>
-            </div>
-            <div class="skill-progress-area">
-              <div class="skill-progress-labels">
-                <span>Proficiency</span>
-                <span>86%</span>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="--percent: 86%"></div>
-              </div>
-            </div>
-            <div class="skill-meta-metrics">
-              <div class="skill-metric-item">
-                <span class="metric-label">Category</span>
-                <span class="metric-value">Core CS</span>
-              </div>
-              <div class="skill-metric-item">
-                <span class="metric-label">Application</span>
-                <span class="metric-value">TCP/IP, HTTP/3 &amp; OSI</span>
-              </div>
+          <p class="toolkit-card-desc">Fundamental CS concepts that strengthen problem-solving and system design skills.</p>
+          <div class="toolkit-chips-container">
+            <div class="toolkit-chip">
+              <i class="fa-solid fa-code-branch" style="color: #2563eb;"></i>
+              <span>DSA</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="fa-solid fa-cubes" style="color: #7c3aed;"></i>
+              <span>OOP</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="fa-solid fa-database" style="color: #059669;"></i>
+              <span>DBMS</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="fa-solid fa-microchip" style="color: #d97706;"></i>
+              <span>Operating Systems</span>
+            </div>
+            <div class="toolkit-chip">
+              <i class="fa-solid fa-network-wired" style="color: #0284c7;"></i>
+              <span>Computer Networks</span>
             </div>
           </div>
         </div>
 
       </div>
+
+      <!-- Bottom Stats Strip (Truthful & Verified) -->
+      <div class="skills-stats-strip">
+        <div class="skills-stat-item">
+          <div class="stat-icon-circle">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <div class="stat-text-meta">
+            <span class="stat-main-num">25+</span>
+            <span class="stat-main-label">Technologies &amp; Tools</span>
+          </div>
+        </div>
+        <div class="skills-stat-item">
+          <div class="stat-icon-circle">
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <div class="stat-text-meta">
+            <span class="stat-main-num">6</span>
+            <span class="stat-main-label">Skill Categories</span>
+          </div>
+        </div>
+        <div class="skills-stat-item">
+          <div class="stat-icon-circle">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <div class="stat-text-meta">
+            <span class="stat-main-num">Building</span>
+            <span class="stat-main-label">Real-World Projects</span>
+          </div>
+        </div>
+        <div class="skills-stat-item">
+          <div class="stat-icon-circle">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <div class="stat-text-meta">
+            <span class="stat-main-num">Always Learning</span>
+            <span class="stat-main-label">Better Every Day</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1881,6 +1105,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script src="script.js?v=2.3"></script>
+  <script src="script.js?v=2.4"></script>
 </body>
 </html>
