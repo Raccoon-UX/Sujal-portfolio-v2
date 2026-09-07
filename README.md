@@ -39,8 +39,9 @@ Personal developer portfolio showcasing production-ready full-stack web platform
 * **Build & Grow AI Hackathon 2.0 (Shortlisted)** — *NMIMS, GDG Cloud Mumbai*
 * **SuperHack 2025 Global AI Hackathon** — *SuperOps × AWS & Hack2Skill*
 * **Advanced Software Engineering Job Simulation** — *Walmart Global Tech (Forage)*
-* **Smart India Hackathon | Hack the Web** — *Smart India Hackathon (Unstop)*
+* **HACKSAGON 2026** — *ABV-IIITM IEEE Student Branch & IEEE MP Section*
 * **TechBlitz 2026 – Trident AI** — *VCET*
+* **ITSA AI Experience & Technical Leadership** — *ITSA SLRTCE*
 
 ---
 
