@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <link rel="stylesheet" href="style.css?v=4.1" />
+  <link rel="stylesheet" href="style.css?v=4.2" />
   <style id="contact-critical-styles">
     /* ================= 1:1 Image 2 Reference Contact Showcase ================= */
     .contact-section {
@@ -2016,80 +2016,178 @@
     </div>
   </section>
 
-  <!-- Structural Footer Component (Light Mode Polished) -->
-  <footer class="footer-component">
-    <div class="footer-grid container">
-      
-      <!-- Column 1: Brand -->
-      <div class="footer-block main-identity">
-        <h2 class="footer-brand">Sujal<span class="highlight">.dev</span></h2>
-        <p class="footer-bio-text">Architecting production-ready full-stack applications, scalable database systems, and real-time distributed software.</p>
+  <!-- ================= EDITORIAL SPLIT-COLUMN FOOTER COMPONENT ================= -->
+  <footer class="footer-component" id="footerComponent">
+    <!-- Ambient Subtle Decorative Background Elements -->
+    <div class="footer-bg-orb orb-left"></div>
+    <div class="footer-bg-orb orb-right"></div>
+    <div class="footer-dot-grid dot-top-left"></div>
+    <div class="footer-dot-grid dot-top-right"></div>
+    <div class="footer-dot-grid dot-bottom-left"></div>
+    <div class="footer-dot-grid dot-bottom-right"></div>
+    <svg class="footer-ambient-curve" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 60C360 110 1080 10 1440 60V120H0V60Z" fill="rgba(239, 246, 255, 0.4)"/>
+    </svg>
+
+    <div class="footer-main-container container">
+      <div class="footer-editorial-grid">
         
-        <!-- Core Architecture Stack Badges -->
-        <div class="footer-stack-badges">
-          <span>Next.js 14</span>
-          <span>React.js</span>
-          <span>TypeScript</span>
-          <span>Node.js</span>
-          <span>PostgreSQL</span>
-          <span>Prisma</span>
-          <span>Socket.io</span>
-        </div>
-      </div>
-
-      <!-- Column 2: Navigation -->
-      <div class="footer-block access-points">
-        <h3>Navigation</h3>
-        <ul class="footer-nav-matrix">
-          <li><a href="#home"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
-          <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> About</a></li>
-          <li><a href="#skills"><i class="fa-solid fa-chevron-right"></i> Skills</a></li>
-          <li><a href="#projects"><i class="fa-solid fa-chevron-right"></i> Projects</a></li>
-          <li><a href="#experience"><i class="fa-solid fa-chevron-right"></i> Experience</a></li>
-          <li><a href="#achievements"><i class="fa-solid fa-chevron-right"></i> Achievements</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 3: Communication Channels -->
-      <div class="footer-block communication-coordinates">
-        <h3>Direct Channels</h3>
-        <div class="footer-coordinate-links">
-          <a href="mailto:vsujal956@gmail.com" class="coordinate-item">
-            <i class="fa-solid fa-envelope"></i> vsujal956@gmail.com
-          </a>
-          <a href="https://wa.me/917710893839" target="_blank" rel="noopener noreferrer" class="coordinate-item">
-            <i class="fa-brands fa-whatsapp"></i> +91 7710893839
-          </a>
-          <span class="coordinate-item-static">
-            <i class="fa-solid fa-location-dot"></i> Mumbai, Maharashtra, India
-          </span>
+        <!-- COLUMN 1 (LEFT): Identity, Bio & Tech Badges -->
+        <div class="footer-col-identity">
+          <h2 class="footer-brand">Sujal<span class="highlight">.dev</span></h2>
+          <p class="footer-bio-text">Architecting production-ready full-stack applications, scalable database systems, and real-time distributed software.</p>
+          
+          <!-- Technology Badges -->
+          <div class="footer-tech-pills">
+            <span class="tech-pill-badge"><span class="tech-pill-icon icon-next">N</span> Next.js</span>
+            <span class="tech-pill-badge"><i class="fa-brands fa-react icon-react"></i> React</span>
+            <span class="tech-pill-badge"><span class="tech-pill-icon icon-ts">TS</span> TypeScript</span>
+            <span class="tech-pill-badge"><i class="fa-brands fa-node-js icon-node"></i> Node.js</span>
+            <span class="tech-pill-badge"><i class="devicon-postgresql-plain icon-postgres"></i> PostgreSQL</span>
+            <span class="tech-pill-badge"><svg class="icon-prisma" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 22h20L12 2z"/><path d="M12 8l-5 10h10l-5-10z"/></svg> Prisma</span>
+            <span class="tech-pill-badge"><i class="fa-solid fa-bolt icon-socket"></i> Socket.io</span>
+          </div>
         </div>
 
-        <!-- Social Handles Grid -->
-        <div class="footer-brand-channels">
-          <a href="https://www.linkedin.com/in/sujalverma456/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="footer-icon-btn linkedin-f"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="https://github.com/Raccoon-UX" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="footer-icon-btn github-f"><i class="fa-brands fa-github"></i></a>
-          <a href="mailto:vsujal956@gmail.com" aria-label="Email" class="footer-icon-btn mail-f"><i class="fa-solid fa-envelope"></i></a>
+        <!-- Vertical Separator 1 -->
+        <div class="footer-col-divider"></div>
+
+        <!-- COLUMN 2 (CENTER): Quick Links (Dual Column Matrix) -->
+        <div class="footer-col-quicklinks">
+          <div class="editorial-eyebrow-row">
+            <span class="editorial-eyebrow">QUICK LINKS</span>
+            <span class="editorial-header-line"></span>
+          </div>
+
+          <div class="footer-dual-nav-matrix">
+            <div class="nav-sub-column">
+              <a href="#home" class="editorial-nav-item">
+                <svg class="editorial-link-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 10.5L10.5 3.5M10.5 3.5H4.66667M10.5 3.5V9.33333" stroke="#2563eb" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Home</span>
+              </a>
+              <a href="#about" class="editorial-nav-item">
+                <svg class="editorial-link-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 10.5L10.5 3.5M10.5 3.5H4.66667M10.5 3.5V9.33333" stroke="#2563eb" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>About</span>
+              </a>
+              <a href="#skills" class="editorial-nav-item">
+                <svg class="editorial-link-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 10.5L10.5 3.5M10.5 3.5H4.66667M10.5 3.5V9.33333" stroke="#2563eb" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Skills</span>
+              </a>
+            </div>
+
+            <div class="nav-sub-column">
+              <a href="#projects" class="editorial-nav-item">
+                <svg class="editorial-link-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 10.5L10.5 3.5M10.5 3.5H4.66667M10.5 3.5V9.33333" stroke="#2563eb" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Projects</span>
+              </a>
+              <a href="#experience" class="editorial-nav-item">
+                <svg class="editorial-link-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 10.5L10.5 3.5M10.5 3.5H4.66667M10.5 3.5V9.33333" stroke="#2563eb" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Experience</span>
+              </a>
+              <a href="#achievements" class="editorial-nav-item">
+                <svg class="editorial-link-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 10.5L10.5 3.5M10.5 3.5H4.66667M10.5 3.5V9.33333" stroke="#2563eb" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Achievements</span>
+              </a>
+            </div>
+          </div>
         </div>
+
+        <!-- Vertical Separator 2 -->
+        <div class="footer-col-divider"></div>
+
+        <!-- COLUMN 3 (RIGHT): Let's Connect -->
+        <div class="footer-col-connect">
+          <div class="editorial-eyebrow-row">
+            <span class="editorial-eyebrow">LET'S CONNECT</span>
+            <span class="editorial-header-line"></span>
+          </div>
+
+          <div class="footer-direct-coords">
+            <!-- Direct Email -->
+            <div class="coord-item-row">
+              <div class="coord-icon-bubble">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="coord-info-meta">
+                <h4>Direct Email</h4>
+                <a href="mailto:vsujal956@gmail.com" class="coord-link-val">vsujal956@gmail.com</a>
+              </div>
+            </div>
+
+            <!-- Phone / WhatsApp -->
+            <div class="coord-item-row">
+              <div class="coord-icon-bubble">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div class="coord-info-meta">
+                <h4>Phone</h4>
+                <a href="https://wa.me/917710893839" target="_blank" rel="noopener noreferrer" class="coord-link-val">+91 7710893839</a>
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div class="coord-item-row">
+              <div class="coord-icon-bubble">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="coord-info-meta">
+                <h4>Location</h4>
+                <span class="coord-static-val">Mumbai, Maharashtra, India</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subtle Horizontal Separator -->
+          <div class="footer-connect-separator"></div>
+
+          <!-- Social Icon Buttons -->
+          <div class="footer-social-row">
+            <a href="https://www.linkedin.com/in/sujalverma456/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="editorial-social-bubble linkedin-brand">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/Raccoon-UX" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="editorial-social-bubble github-brand">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="mailto:vsujal956@gmail.com" aria-label="Gmail" class="editorial-social-bubble gmail-brand">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://wa.me/917710893839" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="editorial-social-bubble whatsapp-brand">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
       </div>
 
-    </div>
+      <!-- Bottom Horizontal Line -->
+      <div class="footer-bottom-divider"></div>
 
-    <!-- Separator Line Rule -->
-    <div class="footer-separator container"></div>
-    
-    <!-- Meta Bottom Layout Sheet -->
-    <div class="footer-meta-bottom container">
-      <div class="system-status-wrapper">
-        <span class="pulse-dot"></span>
-        <span class="status-label">Status: Available for SDE Opportunities</span>
+      <!-- Meta Bottom Strip -->
+      <div class="footer-meta-bottom-bar">
+        <div class="system-status-wrapper">
+          <span class="pulse-dot"></span>
+          <span class="status-label">Available for SDE Opportunities</span>
+        </div>
+
+        <span class="copyright-text">&copy; 2026 Sujal Verma - All Rights Reserved</span>
+
+        <a href="#home" class="editorial-back-to-top scroll-top-trigger" aria-label="Scroll to top of page">
+          <span class="top-arrow-circle"><i class="fa-solid fa-arrow-up"></i></span>
+          <span class="top-label">Back to Top</span>
+        </a>
       </div>
-      <span class="copyright-text">&copy; 2026 Sujal Verma &middot; All Rights Reserved</span>
-      
-      <!-- Back to Top Mechanism -->
-      <a href="#home" class="scroll-top-trigger" aria-label="Scroll Back To Top">
-        <i class="fa-solid fa-arrow-up"></i>
-      </a>
     </div>
   </footer>
 
@@ -2180,6 +2278,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script src="script.js?v=4.1"></script>
+  <script src="script.js?v=4.2"></script>
 </body>
 </html>
