@@ -565,10 +565,18 @@ document.addEventListener('DOMContentLoaded', () => {
             modalTechStack.appendChild(tag);
           });
 
+          // Stop Lenis & Lock Background Scrolling
+          if (window.lenis) {
+            window.lenis.stop();
+          }
+          document.documentElement.classList.add("modal-open");
+          document.body.classList.add("modal-open");
+          document.body.style.overflow = "hidden";
+          document.documentElement.style.overflow = "hidden";
+
           caseStudyModal.style.display = "flex";
           setTimeout(() => {
             caseStudyModal.classList.add("active");
-            document.body.style.overflow = "hidden";
           }, 10);
         }
       });
@@ -576,7 +584,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const closeCaseStudy = () => {
       caseStudyModal.classList.remove("active");
+      document.documentElement.classList.remove("modal-open");
+      document.body.classList.remove("modal-open");
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+      
+      // Resume Lenis Smooth Scroll
+      if (window.lenis) {
+        window.lenis.start();
+      }
       setTimeout(() => {
         caseStudyModal.style.display = "none";
       }, 350);
@@ -597,6 +613,45 @@ document.addEventListener('DOMContentLoaded', () => {
         closeCaseStudy();
       }
     });
+
+    // Isolate Wheel and Touch scrolling strictly within Case Study Modal
+    const modalBodyScroll = caseStudyModal.querySelector(".modal-body-scroll");
+    if (modalBodyScroll) {
+      modalBodyScroll.addEventListener("wheel", function(e) {
+        e.stopPropagation();
+        const { scrollTop, scrollHeight, clientHeight } = modalBodyScroll;
+        const isScrollingUp = e.deltaY < 0;
+        const isScrollingDown = e.deltaY > 0;
+
+        if ((isScrollingUp && scrollTop <= 0) || (isScrollingDown && scrollTop + clientHeight >= scrollHeight - 1)) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+
+      let touchStartY = 0;
+      modalBodyScroll.addEventListener("touchstart", function(e) {
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+
+      modalBodyScroll.addEventListener("touchmove", function(e) {
+        const touchY = e.touches[0].clientY;
+        const deltaY = touchStartY - touchY;
+        const { scrollTop, scrollHeight, clientHeight } = modalBodyScroll;
+        const isScrollingUp = deltaY < 0;
+        const isScrollingDown = deltaY > 0;
+
+        if ((isScrollingUp && scrollTop <= 0) || (isScrollingDown && scrollTop + clientHeight >= scrollHeight - 1)) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+    }
+
+    caseStudyModal.addEventListener("wheel", function(e) {
+      if (!e.target.closest(".modal-body-scroll")) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, { passive: false });
   }
 
   /* ================= 10. CERTIFICATE LIGHTBOX SYSTEM ================= */
@@ -615,6 +670,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const parentCard = this.closest(".carousel-card-wide, .timeline-item, .certificate-preview-box");
         const entryTitle = parentCard ? parentCard.querySelector("h3") : null;
 
+        // Stop Lenis & Lock Body
+        if (window.lenis) {
+          window.lenis.stop();
+        }
+        document.documentElement.classList.add("modal-open");
+        document.body.classList.add("modal-open");
+        document.body.style.overflow = "hidden";
+        document.documentElement.style.overflow = "hidden";
+
         lightboxModal.style.display = "flex";
         setTimeout(() => { lightboxModal.classList.add("active"); }, 10);
 
@@ -630,11 +694,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+
+    lightboxModal.addEventListener("wheel", function(e) {
+      if (!e.target.closest(".lightbox-wrapper")) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, { passive: false });
   }
 
   function closeLightboxArray() {
     if (lightboxModal) {
       lightboxModal.classList.remove("active");
+      document.documentElement.classList.remove("modal-open");
+      document.body.classList.remove("modal-open");
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+      
+      if (window.lenis) {
+        window.lenis.start();
+      }
       setTimeout(() => { lightboxModal.style.display = "none"; }, 300);
     }
   }
@@ -749,6 +828,8 @@ document.addEventListener('DOMContentLoaded', () => {
       smooth: true,
       infinite: false,
     });
+
+    window.lenis = lenis;
 
     lenis.on('scroll', () => {
       if (typeof ScrollTrigger !== 'undefined') {

@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <link rel="stylesheet" href="style.css?v=2.1" />
+  <link rel="stylesheet" href="style.css?v=2.2" />
 </head>
 <body> 
   <!-- Custom Premium Cursor -->
@@ -1795,15 +1795,15 @@
   </footer>
 
   <!-- Immersive Case Study Modal -->
-  <div id="caseStudyModal" class="case-study-modal-overlay">
-    <div class="modal-container-glass">
+  <div id="caseStudyModal" class="case-study-modal-overlay" data-lenis-prevent>
+    <div class="modal-container-glass" data-lenis-prevent>
       <button class="modal-close-btn" aria-label="Close Case Study">&times;</button>
       <div class="modal-header-banner">
         <span class="modal-project-badge" id="modalProjBadge">Project</span>
         <h2 id="modalProjTitle">Project Title</h2>
         <p id="modalProjDesc">Project Description</p>
       </div>
-      <div class="modal-body-scroll">
+      <div class="modal-body-scroll" data-lenis-prevent>
         <div class="modal-two-columns">
           <div class="modal-main-column">
             <section class="modal-sec">
@@ -1866,9 +1866,9 @@
   </div>
 
   <!-- Certificate Lightbox Engine -->
-  <div id="lightboxModal" class="lightbox-engine-overlay">
+  <div id="lightboxModal" class="lightbox-engine-overlay" data-lenis-prevent>
     <span class="dismiss-btn">&times;</span>
-    <div class="lightbox-wrapper">
+    <div class="lightbox-wrapper" data-lenis-prevent>
       <div class="fallback-modal-icon"><i class="fa-solid fa-file-lines"></i></div>
       <img class="lightbox-image-target" id="modalImageContainer" alt="Certificate Preview" />
       <div id="lightboxCaption"></div>
@@ -1881,6 +1881,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script src="script.js?v=2.1"></script>
+  <script src="script.js?v=2.2"></script>
 </body>
 </html>
