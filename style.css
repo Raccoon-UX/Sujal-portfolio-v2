@@ -1913,7 +1913,7 @@ body {
 
 .achieve-header-block {
   text-align: center;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
   position: relative;
   z-index: 2;
 }
@@ -1932,22 +1932,30 @@ body {
   margin-bottom: 16px;
 }
 
-.achieve-filter-pills {
+/* Filter Pills & Carousel Controls Bar */
+.achieve-filter-bar-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 42px;
-  flex-wrap: wrap;
+  margin-bottom: 36px;
+  gap: 16px;
   position: relative;
   z-index: 2;
+  flex-wrap: wrap;
+}
+
+.achieve-filter-pills {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .achieve-pill-btn {
   background: #ffffff;
   border: 1px solid var(--card-border);
   color: var(--text-muted);
-  padding: 9px 22px;
+  padding: 9px 20px;
   border-radius: 9999px;
   font-weight: 600;
   font-size: 0.88rem;
@@ -1974,12 +1982,46 @@ body {
   transform: translateY(-2px);
 }
 
+.achieve-carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.achieve-nav-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  color: var(--text-main);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.achieve-nav-btn:hover {
+  background: var(--accent-blue);
+  color: #ffffff;
+  border-color: var(--accent-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+}
+
+.achieve-nav-btn:active {
+  transform: scale(0.95);
+}
+
 /* Showcase Grid */
 .achieve-showcase-grid {
   display: grid;
   grid-template-columns: 1.15fr 2.85fr;
   gap: 24px;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   align-items: stretch;
   position: relative;
   z-index: 2;
@@ -1988,7 +2030,7 @@ body {
 /* Left Featured Card (ISRO) */
 .featured-achieve-card {
   background: #ffffff;
-  border: 2px solid rgba(37, 99, 235, 0.26);
+  border: 2px solid rgba(37, 99, 235, 0.28);
   border-radius: 22px;
   padding: 22px;
   display: flex;
@@ -2280,44 +2322,193 @@ body {
   margin-bottom: 14px;
 }
 
-/* Bottom Stats Strip */
-.achieve-stats-strip {
-  background: #ffffff;
-  border: 1px solid var(--card-border);
-  border-radius: 22px;
-  padding: 24px 36px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+/* Pagination Dots */
+.achieve-pagination-dots {
+  display: flex;
+  justify-content: center;
   align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  margin-bottom: 40px;
   position: relative;
   z-index: 2;
 }
 
-.achieve-stat-item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+.achieve-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: #CBD5E1;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.achieve-stat-icon {
+.achieve-dot:hover {
+  background: #94A3B8;
+}
+
+.achieve-dot.active {
+  width: 24px;
+  background: var(--accent-blue);
+}
+
+/* ================= Expanding 8-Pillar Highlights Accordion Strip ================= */
+.achieve-accordion-strip {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  min-height: 250px;
+  position: relative;
+  z-index: 2;
+  align-items: stretch;
+}
+
+.accordion-panel {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 24px 20px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+  transition: flex 0.45s cubic-bezier(0.25, 1, 0.5, 1), 
+              background 0.35s ease, 
+              border-color 0.35s ease, 
+              box-shadow 0.35s ease, 
+              transform 0.35s ease;
+  min-width: 70px;
+}
+
+.accordion-panel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+.panel-icon-box {
   width: 44px;
   height: 44px;
-  border-radius: 50%;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   flex-shrink: 0;
-  background: rgba(37, 99, 235, 0.08);
-  color: var(--accent-blue);
+  margin-bottom: 24px;
+  transition: all 0.35s ease;
 }
 
-.achieve-stat-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+.panel-text-content {
+  position: relative;
+  z-index: 3;
+  transition: all 0.35s ease;
+}
+
+.panel-text-content h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.35s ease, white-space 0.35s ease;
+}
+
+.panel-text-content p {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin: 0;
+  opacity: 0.85;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 0.35s ease, opacity 0.35s ease;
+}
+
+.panel-ripple-svg {
+  position: absolute;
+  right: -30px;
+  bottom: -30px;
+  width: 190px;
+  height: 190px;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 2;
+}
+
+/* Inactive Theme Colors for Icon Box */
+.panel-blue .panel-icon-box { background: rgba(37, 99, 235, 0.1); color: #2563eb; }
+.panel-rose .panel-icon-box { background: rgba(244, 63, 94, 0.1); color: #f43f5e; }
+.panel-teal .panel-icon-box { background: rgba(13, 148, 136, 0.1); color: #0d9488; }
+.panel-yellow .panel-icon-box { background: rgba(234, 179, 8, 0.15); color: #ca8a04; }
+.panel-purple .panel-icon-box { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+.panel-cyan .panel-icon-box { background: rgba(6, 182, 212, 0.1); color: #0891b2; }
+.panel-indigo .panel-icon-box { background: rgba(99, 102, 241, 0.1); color: #4f46e5; }
+.panel-green .panel-icon-box { background: rgba(16, 185, 129, 0.1); color: #059669; }
+
+/* Expanded / Active State */
+.accordion-panel.active {
+  flex: 3.5;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.15);
+  border-color: transparent;
+}
+
+.accordion-panel.active .panel-icon-box {
+  background: rgba(255, 255, 255, 0.22) !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(4px);
+}
+
+.accordion-panel.active .panel-text-content h4 {
+  color: #ffffff !important;
+  white-space: normal;
+  font-size: 1.15rem;
+}
+
+.accordion-panel.active .panel-text-content p {
+  color: rgba(255, 255, 255, 0.92) !important;
+  opacity: 1;
+  -webkit-line-clamp: 4;
+}
+
+.accordion-panel.active .panel-ripple-svg {
+  opacity: 0.85;
+  transform: scale(1);
+}
+
+/* Active Gradient Themes */
+.panel-blue.active {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+}
+.panel-rose.active {
+  background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%) !important;
+}
+.panel-teal.active {
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%) !important;
+}
+.panel-yellow.active {
+  background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%) !important;
+}
+.panel-purple.active {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%) !important;
+}
+.panel-cyan.active {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%) !important;
+}
+.panel-indigo.active {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important;
+}
+.panel-green.active {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
 }
 
 /* ================= 11. CONTACT SECTION ================= */
@@ -3190,10 +3381,20 @@ html.modal-open {
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
   }
-  .achieve-stats-strip {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 22px 28px;
-    gap: 20px;
+  .achieve-accordion-strip {
+    overflow-x: auto;
+    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .accordion-panel {
+    min-width: 220px;
+    flex: 0 0 220px;
+    scroll-snap-align: start;
+  }
+  .accordion-panel.active {
+    flex: 0 0 300px;
+    min-width: 300px;
   }
 
   .modal-two-columns {
@@ -3285,18 +3486,33 @@ html.modal-open {
     grid-template-columns: 1fr;
     gap: 16px;
   }
+  .achieve-filter-bar-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
   .achieve-filter-pills {
+    width: 100%;
+    justify-content: center;
     gap: 8px;
-    margin-bottom: 28px;
   }
   .achieve-pill-btn {
     padding: 7px 14px;
     font-size: 0.82rem;
   }
-  .achieve-stats-strip {
-    grid-template-columns: 1fr;
-    padding: 20px 18px;
-    gap: 16px;
+  .achieve-carousel-controls {
+    display: none;
+  }
+  .accordion-panel {
+    min-width: 190px;
+    flex: 0 0 190px;
+    padding: 20px 16px;
+  }
+  .accordion-panel.active {
+    flex: 0 0 260px;
+    min-width: 260px;
+  }
     border-radius: 18px;
   }
 

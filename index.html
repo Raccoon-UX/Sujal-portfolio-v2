@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <link rel="stylesheet" href="style.css?v=2.8" />
+  <link rel="stylesheet" href="style.css?v=3.0" />
 </head>
 <body> 
   <!-- Custom Premium Cursor -->
@@ -838,20 +838,32 @@
         <p class="section-sub">A collection of certifications, hackathons and achievements that have helped me learn, build and grow as a developer.</p>
       </div>
 
-      <!-- Filter Pills -->
-      <div class="achieve-filter-pills">
-        <button class="achieve-pill-btn active" data-achieve-filter="all">
-          <i class="fa-solid fa-table-cells-large"></i> All
-        </button>
-        <button class="achieve-pill-btn" data-achieve-filter="certification">
-          <i class="fa-solid fa-certificate"></i> Certifications
-        </button>
-        <button class="achieve-pill-btn" data-achieve-filter="hackathon">
-          <i class="fa-solid fa-code"></i> Hackathons
-        </button>
-        <button class="achieve-pill-btn" data-achieve-filter="achievement">
-          <i class="fa-solid fa-star"></i> Achievements
-        </button>
+      <!-- Filter Pills & Carousel Navigation Controls -->
+      <div class="achieve-filter-bar-wrapper">
+        <div class="achieve-filter-pills">
+          <button class="achieve-pill-btn active" data-achieve-filter="all">
+            <i class="fa-solid fa-table-cells-large"></i> All
+          </button>
+          <button class="achieve-pill-btn" data-achieve-filter="certification">
+            <i class="fa-solid fa-certificate"></i> Certifications
+          </button>
+          <button class="achieve-pill-btn" data-achieve-filter="hackathon">
+            <i class="fa-solid fa-code"></i> Hackathons
+          </button>
+          <button class="achieve-pill-btn" data-achieve-filter="achievement">
+            <i class="fa-regular fa-star"></i> Achievements
+          </button>
+        </div>
+
+        <!-- Carousel Navigation Arrows -->
+        <div class="achieve-carousel-controls">
+          <button class="achieve-nav-btn prev-btn" id="achievePrevBtn" aria-label="Previous Slide">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="achieve-nav-btn next-btn" id="achieveNextBtn" aria-label="Next Slide">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
       </div>
 
       <!-- Main Showcase Grid Layout -->
@@ -886,7 +898,7 @@
         </div>
 
         <!-- Right Side Cards Grid (Standard Cards) -->
-        <div class="achieve-cards-grid">
+        <div class="achieve-cards-grid" id="achieveCardsTrack">
           
           <!-- Card 2: Build with AI Bootcamp (Google) -->
           <div class="achieve-card tilt" data-achieve-category="certification">
@@ -1052,47 +1064,153 @@
         </div>
       </div>
 
-      <!-- Bottom Stats Strip (From Reference Image) -->
-      <div class="achieve-stats-strip">
-        <div class="achieve-stat-item">
-          <div class="achieve-stat-icon icon-blue">
+      <!-- Pagination Dots (Responsive Carousel Support) -->
+      <div class="achieve-pagination-dots" id="achievePaginationDots">
+        <span class="achieve-dot active" data-slide="0"></span>
+        <span class="achieve-dot" data-slide="1"></span>
+        <span class="achieve-dot" data-slide="2"></span>
+        <span class="achieve-dot" data-slide="3"></span>
+      </div>
+
+      <!-- Expanding 8-Pillar Highlights Accordion Strip (From Reference Images) -->
+      <div class="achieve-accordion-strip" id="achieveAccordionStrip">
+        
+        <!-- Panel 1: Real-World Experience -->
+        <div class="accordion-panel panel-blue" data-index="0">
+          <div class="panel-icon-box">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+          <div class="panel-text-content">
+            <h4>Real-World Experience</h4>
+            <p>Build software against real project briefs and production standards.</p>
+          </div>
+          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
+            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
+            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
+            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
+          </svg>
+        </div>
+
+        <!-- Panel 2: Industry Ready -->
+        <div class="accordion-panel panel-rose" data-index="1">
+          <div class="panel-icon-box">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <div class="panel-text-content">
+            <h4>Industry Ready...</h4>
+            <p>Work on practical projects that strengthen your engineering expertise.</p>
+          </div>
+          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
+            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
+            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
+            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
+          </svg>
+        </div>
+
+        <!-- Panel 3: Verifiable Certificates (Active by default) -->
+        <div class="accordion-panel panel-teal active" data-index="2">
+          <div class="panel-icon-box">
             <i class="fa-solid fa-award"></i>
           </div>
-          <div class="achieve-stat-meta">
-            <span class="stat-main-num">7+</span>
-            <span class="stat-main-label">Certifications &amp; Hackathons</span>
+          <div class="panel-text-content">
+            <h4>Verifiable Certificates</h4>
+            <p>Earn certificates that showcase your participation, skills and achievements.</p>
           </div>
+          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
+            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
+            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
+            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
+          </svg>
         </div>
 
-        <div class="achieve-stat-item">
-          <div class="achieve-stat-icon icon-purple">
+        <!-- Panel 4: Cash Prizes & Bounties -->
+        <div class="accordion-panel panel-yellow" data-index="3">
+          <div class="panel-icon-box">
             <i class="fa-solid fa-trophy"></i>
           </div>
-          <div class="achieve-stat-meta">
-            <span class="stat-main-num">1</span>
-            <span class="stat-main-label">Major Achievement</span>
+          <div class="panel-text-content">
+            <h4>Cash Prizes &amp; Bounties</h4>
+            <p>Compete in challenges with exciting prizes, bounties and recognition.</p>
           </div>
+          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
+            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
+            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
+            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
+          </svg>
         </div>
 
-        <div class="achieve-stat-item">
-          <div class="achieve-stat-icon icon-cyan">
-            <i class="fa-solid fa-star"></i>
+        <!-- Panel 5: Global Networking -->
+        <div class="accordion-panel panel-purple" data-index="4">
+          <div class="panel-icon-box">
+            <i class="fa-solid fa-network-wired"></i>
           </div>
-          <div class="achieve-stat-meta">
-            <span class="stat-main-num">Continuous Learning</span>
-            <span class="stat-main-label">Building a Stronger Tomorrow</span>
+          <div class="panel-text-content">
+            <h4>Global Networking</h4>
+            <p>Connect with developers, mentors, teams and innovators from different communities.</p>
           </div>
+          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
+            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
+            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
+            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
+          </svg>
         </div>
 
-        <div class="achieve-stat-item">
-          <div class="achieve-stat-icon icon-emerald">
-            <i class="fa-solid fa-rocket"></i>
+        <!-- Panel 6: Community Support -->
+        <div class="accordion-panel panel-cyan" data-index="5">
+          <div class="panel-icon-box">
+            <i class="fa-solid fa-hand-holding-heart"></i>
           </div>
-          <div class="achieve-stat-meta">
-            <span class="stat-main-num">Innovation</span>
-            <span class="stat-main-label">Through Challenges</span>
+          <div class="panel-text-content">
+            <h4>Community Support</h4>
+            <p>Get guidance, collaborate with other developers, and grow together.</p>
           </div>
+          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
+            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
+            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
+            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
+          </svg>
         </div>
+
+        <!-- Panel 7: Portfolio Building -->
+        <div class="accordion-panel panel-indigo" data-index="6">
+          <div class="panel-icon-box">
+            <i class="fa-solid fa-folder-open"></i>
+          </div>
+          <div class="panel-text-content">
+            <h4>Portfolio Building</h4>
+            <p>Turn hackathon work into strong, real-world projects for your developer portfolio.</p>
+          </div>
+          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
+            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
+            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
+            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
+          </svg>
+        </div>
+
+        <!-- Panel 8: Industry Recognition -->
+        <div class="accordion-panel panel-green" data-index="7">
+          <div class="panel-icon-box">
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <div class="panel-text-content">
+            <h4>Industry Recognition</h4>
+            <p>Showcase your achievements and get recognized for the work you build.</p>
+          </div>
+          <svg class="panel-ripple-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="160" stroke="white" stroke-width="18" stroke-opacity="0.25"/>
+            <circle cx="200" cy="200" r="120" stroke="white" stroke-width="18" stroke-opacity="0.30"/>
+            <circle cx="200" cy="200" r="80" stroke="white" stroke-width="18" stroke-opacity="0.35"/>
+            <circle cx="200" cy="200" r="40" stroke="white" stroke-width="18" stroke-opacity="0.40"/>
+          </svg>
+        </div>
+
       </div>
 
     </div>
@@ -1334,6 +1452,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script src="script.js?v=2.8"></script>
+  <script src="script.js?v=3.0"></script>
 </body>
 </html>

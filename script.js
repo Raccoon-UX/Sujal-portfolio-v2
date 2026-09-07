@@ -514,46 +514,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ================= 8.6 DYNAMIC ACHIEVEMENTS & CERTIFICATIONS FILTER ================= */
-  const achieveFilterBtns = document.querySelectorAll('.achieve-pill-btn');
-  const featuredAchieveCard = document.querySelector('.featured-achieve-card');
-  const standardAchieveCards = document.querySelectorAll('.achieve-card');
-
-  if (achieveFilterBtns.length > 0) {
-    achieveFilterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        achieveFilterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const activeFilter = btn.getAttribute('data-achieve-filter');
-
-        // Filter featured card
-        if (featuredAchieveCard) {
-          const featCats = (featuredAchieveCard.getAttribute('data-achieve-category') || '').split(' ');
-          if (activeFilter === 'all' || featCats.includes(activeFilter)) {
-            featuredAchieveCard.classList.remove('hide');
-          } else {
-            featuredAchieveCard.classList.add('hide');
-          }
-        }
-
-        // Filter standard cards
-        standardAchieveCards.forEach(card => {
-          const cardCats = (card.getAttribute('data-achieve-category') || '').split(' ');
-          if (activeFilter === 'all' || cardCats.includes(activeFilter)) {
-            card.classList.remove('hide');
-          } else {
-            card.classList.add('hide');
-          }
-        });
-
-        // Trigger ScrollTrigger refresh to maintain accurate scroll measurements
-        if (typeof ScrollTrigger !== 'undefined') {
-          ScrollTrigger.refresh();
-        }
-      });
-    });
-  }
 
   /* ================= 9. PROJECT CASE STUDY MODAL SYSTEM ================= */
   const projectCaseStudies = {
@@ -846,29 +806,105 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* ================= 11. SWIPER ACCREDITATION CAROUSEL ================= */
-  if (typeof Swiper !== 'undefined' && document.querySelector(".certifications-swiper-container")) {
-    new Swiper(".certifications-swiper-container", {
-      slidesPerView: 1,
-      spaceBetween: 25,
-      loop: true,
-      grabCursor: true,
-      autoplay: {
-        delay: 3500,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      breakpoints: {
-        768: { slidesPerView: 2, spaceBetween: 25 },
-        1024: { slidesPerView: 3, spaceBetween: 30 }
-      }
+  /* ================= 11. CERTIFICATIONS & HACKATHONS SHOWCASE INTERACTIVITY ================= */
+  const achieveFilterBtns = document.querySelectorAll(".achieve-pill-btn");
+  const featuredAchieveCard = document.querySelector(".featured-achieve-card");
+  const standardAchieveCards = document.querySelectorAll(".achieve-card");
+  const cardsTrack = document.getElementById("achieveCardsTrack");
+  const achievePrevBtn = document.getElementById("achievePrevBtn");
+  const achieveNextBtn = document.getElementById("achieveNextBtn");
+  const achieveDots = document.querySelectorAll(".achieve-dot");
+  const accordionPanels = document.querySelectorAll(".accordion-panel");
+
+  // A. Category Filtering
+  if (achieveFilterBtns.length > 0) {
+    achieveFilterBtns.forEach(btn => {
+      btn.addEventListener("click", function() {
+        achieveFilterBtns.forEach(b => b.classList.remove("active"));
+        this.classList.add("active");
+        const filter = this.getAttribute("data-achieve-filter");
+
+        // Filter Featured Card
+        if (featuredAchieveCard) {
+          const heroCat = featuredAchieveCard.getAttribute("data-achieve-category") || "";
+          if (filter === "all" || heroCat.includes(filter)) {
+            featuredAchieveCard.classList.remove("hide");
+          } else {
+            featuredAchieveCard.classList.add("hide");
+          }
+        }
+
+        // Filter Standard Cards
+        standardAchieveCards.forEach(card => {
+          const cat = card.getAttribute("data-achieve-category") || "";
+          if (filter === "all" || cat.includes(filter)) {
+            card.classList.remove("hide");
+          } else {
+            card.classList.add("hide");
+          }
+        });
+
+        if (typeof ScrollTrigger !== 'undefined') {
+          ScrollTrigger.refresh();
+        }
+      });
+    });
+  }
+
+  // B. Carousel Navigation & Dots Sync
+  if (cardsTrack) {
+    const getCardWidth = () => {
+      const firstCard = cardsTrack.querySelector(".achieve-card:not(.hide)");
+      return firstCard ? firstCard.offsetWidth + 20 : 320;
+    };
+
+    if (achievePrevBtn) {
+      achievePrevBtn.addEventListener("click", () => {
+        cardsTrack.scrollBy({ left: -getCardWidth(), behavior: "smooth" });
+      });
+    }
+
+    if (achieveNextBtn) {
+      achieveNextBtn.addEventListener("click", () => {
+        cardsTrack.scrollBy({ left: getCardWidth(), behavior: "smooth" });
+      });
+    }
+
+    // Dots click
+    achieveDots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        achieveDots.forEach(d => d.classList.remove("active"));
+        dot.classList.add("active");
+        const targetScroll = index * getCardWidth();
+        cardsTrack.scrollTo({ left: targetScroll, behavior: "smooth" });
+      });
+    });
+
+    // Track scroll update dots
+    cardsTrack.addEventListener("scroll", () => {
+      const scrollLeft = cardsTrack.scrollLeft;
+      const cardWidth = getCardWidth();
+      const activeIndex = Math.min(Math.round(scrollLeft / cardWidth), achieveDots.length - 1);
+      achieveDots.forEach((dot, idx) => {
+        if (idx === activeIndex) {
+          dot.classList.add("active");
+        } else {
+          dot.classList.remove("active");
+        }
+      });
+    }, { passive: true });
+  }
+
+  // C. 8-Pillar Expanding Highlights Accordion Strip Interactivity
+  if (accordionPanels.length > 0) {
+    const setActivePanel = (panel) => {
+      accordionPanels.forEach(p => p.classList.remove("active"));
+      panel.classList.add("active");
+    };
+
+    accordionPanels.forEach(panel => {
+      panel.addEventListener("mouseenter", () => setActivePanel(panel));
+      panel.addEventListener("click", () => setActivePanel(panel));
     });
   }
 
