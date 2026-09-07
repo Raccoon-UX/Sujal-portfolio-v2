@@ -252,6 +252,7 @@ body {
 .experience-section {
   background: radial-gradient(circle at 50% 100%, rgba(37, 99, 235, 0.03) 0%, var(--bg-secondary) 75%);
 }
+.certifications-section,
 .certifications-slider {
   background: radial-gradient(circle at 50% 0%, rgba(79, 70, 229, 0.03) 0%, var(--bg-primary) 70%);
 }
@@ -274,6 +275,8 @@ body {
 .skills-section .container,
 .projects-section .container,
 .experience-section .container,
+.certifications-section,
+.certifications-section .container,
 .certifications-slider .container,
 .contact-section .container,
 .footer-component {
@@ -1902,11 +1905,17 @@ body {
   padding: 100px 0 80px;
   width: 100%;
   position: relative;
+  z-index: 2;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .achieve-header-block {
   text-align: center;
   margin-bottom: 28px;
+  position: relative;
+  z-index: 2;
 }
 
 .achieve-eyebrow {
@@ -1927,16 +1936,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 42px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
 }
 
 .achieve-pill-btn {
   background: #ffffff;
   border: 1px solid var(--card-border);
   color: var(--text-muted);
-  padding: 9px 20px;
+  padding: 9px 22px;
   border-radius: 9999px;
   font-weight: 600;
   font-size: 0.88rem;
@@ -1970,35 +1981,41 @@ body {
   gap: 24px;
   margin-bottom: 40px;
   align-items: stretch;
+  position: relative;
+  z-index: 2;
 }
 
 /* Left Featured Card (ISRO) */
 .featured-achieve-card {
   background: #ffffff;
-  border: 2px solid rgba(37, 99, 235, 0.22);
+  border: 2px solid rgba(37, 99, 235, 0.26);
   border-radius: 22px;
-  padding: 20px;
+  padding: 22px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.07);
   position: relative;
+  z-index: 2;
+  opacity: 1 !important;
+  visibility: visible !important;
   transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.35s, box-shadow 0.35s;
 }
 
 .featured-achieve-card:hover {
   transform: translateY(-5px);
   border-color: var(--accent-blue);
-  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.14);
 }
 
 .featured-achieve-card.hide {
   display: none !important;
   opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 .featured-visual-frame {
   width: 100%;
-  height: 220px;
+  height: 240px;
   background: #F8FAFC;
   border-radius: 16px;
   overflow: hidden;
@@ -2008,6 +2025,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 
 .featured-visual-frame img {
@@ -2025,11 +2043,11 @@ body {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(37, 99, 235, 0.9);
+  background: rgba(37, 99, 235, 0.92);
   color: #ffffff;
   font-size: 0.72rem;
   font-weight: 700;
-  padding: 4px 10px;
+  padding: 4px 12px;
   border-radius: 20px;
   backdrop-filter: blur(4px);
   display: flex;
@@ -2068,24 +2086,24 @@ body {
   gap: 5px;
   font-size: 0.72rem;
   font-weight: 700;
-  padding: 4px 10px;
+  padding: 4px 12px;
   border-radius: 9999px;
   width: fit-content;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .achieve-badge-pill.pill-achievement {
   background: rgba(37, 99, 235, 0.08);
   color: var(--accent-blue);
-  border: 1px solid rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.18);
 }
 
 .featured-title {
-  font-size: 1.22rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--text-main);
   line-height: 1.3;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .achieve-date-row {
@@ -2102,14 +2120,14 @@ body {
   font-size: 0.88rem;
   line-height: 1.6;
   color: #475569;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .achieve-view-btn {
-  background: #F1F5F9;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: #eff6ff;
+  border: 1px solid rgba(37, 99, 235, 0.15);
   color: var(--accent-blue);
-  padding: 10px 16px;
+  padding: 10px 18px;
   border-radius: 12px;
   font-size: 0.85rem;
   font-weight: 700;
@@ -2120,6 +2138,7 @@ body {
   gap: 8px;
   margin-top: auto;
   width: 100%;
+  text-decoration: none;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -2128,7 +2147,7 @@ body {
   color: #ffffff;
   border-color: var(--accent-blue);
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
 }
 
 /* Right Side Cards Grid */
@@ -2136,6 +2155,8 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .achieve-card {
@@ -2145,25 +2166,29 @@ body {
   padding: 16px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.03);
   position: relative;
+  z-index: 2;
+  opacity: 1 !important;
+  visibility: visible !important;
   transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.35s, box-shadow 0.35s;
 }
 
 .achieve-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(37, 99, 235, 0.25);
-  box-shadow: 0 16px 32px rgba(37, 99, 235, 0.09);
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: 0 16px 32px rgba(37, 99, 235, 0.08);
 }
 
 .achieve-card.hide {
   display: none !important;
   opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 .achieve-visual-banner {
   width: 100%;
-  height: 120px;
+  height: 130px;
   background: #F8FAFC;
   border-radius: 14px;
   overflow: hidden;
@@ -2173,6 +2198,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 6px;
 }
 
 .achieve-visual-banner img {
@@ -2192,7 +2218,7 @@ body {
   right: 8px;
   font-size: 0.68rem;
   font-weight: 700;
-  padding: 3px 8px;
+  padding: 3px 10px;
   border-radius: 20px;
   backdrop-filter: blur(4px);
   display: flex;
@@ -2236,7 +2262,7 @@ body {
 }
 
 .achieve-card-content h3 {
-  font-size: 0.98rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--text-main);
   line-height: 1.35;
@@ -2265,6 +2291,8 @@ body {
   gap: 24px;
   box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .achieve-stat-item {
@@ -2282,26 +2310,8 @@ body {
   justify-content: center;
   font-size: 1.15rem;
   flex-shrink: 0;
-}
-
-.achieve-stat-icon.icon-blue {
   background: rgba(37, 99, 235, 0.08);
   color: var(--accent-blue);
-}
-
-.achieve-stat-icon.icon-purple {
-  background: rgba(139, 92, 246, 0.08);
-  color: #8B5CF6;
-}
-
-.achieve-stat-icon.icon-cyan {
-  background: rgba(2, 132, 199, 0.08);
-  color: #0284C7;
-}
-
-.achieve-stat-icon.icon-emerald {
-  background: rgba(16, 185, 129, 0.08);
-  color: #10B981;
 }
 
 .achieve-stat-meta {

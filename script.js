@@ -380,19 +380,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Certifications & Hackathons Showcase Cards Entrance
-    gsap.from(".featured-achieve-card, .achieve-card", {
-      scrollTrigger: {
-        trigger: "#achievements",
-        start: "top 85%",
-        once: true
-      },
-      opacity: 0,
-      y: 30,
-      duration: 0.6,
-      ease: "power2.out",
-      stagger: 0.08,
-      clearProps: "all"
-    });
+    if (document.querySelector("#achievements")) {
+      gsap.from(".featured-achieve-card, .achieve-card", {
+        scrollTrigger: {
+          trigger: "#achievements",
+          start: "top 95%",
+          once: true
+        },
+        y: 20,
+        duration: 0.5,
+        ease: "power2.out",
+        stagger: 0.05,
+        clearProps: "all"
+      });
+    }
   }
 
   /* ================= 6. INTERACTIVE 3D TILT EFFECT ================= */
