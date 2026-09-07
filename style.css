@@ -2064,8 +2064,6 @@ body {
 body.modal-open,
 html.modal-open {
   overflow: hidden !important;
-  height: 100% !important;
-  touch-action: none;
 }
 
 .case-study-modal-overlay {
@@ -2083,6 +2081,7 @@ html.modal-open {
   padding: 24px;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
 }
 
 .case-study-modal-overlay.active {
@@ -2138,6 +2137,7 @@ html.modal-open {
 }
 
 .modal-header-banner {
+  flex-shrink: 0;
   padding: 36px 40px 24px 40px;
   background: #F8FAFC;
   border-bottom: 1px solid var(--card-border);
@@ -2173,7 +2173,8 @@ html.modal-open {
 .modal-body-scroll {
   padding: 36px 40px;
   overflow-y: auto;
-  flex: 1;
+  flex: 1 1 auto;
+  min-height: 0;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
   touch-action: pan-y;
@@ -2363,6 +2364,7 @@ html.modal-open {
   padding: 20px;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
 }
 
 .lightbox-engine-overlay.active { 
@@ -2374,7 +2376,7 @@ html.modal-open {
   position: relative; 
   width: 100%;
   max-width: 650px;
-  max-height: 85vh; 
+  max-height: 88vh; 
   background: #ffffff;
   padding: 16px;
   border-radius: 20px;
@@ -2384,8 +2386,10 @@ html.modal-open {
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
+  min-height: 0;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
 }
 
 .lightbox-image-target { 
@@ -2536,4 +2540,33 @@ html.modal-open {
   .section-title { font-size: 2.1rem; }
   .bento-stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
   .stat-num { font-size: 2rem; }
+
+  .case-study-modal-overlay {
+    padding: 12px;
+  }
+  .modal-container-glass {
+    max-height: 92vh;
+    border-radius: 18px;
+  }
+  .modal-header-banner {
+    padding: 20px 54px 16px 18px;
+  }
+  .modal-header-banner h2 {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+  .modal-header-banner p {
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+  .modal-close-btn {
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    font-size: 1.4rem;
+  }
+  .modal-body-scroll {
+    padding: 20px 16px;
+  }
 }

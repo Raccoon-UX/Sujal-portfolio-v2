@@ -565,6 +565,12 @@ document.addEventListener('DOMContentLoaded', () => {
             modalTechStack.appendChild(tag);
           });
 
+          // Reset modal inner scroll position to top
+          const innerScroll = caseStudyModal.querySelector(".modal-body-scroll");
+          if (innerScroll) {
+            innerScroll.scrollTop = 0;
+          }
+
           // Stop Lenis & Lock Background Scrolling
           if (window.lenis) {
             window.lenis.stop();
@@ -594,7 +600,9 @@ document.addEventListener('DOMContentLoaded', () => {
         window.lenis.start();
       }
       setTimeout(() => {
-        caseStudyModal.style.display = "none";
+        if (!caseStudyModal.classList.contains("active")) {
+          caseStudyModal.style.display = "none";
+        }
       }, 350);
     };
 
@@ -604,12 +612,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     caseStudyModal.addEventListener("click", function(e) {
       if (e.target === caseStudyModal) {
-        closeCaseStudy();
-      }
-    });
-
-    window.addEventListener("keydown", function(e) {
-      if (e.key === "Escape" && caseStudyModal.classList.contains("active")) {
         closeCaseStudy();
       }
     });
@@ -650,6 +652,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!e.target.closest(".modal-body-scroll")) {
         e.preventDefault();
         e.stopPropagation();
+      }
+    }, { passive: false });
+
+    caseStudyModal.addEventListener("touchmove", function(e) {
+      if (!e.target.closest(".modal-body-scroll")) {
+        e.preventDefault();
       }
     }, { passive: false });
   }
@@ -701,6 +709,12 @@ document.addEventListener('DOMContentLoaded', () => {
         e.stopPropagation();
       }
     }, { passive: false });
+
+    lightboxModal.addEventListener("touchmove", function(e) {
+      if (!e.target.closest(".lightbox-wrapper")) {
+        e.preventDefault();
+      }
+    }, { passive: false });
   }
 
   function closeLightboxArray() {
@@ -714,12 +728,36 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.lenis) {
         window.lenis.start();
       }
-      setTimeout(() => { lightboxModal.style.display = "none"; }, 300);
+      setTimeout(() => {
+        if (!lightboxModal.classList.contains("active")) {
+          lightboxModal.style.display = "none";
+        }
+      }, 300);
     }
   }
 
   if (dismissBtn) dismissBtn.onclick = closeLightboxArray;
   window.addEventListener("click", (e) => { if (e.target === lightboxModal) closeLightboxArray(); });
+
+  // Global Escape Key Listener for all Modals & Lightbox
+  window.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+      if (caseStudyModal && caseStudyModal.classList.contains("active")) {
+        caseStudyModal.classList.remove("active");
+        document.documentElement.classList.remove("modal-open");
+        document.body.classList.remove("modal-open");
+        document.body.style.overflow = "";
+        document.documentElement.style.overflow = "";
+        if (window.lenis) window.lenis.start();
+        setTimeout(() => {
+          if (!caseStudyModal.classList.contains("active")) caseStudyModal.style.display = "none";
+        }, 350);
+      }
+      if (lightboxModal && lightboxModal.classList.contains("active")) {
+        closeLightboxArray();
+      }
+    }
+  });
 
   /* ================= 11. SWIPER ACCREDITATION CAROUSEL ================= */
   if (typeof Swiper !== 'undefined') {
@@ -843,6 +881,20 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       gsap.ticker.lagSmoothing(0);
     }
+
+    // Smooth scroll for anchor navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId && targetId !== '#' && targetId.length > 1) {
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            lenis.scrollTo(targetEl, { offset: -70 });
+          }
+        }
+      });
+    });
   }
 
   /* ================= 15. THREE.JS GRAVITY GRID CANVAS (LIGHT MODE) ================= */
