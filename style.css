@@ -232,10 +232,8 @@ body {
 .about-section,
 .skills-section,
 .projects-section,
-.experience-section,
-.certifications-slider,
-.contact-section {
-  padding: var(--space-10) 0;
+.experience-section {
+  padding: 68px 0 54px;
   position: relative;
   z-index: 10;
 }
@@ -1902,7 +1900,7 @@ body {
 
 /* ================= 10. CERTIFICATIONS & HACKATHONS SHOWCASE ================= */
 .certifications-section {
-  padding: 100px 0 80px;
+  padding: 64px 0 20px;
   width: 100%;
   position: relative;
   z-index: 2;
@@ -2375,7 +2373,7 @@ body {
 .contact-section {
   position: relative;
   overflow: hidden;
-  padding: 100px 0 110px;
+  padding: 24px 0 76px;
 }
 
 /* Ambient Subtle Glow Orbs & Dot Matrices */
@@ -2388,7 +2386,7 @@ body {
 }
 
 .contact-bg-orb.orb-top-left {
-  top: 10%;
+  top: 6%;
   left: -80px;
   width: 380px;
   height: 380px;
@@ -2396,7 +2394,7 @@ body {
 }
 
 .contact-bg-orb.orb-top-right {
-  top: 15%;
+  top: 10%;
   right: -80px;
   width: 400px;
   height: 400px;
@@ -2414,12 +2412,12 @@ body {
 }
 
 .contact-dot-matrix.matrix-left {
-  top: 140px;
+  top: 50px;
   left: 30px;
 }
 
 .contact-dot-matrix.matrix-right {
-  top: 100px;
+  top: 30px;
   right: 30px;
 }
 
@@ -2439,25 +2437,59 @@ body {
   max-width: 1240px;
 }
 
-/* Header Block */
+/* Header Block (Image 2 Reference Design with Radiant Sparks) */
 .contact-header-block {
   text-align: center;
-  margin-bottom: 44px;
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contact-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 18px;
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
+  padding: 6px 20px;
+  background: rgba(239, 246, 255, 0.95);
+  border: 1.5px solid #bfdbfe;
   color: #2563eb;
   border-radius: 50px;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+  margin-bottom: 12px;
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.08);
+}
+
+.contact-title-with-sparks {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+}
+
+.contact-heading-title {
+  margin: 0;
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+
+.contact-spark-svg {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 6px rgba(59, 130, 246, 0.35));
+}
+
+.contact-sub-text {
+  max-width: 640px;
+  margin: 12px auto 0 auto;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: #64748b;
 }
 
 /* 3-Column Balanced Composition */
