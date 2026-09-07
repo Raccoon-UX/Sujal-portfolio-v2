@@ -398,18 +398,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const elementsToTilt = document.querySelectorAll(".tilt");
 
   elementsToTilt.forEach((card) => {
+    let tiltRaf = null;
     card.addEventListener("mousemove", (e) => {
-      const rectBound = card.getBoundingClientRect();
-      const inputX = e.clientX - rectBound.left;
-      const inputY = e.clientY - rectBound.top;
+      if (tiltRaf) return;
+      tiltRaf = requestAnimationFrame(() => {
+        const rectBound = card.getBoundingClientRect();
+        const inputX = e.clientX - rectBound.left;
+        const inputY = e.clientY - rectBound.top;
 
-      const degreeX = ((inputY - rectBound.height / 2) / (rectBound.height / 2)) * -5;
-      const degreeY = ((inputX - rectBound.width / 2) / (rectBound.width / 2)) * 5;
+        const degreeX = ((inputY - rectBound.height / 2) / (rectBound.height / 2)) * -4;
+        const degreeY = ((inputX - rectBound.width / 2) / (rectBound.width / 2)) * 4;
 
-      card.style.transform = `perspective(1000px) rotateX(${degreeX}deg) rotateY(${degreeY}deg) scale(1.01)`;
-    });
+        card.style.transform = `perspective(1000px) rotateX(${degreeX}deg) rotateY(${degreeY}deg) scale(1.01)`;
+        tiltRaf = null;
+      });
+    }, { passive: true });
 
     card.addEventListener("mouseleave", () => {
+      if (tiltRaf) {
+        cancelAnimationFrame(tiltRaf);
+        tiltRaf = null;
+      }
       card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
     });
   });
@@ -451,8 +460,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const activeFilter = btn.getAttribute('data-skill-filter');
 
         skillCards.forEach(card => {
-          const cardCats = card.getAttribute('data-skill-cat').split(' ');
-          if (activeFilter === 'all' || cardCats.includes(activeFilter)) {
+          const cardCat = card.getAttribute('data-skill-cat');
+          if (activeFilter === 'all' || cardCat === activeFilter) {
             card.classList.remove('hide');
           } else {
             card.classList.add('hide');
@@ -659,26 +668,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ================= 12. GLOBAL SCROLL REVEALS (INTERSECTION OBSERVER + SCROLL) ================= */
+  /* ================= 12. GLOBAL SCROLL REVEALS ================= */
   const scrollingReveals = document.querySelectorAll(".reveal");
 
-  window.processScrollReveal = function() {
-    const windowViewportHeight = window.innerHeight;
-    scrollingReveals.forEach((element) => {
-      const elementTopPosition = element.getBoundingClientRect().top;
-      const injectionTriggerPoint = 100;
-
-      if (elementTopPosition < windowViewportHeight - injectionTriggerPoint) {
-        element.classList.add("active");
-      }
-    });
-  };
-
   if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("active");
+          observer.unobserve(entry.target);
           if (typeof ScrollTrigger !== 'undefined') {
             ScrollTrigger.refresh();
           }
@@ -691,10 +689,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     scrollingReveals.forEach(el => revealObserver.observe(el));
+  } else {
+    scrollingReveals.forEach(el => el.classList.add("active"));
   }
-
-  window.addEventListener("scroll", window.processScrollReveal, { passive: true });
-  window.processScrollReveal();
 
   /* ================= 13. ASYNCHRONOUS FORMSPREE ENGINE ================= */
   const contactForm = document.getElementById("contactForm");
@@ -747,7 +744,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ================= 14. LENIS SMOOTH SCROLL ================= */
   if (typeof Lenis !== 'undefined') {
     const lenis = new Lenis({
-      duration: 1.0,
+      duration: 0.9,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smooth: true,
       infinite: false,
@@ -756,9 +753,6 @@ document.addEventListener('DOMContentLoaded', () => {
     lenis.on('scroll', () => {
       if (typeof ScrollTrigger !== 'undefined') {
         ScrollTrigger.update();
-      }
-      if (typeof window.processScrollReveal === 'function') {
-        window.processScrollReveal();
       }
     });
 
@@ -781,9 +775,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const renderer = new THREE.WebGLRenderer({
       canvas: bgCanvas,
       antialias: true,
-      alpha: false
+      alpha: false,
+      powerPreference: "high-performance"
     });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.25));
     renderer.setSize(window.innerWidth, window.innerHeight);
 
     // Light Mode Canvas Scene & Fog
@@ -855,7 +850,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `
     });
 
-    const gridGeometry = new THREE.PlaneGeometry(2400, 2400, 45, 45);
+    const gridGeometry = new THREE.PlaneGeometry(2400, 2400, 36, 36);
     const gridMesh = new THREE.Mesh(gridGeometry, gridMaterial);
     gridMesh.rotation.x = -Math.PI / 2;
     gridMesh.position.y = 0;
@@ -872,7 +867,7 @@ document.addEventListener('DOMContentLoaded', () => {
       new THREE.RingGeometry(10, 15, 6)
     ];
 
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 12; i++) {
       const geom = floaterGeoms[Math.floor(Math.random() * floaterGeoms.length)];
       const mat = new THREE.MeshBasicMaterial({
         color: Math.random() > 0.5 ? 0x2563eb : 0x4f46e5,
@@ -900,13 +895,24 @@ document.addEventListener('DOMContentLoaded', () => {
       floaters.push({ mesh, speed });
     }
 
-    // Mouse Intersect Updates
+    // Static objects for calculations (eliminates runtime garbage collection)
+    const groundPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
+    const planeIntersect = new THREE.Vector3();
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2(-1000, -1000);
     const currentMouse = new THREE.Vector3(10000, 0, 10000);
     const targetMouse = new THREE.Vector3(10000, 0, 10000);
     let targetCameraX = 0;
     let targetCameraY = 180;
+    let isCanvasActive = true;
+    let bgRafId = null;
+
+    document.addEventListener("visibilitychange", () => {
+      isCanvasActive = !document.hidden;
+      if (isCanvasActive && !bgRafId) {
+        bgRafId = requestAnimationFrame(animateBg);
+      }
+    });
 
     window.addEventListener("mousemove", (e) => {
       mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
@@ -914,14 +920,14 @@ document.addEventListener('DOMContentLoaded', () => {
       
       targetCameraX = (e.clientX / window.innerWidth - 0.5) * 60;
       targetCameraY = 180 + (e.clientY / window.innerHeight - 0.5) * 30;
-    });
+    }, { passive: true });
 
     window.addEventListener("mouseleave", () => {
       mouse.x = -1000;
       mouse.y = -1000;
       targetCameraX = 0;
       targetCameraY = 180;
-    });
+    }, { passive: true });
 
     function resizeBg() {
       const w = window.innerWidth;
@@ -930,16 +936,21 @@ document.addEventListener('DOMContentLoaded', () => {
       camera.updateProjectionMatrix();
       renderer.setSize(w, h);
     }
-    window.addEventListener("resize", resizeBg);
+    window.addEventListener("resize", resizeBg, { passive: true });
 
     function animateBg() {
-      requestAnimationFrame(animateBg);
+      if (!isCanvasActive) {
+        bgRafId = null;
+        return;
+      }
+      bgRafId = requestAnimationFrame(animateBg);
 
       camera.position.x += (targetCameraX - camera.position.x) * 0.05;
       camera.position.y += (targetCameraY - camera.position.y) * 0.05;
       camera.lookAt(0, -30, 0);
 
-      floaters.forEach(fl => {
+      for (let i = 0; i < floaters.length; i++) {
+        const fl = floaters[i];
         fl.mesh.position.y += fl.speed.y;
         fl.mesh.position.x += fl.speed.x;
         fl.mesh.rotation.x += fl.speed.rotX;
@@ -949,11 +960,10 @@ document.addEventListener('DOMContentLoaded', () => {
           fl.mesh.position.y = -100;
           fl.mesh.position.x = (Math.random() - 0.5) * 800;
         }
-      });
+      }
 
       raycaster.setFromCamera(mouse, camera);
-      const planeIntersect = new THREE.Vector3();
-      raycaster.ray.intersectPlane(new THREE.Plane(new THREE.Vector3(0, 1, 0), 0), planeIntersect);
+      raycaster.ray.intersectPlane(groundPlane, planeIntersect);
 
       if (mouse.x > -0.96 && mouse.x < 0.96) {
         targetMouse.copy(planeIntersect);
@@ -965,28 +975,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
       renderer.render(scene, camera);
     }
-    animateBg();
+    bgRafId = requestAnimationFrame(animateBg);
   }
 
-  /* ================= 16. THREE.JS HERO 3D STAGE ================= */
+  /* ================= 16. THREE.JS HERO 3D STAGE (VIEWPORT-PAUSED) ================= */
   const heroStage = document.getElementById("hero3dStage");
+  const heroSection = document.getElementById("hero");
   if (heroStage && typeof THREE !== 'undefined') {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(45, 340 / 420, 0.1, 100);
     camera.position.set(0, 0, 6.2);
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
     renderer.setSize(340, 420);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.25));
     heroStage.appendChild(renderer.domElement);
 
     function resizeHeroStage() {
       const rect = heroStage.getBoundingClientRect();
-      camera.aspect = rect.width / rect.height;
-      camera.updateProjectionMatrix();
-      renderer.setSize(rect.width, rect.height);
+      if (rect.width > 0 && rect.height > 0) {
+        camera.aspect = rect.width / rect.height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(rect.width, rect.height);
+      }
     }
-    window.addEventListener("resize", resizeHeroStage);
+    window.addEventListener("resize", resizeHeroStage, { passive: true });
 
     // Stage Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
@@ -1025,10 +1038,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Orbiting Primitives
     const orbitCubeGeom = new THREE.BoxGeometry(0.24, 0.24, 0.24);
-    const orbitCubeMat = new THREE.MeshPhysicalMaterial({
+    const orbitCubeMat = new THREE.MeshBasicMaterial({
       color: 0x4f46e5,
-      roughness: 0.2,
-      metalness: 0.3,
+      wireframe: false,
       transparent: true,
       opacity: 0.85
     });
@@ -1062,7 +1074,7 @@ document.addEventListener('DOMContentLoaded', () => {
           overwrite: "auto"
         });
       }
-    });
+    }, { passive: true });
 
     window.addEventListener("mouseleave", () => {
       targetRotX = 0;
@@ -1076,11 +1088,30 @@ document.addEventListener('DOMContentLoaded', () => {
           overwrite: "auto"
         });
       }
-    });
+    }, { passive: true });
+
+    let isHeroVisible = true;
+    let heroRafId = null;
+
+    if ('IntersectionObserver' in window && heroSection) {
+      const heroVisibilityObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          isHeroVisible = entry.isIntersecting;
+          if (isHeroVisible && !heroRafId) {
+            heroRafId = requestAnimationFrame(animateHeroStage);
+          }
+        });
+      }, { threshold: 0.05 });
+      heroVisibilityObserver.observe(heroSection);
+    }
 
     let clock = 0;
     function animateHeroStage() {
-      requestAnimationFrame(animateHeroStage);
+      if (!isHeroVisible || document.hidden) {
+        heroRafId = null;
+        return; // Pause 3D animation loop when user scrolls away
+      }
+      heroRafId = requestAnimationFrame(animateHeroStage);
 
       clock += 0.01;
 
@@ -1103,6 +1134,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       renderer.render(scene, camera);
     }
-    animateHeroStage();
+    heroRafId = requestAnimationFrame(animateHeroStage);
   }
 });
