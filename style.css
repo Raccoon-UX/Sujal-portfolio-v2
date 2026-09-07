@@ -2372,6 +2372,7 @@ body {
 /* ================= 11. CONTACT SECTION (3-COLUMN PREMIUM BENTO SHOWCASE) ================= */
 .contact-section {
   position: relative;
+  z-index: 10;
   overflow: visible;
   padding: 34px 0 80px;
   width: 100%;

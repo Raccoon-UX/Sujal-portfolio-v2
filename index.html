@@ -29,7 +29,152 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <link rel="stylesheet" href="style.css?v=3.7" />
+  <link rel="stylesheet" href="style.css?v=3.8" />
+  <style id="contact-critical-styles">
+    /* Critical Contact Section Styles (Guaranteed Instant Rendering & Spacing) */
+    .contact-section {
+      position: relative !important;
+      z-index: 10 !important;
+      overflow: visible !important;
+      padding: 34px 0 80px !important;
+      width: 100% !important;
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      background: radial-gradient(circle at 50% 100%, rgba(37, 99, 235, 0.04) 0%, var(--bg-secondary) 75%);
+    }
+    .contact-main-container {
+      position: relative !important;
+      z-index: 5 !important;
+      max-width: 1240px !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .contact-header-block {
+      text-align: center;
+      margin-bottom: 34px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .contact-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 20px;
+      background: rgba(239, 246, 255, 0.95);
+      border: 1.5px solid #bfdbfe;
+      color: #2563eb;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 10px rgba(37, 99, 235, 0.08);
+    }
+    .contact-title-with-sparks {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      position: relative;
+    }
+    .contact-heading-title {
+      margin: 0;
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+    }
+    .contact-spark-svg {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
+    }
+    .contact-sub-text {
+      max-width: 640px;
+      margin: 10px auto 0 auto;
+      font-size: 1.02rem;
+      line-height: 1.6;
+      color: #64748b;
+    }
+    .contact-3col-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1.25fr 0.95fr !important;
+      gap: 24px !important;
+      align-items: stretch !important;
+      width: 100% !important;
+      position: relative !important;
+      z-index: 5 !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .contact-card-visual {
+      background: #ffffff !important;
+      border: 1.5px solid rgba(59, 130, 246, 0.45) !important;
+      border-radius: 28px !important;
+      position: relative !important;
+      overflow: hidden !important;
+      box-shadow: 0 16px 40px rgba(37, 99, 235, 0.12) !important;
+      min-height: 480px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .contact-card-form {
+      background: #ffffff !important;
+      border: 1px solid rgba(226, 232, 240, 0.95) !important;
+      border-radius: 28px !important;
+      padding: 34px 30px !important;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.05) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      position: relative !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .contact-card-info {
+      background: #ffffff !important;
+      border: 1px solid rgba(226, 232, 240, 0.95) !important;
+      border-radius: 28px !important;
+      padding: 34px 28px !important;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.05) !important;
+      display: flex !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      position: relative !important;
+    }
+    @media (max-width: 1024px) {
+      .contact-3col-grid {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+        max-width: 680px !important;
+        margin: 0 auto !important;
+      }
+      .contact-card-visual {
+        min-height: 380px !important;
+        height: 380px !important;
+      }
+    }
+    @media (max-width: 768px) {
+      .contact-3col-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+      }
+      .contact-card-visual {
+        min-height: 280px !important;
+        height: 280px !important;
+      }
+    }
+  </style>
 </head>
 <body> 
   <!-- Custom Premium Cursor -->
@@ -1252,7 +1397,7 @@
   </section>
 
   <!-- Contact Portal Section (3-Column Layout Matching Reference Image) -->
-  <section class="contact-section reveal" id="contact">
+  <section class="contact-section" id="contact">
     <!-- Ambient Subtle Glow Orbs & Dot Matrices -->
     <div class="contact-bg-orb orb-top-left"></div>
     <div class="contact-bg-orb orb-top-right"></div>
@@ -1573,6 +1718,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script src="script.js?v=3.7"></script>
+  <script src="script.js?v=3.8"></script>
 </body>
 </html>
