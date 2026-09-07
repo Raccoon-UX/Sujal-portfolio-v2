@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <link rel="stylesheet" href="style.css?v=4.3" />
+  <link rel="stylesheet" href="style.css?v=4.4" />
   <style id="contact-critical-styles">
     /* ================= 1:1 Image 2 Reference Contact Showcase ================= */
     .contact-section {
@@ -603,52 +603,164 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-container">
-      <div class="hero-text">
-        <div class="badge-status">⚡ Available for SDE Roles &amp; Internships</div>
-        <h1>Architecting <span class="gradient-text">Full-Stack Platforms</span> &amp; Scalable Systems</h1>
-        <p class="hero-sub">Engineering high-performance, production-ready web platforms, distributed systems, and real-time APIs using Next.js 14, TypeScript, MERN, and cloud databases.</p>
-    
-        <!-- Hero Action Buttons -->
-        <div class="hero-btns">
-          <a href="#projects" class="btn primary">View Projects</a>
-          <a href="assets/Sujal_Resume_Revised_4.2.pdf" download="Sujal_Verma_Resume.pdf" class="btn outline"><i class="fa-solid fa-file-arrow-down" style="margin-right: 8px;"></i> Download Resume</a>
-          <a href="#contact" class="btn outline">Contact Me</a>
-        </div>
+  <!-- Hero Section (1:1 Reference Layout) -->
+  <section class="hero hero-section" id="home">
+    <!-- Ambient Subtle Decorative Background Elements -->
+    <div class="hero-bg-orb orb-hero-left"></div>
+    <div class="hero-bg-orb orb-hero-right"></div>
+    <div class="hero-dot-grid dot-hero-top-right"></div>
+    <div class="hero-dot-grid dot-hero-mid-left"></div>
+
+    <div class="container hero-main-container">
+      
+      <!-- Top 2-Column Split: Hero Content & Profile Presentation -->
+      <div class="hero-columns-grid">
         
-        <div class="hero-stats">
-          <div class="stat-item"><b>Next.js &amp; MERN</b> <span>Core Stack</span></div>
-          <div class="stat-divider"></div>
-          <div class="stat-item"><b>PostgreSQL &amp; Mongo</b> <span>Database Systems</span></div>
-          <div class="stat-divider"></div>
-          <div class="stat-item"><b>Real-Time &amp; AI</b> <span>Sockets &amp; ML</span></div>
+        <!-- LEFT COLUMN: Headline, Eyebrow, Bio & CTAs -->
+        <div class="hero-text-column hero-text">
+          
+          <!-- Availability Badge -->
+          <div class="hero-status-pill badge-status">
+            <svg class="pill-sparkle-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+            </svg>
+            <span>Available for SDE Roles &amp; Internships</span>
+          </div>
+
+          <!-- Eyebrow Row -->
+          <div class="hero-eyebrow-row">
+            <span class="hero-eyebrow-text">BUILDING SCALABLE SOLUTIONS</span>
+            <div class="hero-eyebrow-line"></div>
+          </div>
+
+          <!-- Main Hero Headline -->
+          <h1 class="hero-main-title">
+            Architecting Full-Stack <span class="text-blue-accent">Platforms</span> &amp; Scalable Systems
+          </h1>
+
+          <!-- Supporting Description -->
+          <p class="hero-sub hero-description">
+            Engineering high-performance, production-ready web platforms, distributed systems, and real-time APIs using <strong>Next.js 14</strong>, <strong>TypeScript</strong>, <strong>MERN</strong>, and <strong>cloud databases</strong>.
+          </p>
+
+          <!-- 3 Hero Action Buttons (CTAs) -->
+          <div class="hero-btns hero-cta-group">
+            <a href="#projects" class="btn hero-btn hero-btn-primary">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <span>View Projects</span>
+              <i class="fa-solid fa-arrow-right cta-arrow-icon"></i>
+            </a>
+
+            <a href="assets/Sujal_Resume_Revised_4.2.pdf" download="Sujal_Verma_Resume.pdf" class="btn hero-btn hero-btn-secondary">
+              <i class="fa-regular fa-file-lines"></i>
+              <span>Download Resume</span>
+            </a>
+
+            <a href="#contact" class="btn hero-btn hero-btn-secondary">
+              <i class="fa-regular fa-envelope"></i>
+              <span>Contact Me</span>
+            </a>
+          </div>
+
         </div>
+
+        <!-- RIGHT COLUMN: Profile Photo Presentation & Floating Assets -->
+        <div class="hero-visual-column hero-visual">
+          
+          <!-- Main Profile Frame Card -->
+          <div class="hero-card-frame">
+            <div class="hero-photo-wrapper">
+              <img src="assets/Profile Photo/profile.jpeg" alt="Sujal Verma - Full Stack Developer" class="hero-profile-photo" />
+            </div>
+
+            <!-- Floating Pill 1 (Top-Left): Full Stack Developer -->
+            <div class="hero-floating-pill pill-top-left">
+              <span class="pill-live-dot"></span>
+              <span class="pill-title-text">Full Stack Developer</span>
+              <span class="pill-code-badge">&lt;/&gt;</span>
+            </div>
+
+            <!-- Floating Pill 2 (Bottom-Right): SDE & Systems -->
+            <div class="hero-floating-pill pill-bottom-right">
+              <i class="fa-solid fa-location-dot pin-accent-icon"></i>
+              <span class="pill-title-text">SDE &amp; Systems</span>
+            </div>
+
+            <!-- Floating Circular Tech Bubble: React (Left Top) -->
+            <div class="hero-tech-bubble bubble-react" title="React.js">
+              <i class="fa-brands fa-react" style="color: #0284c7;"></i>
+            </div>
+
+            <!-- Floating Circular Tech Bubble: Cloud (Left Bottom) -->
+            <div class="hero-tech-bubble bubble-cloud" title="Cloud Architectures">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" fill="#4285F4"/>
+              </svg>
+            </div>
+
+            <!-- Floating Circular Tech Bubble: Node.js (Right Mid) -->
+            <div class="hero-tech-bubble bubble-node" title="Node.js">
+              <i class="fa-brands fa-node-js" style="color: #16a34a;"></i>
+            </div>
+
+            <!-- Handwritten Annotation Top-Right -->
+            <div class="hero-handwritten-note">
+              <span>Turning ideas<br>into real-world<br>solutions</span>
+              <svg class="note-doodle-sparks" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round">
+                <path d="M4 14l4-2"/>
+                <path d="M6 18l6-3"/>
+                <path d="M10 21l4-2"/>
+              </svg>
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
 
-      <!-- 3D Profile Stage Layout -->
-      <div class="hero-visual">
-        <div class="glow-blob"></div>
-        <div id="hero3dStage">
-          <!-- Standalone HTML Profile Image Overlay to prevent CORS/file protocol WebGL texture blocks -->
-          <div class="hero-profile-image-container">
-            <img src="assets/Profile Photo/profile.jpeg" alt="Sujal Verma - Full Stack Developer" class="hero-profile-image" />
+      <!-- BOTTOM ROW: Compact Technical Highlights Strip -->
+      <div class="hero-stats-strip-card hero-stats">
+        
+        <!-- Highlight Item 1: Next.js & MERN -->
+        <div class="hero-strip-item stat-item">
+          <div class="hero-strip-icon-box">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <div class="hero-strip-meta">
+            <h4 class="strip-title">Next.js &amp; MERN</h4>
+            <p class="strip-sub">Core Stack</p>
           </div>
         </div>
-        
-        <!-- Floating Tags Layered on Top -->
-        <div class="floating-tag top-left"><span>💻</span> Full Stack Dev</div>
-        <div class="floating-tag bottom-right"><span>🚀</span> SDE &amp; Systems</div>
-        
-        <!-- Orbit Tech Logos Layered on Top -->
-        <div class="orbit-nodes">
-          <div class="node node-react" title="React.js"><i class="fa-brands fa-react" style="color:#0284c7;"></i></div>
-          <div class="node node-node" title="Node.js"><i class="fa-brands fa-node-js" style="color:#16a34a;"></i></div>
-          <div class="node node-database" title="Java"><i class="fa-brands fa-java" style="color:#ea580c;"></i></div>
-          <div class="node node-python" title="Python"><i class="fa-brands fa-python" style="color:#2563eb;"></i></div>
+
+        <div class="hero-strip-divider stat-divider"></div>
+
+        <!-- Highlight Item 2: PostgreSQL & Mongo -->
+        <div class="hero-strip-item stat-item">
+          <div class="hero-strip-icon-box">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <div class="hero-strip-meta">
+            <h4 class="strip-title">PostgreSQL &amp; Mongo</h4>
+            <p class="strip-sub">Database Systems</p>
+          </div>
         </div>
+
+        <div class="hero-strip-divider stat-divider"></div>
+
+        <!-- Highlight Item 3: Real-Time & AI -->
+        <div class="hero-strip-item stat-item">
+          <div class="hero-strip-icon-box">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <div class="hero-strip-meta">
+            <h4 class="strip-title">Real-Time &amp; AI</h4>
+            <p class="strip-sub">Sockets &amp; ML</p>
+          </div>
+        </div>
+
       </div>
+
     </div>
   </section>
 
@@ -2396,6 +2508,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script src="script.js?v=4.3"></script>
+  <script src="script.js?v=4.4"></script>
 </body>
 </html>

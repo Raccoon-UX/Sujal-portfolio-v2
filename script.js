@@ -252,8 +252,9 @@ document.addEventListener('DOMContentLoaded', () => {
                  .from(".hero-text h1", { opacity: 0, y: 30, duration: 1, ease: "power3.out" }, "-=0.6")
                  .from(".hero-sub", { opacity: 0, y: 20, duration: 0.8, ease: "power3.out" }, "-=0.6")
                  .from(".hero-btns", { opacity: 0, y: 15, duration: 0.8, ease: "power3.out" }, "-=0.5")
-                 .from(".hero-visual", { opacity: 0, scale: 0.95, duration: 1.2, ease: "power4.out" }, "-=0.9")
-                 .from(".orbit-nodes .node", { opacity: 0, scale: 0, duration: 0.8, ease: "back.out(1.7)", stagger: 0.12 }, "-=0.5");
+                 .from(".hero-card-frame", { opacity: 0, scale: 0.95, duration: 1.1, ease: "power4.out" }, "-=0.8")
+                 .from(".hero-tech-bubble, .hero-floating-pill", { opacity: 0, scale: 0, duration: 0.7, ease: "back.out(1.7)", stagger: 0.08 }, "-=0.6")
+                 .from(".hero-stats-strip-card", { opacity: 0, y: 25, duration: 0.8, ease: "power3.out" }, "-=0.4");
 
     // Bento Story Cards Staggered Entry
     gsap.from(".bento-card", {
