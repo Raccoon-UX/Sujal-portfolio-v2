@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sujal Verma | Full-Stack Developer & Software Engineer</title>
+  <meta name="description" content="Portfolio of Sujal Verma - Full-Stack Developer & Software Engineer specializing in Next.js 14, MERN stack, TypeScript, PostgreSQL, Prisma, Socket.io, and AI applications." />
+  <meta name="author" content="Sujal Verma" />
+  <meta name="keywords" content="Sujal Verma, Full Stack Developer, Software Engineer, Next.js, React, Node.js, TypeScript, PostgreSQL, MongoDB, Socket.io, Python, Portfolio, Mumbai" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sujal Verma | Full-Stack Developer & Software Engineer" />
+  <meta property="og:description" content="Engineering production-ready, highly optimized applications using Next.js 14, MERN stack, TypeScript, and modern cloud architectures." />
+  <meta property="og:image" content="assets/Profile Photo/profile.jpeg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="Sujal Verma | Full-Stack Developer & Software Engineer" />
+  <meta property="twitter:description" content="Engineering production-ready, highly optimized applications using Next.js 14, MERN stack, TypeScript, and modern cloud architectures." />
+  <meta property="twitter:image" content="assets/Profile Photo/profile.jpeg" />
+
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet Dependencies -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body> 
+  <!-- Custom Premium Cursor -->
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Space-Time Gravity Warp Grid Canvas Backdrop -->
+  <canvas id="gravityGridCanvas"></canvas>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scrollProgress"></div>
+  </div>
+
+  <!-- Cinematic Background Lights and Grid Overlay -->
+  <div class="cinematic-bg">
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="aurora-blob blob-3"></div>
+    <div class="bg-grid-overlay"></div>
+    <div class="bg-noise-overlay"></div>
+  </div>
+
+  <!-- Minimalist Logo Preloader -->
+  <div id="preloader">
+    <div class="minimal-loader-wrapper">
+      <div class="loader-logo">&lt;Sujal<span class="highlight">.dev</span>&gt;</div>
+      <div class="loader-progress-track">
+        <div class="loader-progress-fill" id="progressFill"></div>
+      </div>
+      <div class="loader-percentage" id="progressPercent">0%</div>
+    </div>
+  </div>
+
+  <!-- Glassmorphic Navigation Bar (Light Mode Only) -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo" aria-label="Sujal Verma Home">
+        <span class="logo-icon">&lt;/&gt;</span>
+        <span class="logo-text">Sujal<span class="highlight">.dev</span></span>
+      </a>
+
+      <button class="menu-btn" id="menu-btn" aria-label="Toggle Navigation Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-container">
+      <div class="hero-text">
+        <div class="badge-status">⚡ Available for SDE Roles &amp; Internships</div>
+        <h1>Architecting <span class="gradient-text">Full-Stack Platforms</span> &amp; Scalable Systems</h1>
+        <p class="hero-sub">Engineering high-performance, production-ready web platforms, distributed systems, and real-time APIs using Next.js 14, TypeScript, MERN, and cloud databases.</p>
+    
+        <!-- Hero Action Buttons -->
+        <div class="hero-btns">
+          <a href="#projects" class="btn primary">View Projects</a>
+          <a href="assets/Sujal_Resume_Revised_4.2.pdf" download="Sujal_Verma_Resume.pdf" class="btn outline"><i class="fa-solid fa-file-arrow-down" style="margin-right: 8px;"></i> Download Resume</a>
+          <a href="#contact" class="btn outline">Contact Me</a>
+        </div>
+        
+        <div class="hero-stats">
+          <div class="stat-item"><b>Next.js &amp; MERN</b> <span>Core Stack</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><b>PostgreSQL &amp; Mongo</b> <span>Database Systems</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><b>Real-Time &amp; AI</b> <span>Sockets &amp; ML</span></div>
+        </div>
+      </div>
+
+      <!-- 3D Profile Stage Layout -->
+      <div class="hero-visual">
+        <div class="glow-blob"></div>
+        <div id="hero3dStage">
+          <!-- Standalone HTML Profile Image Overlay to prevent CORS/file protocol WebGL texture blocks -->
+          <div class="hero-profile-image-container">
+            <img src="assets/Profile Photo/profile.jpeg" alt="Sujal Verma - Full Stack Developer" class="hero-profile-image" />
+          </div>
+        </div>
+        
+        <!-- Floating Tags Layered on Top -->
+        <div class="floating-tag top-left"><span>💻</span> Full Stack Dev</div>
+        <div class="floating-tag bottom-right"><span>🚀</span> SDE &amp; Systems</div>
+        
+        <!-- Orbit Tech Logos Layered on Top -->
+        <div class="orbit-nodes">
+          <div class="node node-react" title="React.js"><i class="fa-brands fa-react" style="color:#0284c7;"></i></div>
+          <div class="node node-node" title="Node.js"><i class="fa-brands fa-node-js" style="color:#16a34a;"></i></div>
+          <div class="node node-database" title="Java"><i class="fa-brands fa-java" style="color:#ea580c;"></i></div>
+          <div class="node node-python" title="Python"><i class="fa-brands fa-python" style="color:#2563eb;"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section (Bento Grid Layout) -->
+  <section class="about-section reveal" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-sub">Bridging the gap between robust system pipelines, scalable databases, and intuitive interfaces.</p>
+      
+      <div class="about-bento-grid">
+        <!-- Card 1: My Story -->
+        <div class="bento-card bento-wide bento-story">
+          <div class="bento-card-glow"></div>
+          <h3>Engineering Background &amp; Focus</h3>
+          <p class="paragraph">I am an Information Technology Engineering student at <strong>Shree L.R. Tiwari College of Engineering (BE IT, SGPA: 7.83)</strong> specializing in architecting modern full-stack applications, real-time distributed pipelines, and secure backend systems.</p>
+          <p class="paragraph">My development approach centers on building scalable software from end to end — combining modern frontend frameworks (<strong>Next.js 14, React.js, TypeScript</strong>) with resilient backend microservices and databases (<strong>Node.js, Express, PostgreSQL, Prisma, MongoDB</strong>), integrated with real-time WebSockets and cloud APIs.</p>
+        </div>
+        
+        <!-- Card 2: Refined Workspace IDE Mockup -->
+        <div class="bento-card bento-workspace">
+          <div class="bento-card-glow"></div>
+          <div class="workspace-mock">
+            <div class="workspace-header-bar">
+              <div class="header-dots">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              </div>
+              <span class="workspace-tab active-tab"><i class="fa-solid fa-file-code"></i> developer.ts</span>
+            </div>
+            <div class="workspace-body">
+              <div class="file-sidebar">
+                <div class="sidebar-title">WORKSPACE</div>
+                <div class="sidebar-item active-file"><i class="fa-solid fa-file-code text-blue-file"></i> developer.ts</div>
+                <div class="sidebar-item"><i class="fa-solid fa-database text-purple-file"></i> schema.prisma</div>
+                <div class="sidebar-item"><i class="fa-solid fa-gear text-muted-file"></i> .env</div>
+              </div>
+              <div class="code-editor-area">
+                <pre class="code-output"><code><span class="keyword">interface</span> <span class="type-name">EngineerProfile</span> {
+  name: <span class="string">"Sujal Verma"</span>;
+  role: <span class="string">"Full-Stack Developer & SDE"</span>;
+  specialization: [<span class="string">"Next.js"</span>, <span class="string">"MERN"</span>, <span class="string">"TypeScript"</span>];
+  databases: [<span class="string">"PostgreSQL"</span>, <span class="string">"MongoDB"</span>, <span class="string">"MySQL"</span>];
+  location: <span class="string">"Mumbai, Maharashtra, IN"</span>;
+  status: <span class="string">"Available for Roles & Internships"</span>;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 3: Metrics & Stats (Achievements Counters) -->
+        <div class="bento-card bento-stats-box">
+          <div class="bento-card-glow"></div>
+          <h3>Track Record</h3>
+          <div class="bento-stats-grid">
+            <div class="bento-stat-item">
+              <div class="num-wrap">
+                <span class="stat-num" data-target="6">0</span><span class="stat-plus">+</span>
+              </div>
+              <span class="stat-label">Projects &amp; Pilots</span>
+            </div>
+            <div class="bento-stat-item">
+              <div class="num-wrap">
+                <span class="stat-num" data-target="5">0</span><span class="stat-plus">+</span>
+              </div>
+              <span class="stat-label">Hackathons</span>
+            </div>
+            <div class="bento-stat-item">
+              <div class="num-wrap">
+                <span class="stat-num" data-target="1">0</span><span class="stat-plus"></span>
+              </div>
+              <span class="stat-label">Full-Stack Internship</span>
+            </div>
+            <div class="bento-stat-item">
+              <div class="num-wrap">
+                <span class="stat-num" data-target="7">0</span><span class="stat-plus">+</span>
+              </div>
+              <span class="stat-label">Certifications</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Position of Responsibility & Current Status -->
+        <div class="bento-card bento-stance">
+          <div class="bento-card-glow"></div>
+          <h3>Leadership &amp; Availability</h3>
+          <ul class="stance-list">
+            <li><span class="stance-bullet">🏛️</span> <strong>ITSA Committee Member</strong> &ndash; Information Technology Student Association</li>
+            <li><span class="stance-bullet">⚡</span> <strong>Open to Opportunities:</strong> SDE Roles &amp; Full-Stack Internships</li>
+            <li><span class="stance-bullet">🧠</span> <strong>Active Expansion:</strong> Next.js 14, Cloud Microservices &amp; Distributed Systems</li>
+            <li><span class="stance-bullet">📍</span> <strong>Based in:</strong> Mumbai, Maharashtra, India</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Skills Section -->
+  <section class="skills-section reveal" id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills &amp; Toolkit</h2>
+      <p class="section-sub">Comprehensive technical stack and computational tools aligned with modern engineering standards.</p>
+      
+      <!-- Category Tabs Controls -->
+      <div class="skills-filter-controls">
+        <button class="skills-filter-btn active" data-skill-filter="all">All Tech</button>
+        <button class="skills-filter-btn" data-skill-filter="programming">Programming</button>
+        <button class="skills-filter-btn" data-skill-filter="frontend">Frontend</button>
+        <button class="skills-filter-btn" data-skill-filter="backend">Backend</button>
+        <button class="skills-filter-btn" data-skill-filter="databases">Databases</button>
+        <button class="skills-filter-btn" data-skill-filter="tools">Tools &amp; Cloud</button>
+        <button class="skills-filter-btn" data-skill-filter="core-cs">Core CS</button>
+      </div>
+
+      <!-- Skills Cards Grid -->
+      <div class="skills-grid">
+        
+        <!-- Skill 1: TypeScript -->
+        <div class="skill-card-v2" data-skill-cat="programming frontend backend">
+          <div class="skill-card-glow"></div>
+          <div class="skill-card-content">
+            <div class="skill-top-row">
+              <div class="skill-icon-box"><i class="devicon-typescript-plain colored"></i></div>
+              <div class="skill-info">
+                <h3>TypeScript</h3>
+                <span>Type-Safe Architecture</span>
+              </div>
+            </div>
+            <div class="skill-progress-area">
+              <div class="skill-progress-labels">
+                <span>Proficiency</span>
+                <span>88%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="--percent: 88%"></div>
+              </div>
+            </div>
+            <div class="skill-meta-metrics">
+              <div class="skill-metric-item">
+                <span class="metric-label">Category</span>
+                <span class="metric-value">Language</span>
+              </div>
+              <div class="skill-metric-item">
+                <span class="metric-label">Application</span>
+                <span class="metric-value">Next.js &amp; APIs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 2: Next.js 14 -->
+        <div class="skill-card-v2" data-skill-cat="frontend">
+          <div class="skill-card-glow"></div>
+          <div class="skill-card-content">
+            <div class="skill-top-row">
+              <div class="skill-icon-box"><i class="devicon-nextjs-original colored"></i></div>
+              <div class="skill-info">
+                <h3>Next.js 14</h3>
+                <span>App Router &amp; SSR</span>
+              </div>
+            </div>
+            <div class="skill-progress-area">
+              <div class="skill-progress-labels">
+                <span>Proficiency</span>
+                <span>86%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="--percent: 86%"></div>
+              </div>
+            </div>
+            <div class="skill-meta-metrics">
+              <div class="skill-metric-item">
+                <span class="metric-label">Category</span>
+                <span class="metric-value">Framework</span>
+              </div>
+              <div class="skill-metric-item">
+                <span class="metric-label">Application</span>
+                <span class="metric-value">Full-Stack E-Comm</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 3: React.js -->
+        <div class="skill-card-v2" data-skill-cat="frontend">
+          <div class="skill-card-glow"></div>
+          <div class="skill-card-content">
+            <div class="skill-top-row">
+              <div class="skill-icon-box"><i class="devicon-react-original colored"></i></div>
+              <div class="skill-info">
+                <h3>React.js</h3>
+                <span>Component UI Library</span>
+              </div>
+            </div>
+            <div class="skill-progress-area">
+              <div class="skill-progress-labels">
+                <span>Proficiency</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="--percent: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-meta-metrics">
+              <div class="skill-metric-item">
+                <span class="metric-label">Category</span>
+                <span class="metric-value">Frontend</span>
+              </div>
+              <div class="skill-metric-item">
+                <span class="metric-label">Application</span>
+                <span class="metric-value">SPA &amp; Dashboards</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 4: Node.js & Express.js -->
+        <div class="skill-card-v2" data-skill-cat="backend">
+          <div class="skill-card-glow"></div>
+          <div class="skill-card-content">
+            <div class="skill-top-row">
+              <div class="skill-icon-box"><i class="devicon-nodejs-plain colored"></i></div>
+              <div class="skill-info">
+                <h3>Node.js / Express</h3>
+                <span>Server &amp; REST Services</span>
+              </div>
+            </div>
+            <div class="skill-progress-area">
+              <div class="skill-progress-labels">
+                <span>Proficiency</span>
+                <span>88%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="--percent: 88%"></div>
+              </div>
+            </div>
+            <div class="skill-meta-metrics">
+              <div class="skill-metric-item">
+                <span class="metric-label">Category</span>
+                <span class="metric-value">Backend</span>
+              </div>
+              <div class="skill-metric-item">
+                <span class="metric-label">Application</span>
+                <span class="metric-value">Microservices</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 5: JavaScript (ES6) -->
+        <div class="skill-card-v2" data-skill-cat="programming frontend backend">
+          <div class="skill-card-glow"></div>
+          <div class="skill-card-content">
+            <div class="skill-top-row">
+              <div class="skill-icon-box"><i class="devicon-javascript-plain colored"></i></div>
+              <div class="skill-info">
+                <h3>JavaScript (ES6)</h3>
+                <span>Core Language</span>
+              </div>
+            </div>
+            <div class="skill-progress-area">
+              <div class="skill-progress-labels">
+                <span>Proficiency</span>
+                <span>92%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="--percent: 92%"></div>
+              </div>
+            </div>
+            <div class="skill-meta-metrics">
+              <div class="skill-metric-item">
+                <span class="metric-label">Category</span>
+                <span class="metric-value">Core Language</span>
+              </div>
+              <div class="skill-metric-item">
+                <span class="metric-label">Application</span>
+                <span class="metric-value">Async / Event Loop</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 6: Java -->
+        <div class="skill-card-v2" data-skill-cat="programming core-cs">
+          <div class="skill-card-glow"></div>
+          <div class="skill-card-content">
+            <div class="skill-top-row">
+              <div class="skill-icon-box"><i class="devicon-java-plain colored"></i></div>
+              <div class="skill-info">
+                <h3>Java</h3>
+                <span>OOP &amp; Data Structures</span>
+              </div>
+            </div>
+            <div class="skill-progress-area">
+              <div class="skill-progress-labels">
+                <span>Proficiency</span>
+                <span>82%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="--percent: 82%"></div>
+              </div>
+            </div>
+            <div class="skill-meta-metrics">
+              <div class="skill-metric-item">
+                <span class="metric-label">Category</span>
+                <span class="metric-value">Language</span>
+              </div>
+              <div class="skill-metric-item">
+                <span class="metric-label">Application</span>
+                <span class="metric-value">DSA &amp; OOP Concepts</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 7: Python -->
+        <div class="skill-card-v2" data-skill-cat="programming backend">
+          <div class="skill-card-glow"></div>
+          <div class="skill-card-content">
+            <div class="skill-top-row">
+              <div class="skill-icon-box"><i class="devicon-python-plain colored"></i></div>
+              <div class="skill-info">
+                <h3>Python</h3>
+                <span>Backend &amp; AI Scripting</span>
+              </div>
+            </div>
+            <div class="skill-progress-area">
+              <div class="skill-progress-labels">
+                <span>Proficiency</span>
+                <span>84%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="--percent: 84%"></div>
+              </div>
+            </div>
+            <div class="skill-meta-metrics">
+              <div class="skill-metric-item">
+                <span class="metric-label">Category</span>
+                <span class="metric-value">Language</span>
+              </div>
+              <div class="skill-metric-item">
+                <span class="metric-label">Application</span>
+                <span class="metric-value">AI APIs &amp; NLP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 8: PostgreSQL & Prisma ORM -->
+        <div class="skill-card-v2" data-skill-cat="databases">
+          <div class="skill-card-glow"></div>
+          <div class="skill-card-content">
+            <div class="skill-top-row">
+              <div class="skill-icon-box"><i class="devicon-postgresql-plain colored"></i></div>
+              <div class="skill-info">
+                <h3>PostgreSQL &amp; Prisma</h3>
+                <span>Relational ORM Schema</span>
+              </div>
+            </div>
+            <div class="skill-progress-area">
+              <div class="skill-progress-labels">
+                <span>Proficiency</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="--percent: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-meta-metrics">
+              <div class="skill-metric-item">
+                <span class="metric-label">Category</span>
+                <span class="metric-value">RDBMS &amp; ORM</span>
+              </div>
+              <div class="skill-metric-item">
+                <span class="metric-label">Application</span>
+                <span class="metric-value">ACID &amp; Migrations</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 9: MongoDB & MySQL -->
+        <div class="skill-card-v2" data-skill-cat="databases">
+          <div class="skill-card-glow"></div>
+          <div class="skill-card-content">
+            <div class="skill-top-row">
+              <div class="skill-icon-box"><i class="devicon-mongodb-plain colored"></i></div>
+              <div class="skill-info">
+                <h3>MongoDB &amp; MySQL</h3>
+                <span>NoSQL &amp; Relational Datastores</span>
+              </div>
+            </div>
+            <div class="skill-progress-area">
+              <div class="skill-progress-labels">
+                <span>Proficiency</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="--percent: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-meta-metrics">
+              <div class="skill-metric-item">
+                <span class="metric-label">Category</span>
+                <span class="metric-value">Databases</span>
+              </div>
+              <div class="skill-metric-item">
+                <span class="metric-label">Application</span>
+                <span class="metric-value">Transit &amp; Atlas Clusters</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 10: Socket.io & WebSockets -->
+        <div class="skill-card-v2" data-skill-cat="backend">
+          <div class="skill-card-glow"></div>
+          <div class="skill-card-content">
+            <div class="skill-top-row">
+              <div class="skill-icon-box"><i class="devicon-socketio-original colored"></i></div>
+              <div class="skill-info">
+                <h3>Socket.io &amp; WebSockets</h3>
+                <span>Real-Time Bi-Directional Events</span>
+              </div>
+            </div>
+            <div class="skill-progress-area">
+              <div class="skill-progress-labels">
+                <span>Proficiency</span>
+                <span>86%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="--percent: 86%"></div>
+              </div>
+            </div>
+            <div class="skill-meta-metrics">
+              <div class="skill-metric-item">
+                <span class="metric-label">Category</span>
+                <span class="metric-value">Networking</span>
+              </div>
+              <div class="skill-metric-item">
+                <span class="metric-label">Application</span>
+                <span class="metric-value">Live GPS &amp; Chats</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 11: HTML5, CSS3, Tailwind CSS & Bootstrap -->
+        <div class="skill-card-v2" data-skill-cat="frontend">
+          <div class="skill-card-glow"></div>
+          <div class="skill-card-content">
+            <div class="skill-top-row">
+              <div class="skill-icon-box"><i class="devicon-tailwindcss-original colored"></i></div>
+              <div class="skill-info">
+                <h3>HTML5, CSS3 &amp; Tailwind</h3>
+                <span>Responsive Modern UI</span>
+              </div>
+            </div>
+            <div class="skill-progress-area">
+              <div class="skill-progress-labels">
+                <span>Proficiency</span>
+                <span>94%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="--percent: 94%"></div>
+              </div>
+            </div>
+            <div class="skill-meta-metrics">
+              <div class="skill-metric-item">
+                <span class="metric-label">Category</span>
+                <span class="metric-value">UI Styling</span>
+              </div>
+              <div class="skill-metric-item">
+                <span class="metric-label">Application</span>
+                <span class="metric-value">Responsive Frameworks</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 12: REST APIs & OAuth -->
+        <div class="skill-card-v2" data-skill-cat="backend tools">
+          <div class="skill-card-glow"></div>
+          <div class="skill-card-content">
+            <div class="skill-top-row">
+              <div class="skill-icon-box"><i class="fa-solid fa-network-wired" style="color:#2563eb;"></i></div>
+              <div class="skill-info">
+                <h3>REST APIs &amp; Google OAuth</h3>
+                <span>Secure API Integration</span>
+              </div>
+            </div>
+            <div class="skill-progress-area">
+              <div class="skill-progress-labels">
+                <span>Proficiency</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="--percent: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-meta-metrics">
+              <div class="skill-metric-item">
+                <span class="metric-label">Category</span>
+                <span class="metric-value">Integration</span>
+              </div>
+              <div class="skill-metric-item">
+                <span class="metric-label">Application</span>
+                <span class="metric-value">JWT &amp; Auth Flows</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 13: Git, GitHub & GitHub Actions -->
+        <div class="skill-card-v2" data-skill-cat="tools">
+          <div class="skill-card-glow"></div>
+          <div class="skill-card-content">
+            <div class="skill-top-row">
+              <div class="skill-icon-box"><i class="devicon-git-plain colored"></i></div>
+              <div class="skill-info">
+                <h3>Git, GitHub &amp; CI/CD</h3>
+                <span>Version Control &amp; Actions</span>
+              </div>
+            </div>
+            <div class="skill-progress-area">
+              <div class="skill-progress-labels">
+                <span>Proficiency</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="--percent: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-meta-metrics">
+              <div class="skill-metric-item">
+                <span class="metric-label">Category</span>
+                <span class="metric-value">DevOps &amp; VCS</span>
+              </div>
+              <div class="skill-metric-item">
+                <span class="metric-label">Application</span>
+                <span class="metric-value">CI/CD Automation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 14: Linux, Postman, Google Cloud & Vercel -->
+        <div class="skill-card-v2" data-skill-cat="tools">
+          <div class="skill-card-glow"></div>
+          <div class="skill-card-content">
+            <div class="skill-top-row">
+              <div class="skill-icon-box"><i class="devicon-linux-plain colored"></i></div>
+              <div class="skill-info">
+                <h3>Linux, Cloud &amp; Vercel</h3>
+                <span>Platforms &amp; Tooling</span>
+              </div>
+            </div>
+            <div class="skill-progress-area">
+              <div class="skill-progress-labels">
+                <span>Proficiency</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="--percent: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-meta-metrics">
+              <div class="skill-metric-item">
+                <span class="metric-label">Category</span>
+                <span class="metric-value">Platforms</span>
+              </div>
+              <div class="skill-metric-item">
+                <span class="metric-label">Application</span>
+                <span class="metric-value">Deployments &amp; Testing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill 15: Core CS Fundamentals -->
+        <div class="skill-card-v2" data-skill-cat="core-cs">
+          <div class="skill-card-glow"></div>
+          <div class="skill-card-content">
+            <div class="skill-top-row">
+              <div class="skill-icon-box"><i class="fa-solid fa-microchip" style="color:#7c3aed;"></i></div>
+              <div class="skill-info">
+                <h3>Core Computer Science</h3>
+                <span>DSA, OOP, DBMS, OS, Networks</span>
+              </div>
+            </div>
+            <div class="skill-progress-area">
+              <div class="skill-progress-labels">
+                <span>Proficiency</span>
+                <span>88%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="--percent: 88%"></div>
+              </div>
+            </div>
+            <div class="skill-meta-metrics">
+              <div class="skill-metric-item">
+                <span class="metric-label">Category</span>
+                <span class="metric-value">Foundations</span>
+              </div>
+              <div class="skill-metric-item">
+                <span class="metric-label">Application</span>
+                <span class="metric-value">System Architecture</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section (Resume 4.2 Verified) -->
+  <section class="projects-section reveal" id="projects">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-sub">Production-grade applications and architectural implementations engineered for real-world reliability.</p>
+
+      <!-- Filter Controls Array -->
+      <div class="filter-controls">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+        <button class="filter-btn" data-filter="ecommerce">Next.js &amp; E-Commerce</button>
+        <button class="filter-btn" data-filter="realtime">Real-Time &amp; AI</button>
+      </div>
+
+      <!-- Projects Grid Container -->
+      <div class="projects-display-grid">
+        
+        <!-- Project 1: ZUDIO Digital Commerce -->
+        <div class="project-card-row" data-category="fullstack ecommerce">
+          <div class="project-visual-side">
+            <img src="assets/prj-img-src/zudio.png" alt="ZUDIO Digital Commerce Architecture" class="project-ai-img" />
+          </div>
+          <div class="project-narrative-side">
+            <span class="project-status-badge">Concept Pilot &middot; Full Stack</span>
+            <h3>ZUDIO Digital Commerce</h3>
+            <p class="project-text">A full-stack digital commerce platform integrating online shopping with physical store inventory, in-store reservations, and order fulfillment workflows. Engineered with role-based access control, payment webhooks, atomic inventory updates, concurrency protection, audit logging, and automated CI/CD pipelines.</p>
+            
+            <div class="project-tech-tags">
+              <span>Next.js 14</span><span>React.js</span><span>TypeScript</span><span>Node.js</span><span>PostgreSQL</span><span>Prisma</span><span>Razorpay</span><span>Google OAuth</span><span>GitHub Actions</span>
+            </div>
+            
+            <div class="project-action-links">
+              <a href="https://github.com/Raccoon-UX" target="_blank" rel="noopener noreferrer" class="proj-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="#contact" class="proj-btn live"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <button class="proj-btn case-study-btn" data-project="zudio"><i class="fa-solid fa-file-invoice"></i> Case Study</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: SmartTransit OS -->
+        <div class="project-card-row reverse" data-category="fullstack realtime">
+          <div class="project-visual-side">
+            <img src="assets/prj-img-src/GuardianRoute.png" alt="SmartTransit OS Transport System" class="project-ai-img" />
+          </div>
+          <div class="project-narrative-side">
+            <span class="project-status-badge">Public Transit Platform</span>
+            <h3>SmartTransit OS &ndash; Intelligent Public Transportation Platform</h3>
+            <p class="project-text">A unified public transportation platform with role-based workflows for passengers, drivers, administrators, and security operations. Engineered real-time fleet monitoring, route management, journey planning, travel alerts, and live transit updates using Socket.io and interactive maps.</p>
+            
+            <div class="project-tech-tags">
+              <span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Socket.io</span><span>JWT</span><span>Google OAuth</span><span>Leaflet.js</span>
+            </div>
+            
+            <div class="project-action-links">
+              <a href="https://github.com/Raccoon-UX/GuardianRoute-Transport-System-O" target="_blank" rel="noopener noreferrer" class="proj-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="https://raccoon-ux.github.io/GuardianRoute-Transport-System-O/" target="_blank" rel="noopener noreferrer" class="proj-btn live"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <button class="proj-btn case-study-btn" data-project="smarttransit"><i class="fa-solid fa-file-invoice"></i> Case Study</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Verity AI -->
+        <div class="project-card-row" data-category="realtime">
+          <div class="project-visual-side">
+            <img src="assets/prj-img-src/verity-ai.png" alt="Verity AI Audit Model" class="project-ai-img" />
+          </div>
+          <div class="project-narrative-side">
+            <span class="project-status-badge">Hackathon Project &middot; NMIMS GDG Cloud</span>
+            <h3>Verity AI &ndash; AI Auditing &amp; Hallucination Detection</h3>
+            <p class="project-text">An AI response verification platform built during the GDG Cloud Mumbai Hackathon that evaluates LLM-generated answers for factual consistency and potential hallucinations. Features a custom reliability scoring engine ("Gen Score") with automated risk categorization to assist content moderation.</p>
+            
+            <div class="project-tech-tags">
+              <span>Python</span><span>Node.js</span><span>Express.js</span><span>MongoDB Atlas</span><span>Google Cloud API</span>
+            </div>
+            
+            <div class="project-action-links">
+              <a href="https://github.com/Raccoon-UX/Verity-AI-GDG-Hackathon" target="_blank" rel="noopener noreferrer" class="proj-btn github"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="https://aryanubale7.github.io/verity-frontend/" target="_blank" rel="noopener noreferrer" class="proj-btn live"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <button class="proj-btn case-study-btn" data-project="verityai"><i class="fa-solid fa-file-invoice"></i> Case Study</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Career Milestones & Experience Section -->
+  <section class="experience-section reveal" id="experience">
+    <div class="container">
+      <h2 class="section-title">Work Experience &amp; Leadership</h2>
+      <p class="section-sub">Verified industry experience, internship contributions, and institutional leadership roles.</p>
+      
+      <div class="timeline-container">
+        <!-- Timeline Path line -->
+        <div class="timeline-track-line">
+          <div class="timeline-track-fill" id="timelineTrackFill"></div>
+        </div>
+        
+        <!-- Milestone 1: CodTech IT Solutions Pvt. Ltd. -->
+        <div class="timeline-item">
+          <div class="timeline-dot-marker"></div>
+          <div class="timeline-date-side">
+            <span class="timeline-date-label">Dec 2025 &ndash; Jan 2026</span>
+          </div>
+          <div class="timeline-card-content tilt">
+            <div class="timeline-header-v2">
+              <div class="timeline-logo-wrap"><i class="fa-solid fa-code"></i></div>
+              <div class="timeline-title-wrap">
+                <h3>CodTech IT Solutions Pvt. Ltd.</h3>
+                <span class="role-badge">Full Stack Web Development Intern</span>
+              </div>
+            </div>
+            <div class="timeline-body-v2">
+              <div class="timeline-achievements">
+                <h5>Key Responsibilities &amp; Impact</h5>
+                <ul>
+                  <li>Developed a real-time chat application and collaborative document editor using Socket.io and WebSockets for seamless multi-user communication.</li>
+                  <li>Built responsive React applications and integrated REST APIs to enable efficient frontend&ndash;backend communication.</li>
+                  <li>Designed backend services using Node.js, Python, MongoDB, and PostgreSQL with secure authentication and scalable data management.</li>
+                </ul>
+              </div>
+              <div class="timeline-tech-badges">
+                <span>React.js</span><span>Node.js</span><span>Express.js</span><span>Socket.io</span><span>WebSockets</span><span>Python</span><span>MongoDB</span><span>PostgreSQL</span>
+              </div>
+              
+              <!-- Embedded certificate preview with Lightbox trigger -->
+              <div class="certificate-preview-box view-trigger">
+                <img src="assets/Internships- Work Experience/Certified CodTech Intern-1_page-0001.jpg" alt="CodTech Experience Certificate" />
+                <div class="preview-overlay">
+                  <span><i class="fa-solid fa-magnifying-glass-plus"></i> View Certificate</span>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-footer-v2">
+              <a href="https://codtechlearning.com/api/certificates/verify-standalone/A0550C87E4CC8542" target="_blank" rel="noopener noreferrer" class="verify-cred-btn">Verify Credentials <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestone 2: Position of Responsibility - ITSA Committee -->
+        <div class="timeline-item">
+          <div class="timeline-dot-marker"></div>
+          <div class="timeline-date-side">
+            <span class="timeline-date-label">Position of Responsibility</span>
+          </div>
+          <div class="timeline-card-content tilt">
+            <div class="timeline-header-v2">
+              <div class="timeline-logo-wrap"><i class="fa-solid fa-users-gear"></i></div>
+              <div class="timeline-title-wrap">
+                <h3>Information Technology Student Association (ITSA)</h3>
+                <span class="role-badge">Committee Member &middot; SLRTCE</span>
+              </div>
+            </div>
+            <div class="timeline-body-v2">
+              <p class="timeline-desc">Elected committee member driving technical initiatives, student bootcamps, and hackathons across the department. Coordinated technology events including the AI Experience Seminar, promoting practical development workflows and modern stacks.</p>
+              <div class="timeline-achievements">
+                <h5>Key Contributions</h5>
+                <ul>
+                  <li>Organized hands-on technical workshops covering modern web frameworks, Git, and cloud services.</li>
+                  <li>Facilitated peer-to-peer coding sessions and technical seminars for 150+ student participants.</li>
+                </ul>
+              </div>
+              <div class="timeline-tech-badges">
+                <span>Technical Leadership</span><span>Workshop Coordination</span><span>Team Mentorship</span><span>Event Management</span>
+              </div>
+              
+              <div class="certificate-preview-box view-trigger">
+                <img src="assets/Achievements/ITSA AI Experience_page-0001.jpg" alt="ITSA Committee Achievement Certificate" />
+                <div class="preview-overlay">
+                  <span><i class="fa-solid fa-magnifying-glass-plus"></i> View Certificate</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications & Hackathons Slider Section -->
+  <section class="certifications-slider reveal" id="achievements">
+    <div class="container">
+      <h2 class="section-title">Certifications &amp; Hackathons</h2>
+      <p class="section-sub">Verified achievements, hackathon submissions, and technical accreditations from Resume 4.2.</p>
+      
+      <div class="swiper certifications-swiper-container">
+        <div class="swiper-wrapper">
+          
+          <!-- Slide 1: ISRO Bharatiya Antariksh Hackathon 2026 -->
+          <div class="swiper-slide">
+            <div class="carousel-card-wide tilt">
+              <div class="carousel-visual-frame view-trigger">
+                <img src="assets/Achievements/ISRO 2026H2S06BAH-P02709.jpg" alt="ISRO Bharatiya Antariksh Hackathon 2026 Certificate" />
+                <div class="doc-avatar-box"><i class="fa-solid fa-satellite" style="color: #0284c7;"></i></div>
+                <div class="carousel-hover-overlay"><span class="badge-cta">Expand Certificate</span></div>
+              </div>
+              <div class="carousel-meta-content">
+                <h3>ISRO Bharatiya Antariksh Hackathon 2026</h3>
+                <p class="credential-issuer">ISRO &middot; Indian Space Research Organisation</p>
+                <p class="credential-date">August &mdash; 2026</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Build with AI Bootcamp -->
+          <div class="swiper-slide">
+            <div class="carousel-card-wide tilt">
+              <div class="carousel-visual-frame view-trigger">
+                <img src="assets/Achievements/Build With AI Bootcamp.jpg" alt="Build with AI Bootcamp" />
+                <div class="doc-avatar-box"><i class="fa-solid fa-laptop-code" style="color: #2563eb;"></i></div>
+                <div class="carousel-hover-overlay"><span class="badge-cta">Expand Certificate</span></div>
+              </div>
+              <div class="carousel-meta-content">
+                <h3>Build with AI Bootcamp</h3>
+                <p class="credential-issuer">Google for Developers (H2S)</p>
+                <p class="credential-date">April &mdash; 2026</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3: H.E.A.T 1.0 Hackathon -->
+          <div class="swiper-slide">
+            <div class="carousel-card-wide tilt">
+              <div class="carousel-visual-frame view-trigger">
+                <img src="assets/Achievements/H.E.A.T.png" alt="H.E.A.T 1.0 Hackathon" />
+                <div class="doc-avatar-box"><i class="fa-solid fa-fire" style="color: #ea580c;"></i></div>
+                <div class="carousel-hover-overlay"><span class="badge-cta">Expand Certificate</span></div>
+              </div>
+              <div class="carousel-meta-content">
+                <h3>H.E.A.T 1.0 &ndash; 24-Hr Hackathon</h3>
+                <p class="credential-issuer">Atlas SkillTech University</p>
+                <p class="credential-date">March &mdash; 2026</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4: Build & Grow AI Hackathon 2.0 -->
+          <div class="swiper-slide">
+            <div class="carousel-card-wide tilt">
+              <div class="carousel-visual-frame view-trigger">
+                <img src="assets/Achievements/GDG NMIMS.png" alt="Build &amp; Grow AI Hackathon" />
+                <div class="doc-avatar-box"><i class="fa-solid fa-trophy" style="color: #eab308;"></i></div>
+                <div class="carousel-hover-overlay"><span class="badge-cta">Expand Certificate</span></div>
+              </div>
+              <div class="carousel-meta-content">
+                <h3>Build &amp; Grow AI Hackathon 2.0 &ndash; Shortlisted</h3>
+                <p class="credential-issuer">NMIMS, GDG Cloud Mumbai</p>
+                <p class="credential-date">January &mdash; 2026</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5: SuperHack 2025 -->
+          <div class="swiper-slide">
+            <div class="carousel-card-wide tilt">
+              <div class="carousel-visual-frame view-trigger">
+                <img src="assets/Achievements/AWS.png" alt="SuperHack 2025" />
+                <div class="doc-avatar-box"><i class="fa-solid fa-bolt" style="color: #d97706;"></i></div>
+                <div class="carousel-hover-overlay"><span class="badge-cta">Expand Certificate</span></div>
+              </div>
+              <div class="carousel-meta-content">
+                <h3>SuperHack 2025 &ndash; Global AI Hackathon</h3>
+                <p class="credential-issuer">SuperOps &times; AWS &times; Hack2Skill</p>
+                <p class="credential-date">January &mdash; 2026</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 6: Walmart Global Tech -->
+          <div class="swiper-slide">
+            <div class="carousel-card-wide tilt">
+              <div class="carousel-visual-frame view-trigger">
+                <img src="assets/Achievements/Walmart Global Tech_page-0001.jpg" alt="Walmart Job Simulation" />
+                <div class="doc-avatar-box"><i class="fa-solid fa-building-columns" style="color: #0284c7;"></i></div>
+                <div class="carousel-hover-overlay"><span class="badge-cta">Expand Certificate</span></div>
+              </div>
+              <div class="carousel-meta-content">
+                <h3>Advanced Software Engineering Job Simulation</h3>
+                <p class="credential-issuer">Walmart Global Tech (Forage)</p>
+                <p class="credential-date">January &mdash; 2026</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 7: Smart India Hackathon -->
+          <div class="swiper-slide">
+            <div class="carousel-card-wide tilt">
+              <div class="carousel-visual-frame view-trigger">
+                <img src="assets/Achievements/HACKSAGON_page-0001.jpg" alt="Smart India Hackathon Certificate" />
+                <div class="doc-avatar-box"><i class="fa-solid fa-lightbulb" style="color: #2563eb;"></i></div>
+                <div class="carousel-hover-overlay"><span class="badge-cta">Expand Certificate</span></div>
+              </div>
+              <div class="carousel-meta-content">
+                <h3>Smart India Hackathon | Hack the Web</h3>
+                <p class="credential-issuer">Smart India Hackathon (Unstop)</p>
+                <p class="credential-date">September &mdash; 2025</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 8: TechBlitz 2026 -->
+          <div class="swiper-slide">
+            <div class="carousel-card-wide tilt">
+              <div class="carousel-visual-frame view-trigger">
+                <img src="assets/Achievements/Sujal-Verma.png" alt="TechBlitz 2026 Certificate" />
+                <div class="doc-avatar-box"><i class="fa-solid fa-shield-halved" style="color: #dc2626;"></i></div>
+                <div class="carousel-hover-overlay"><span class="badge-cta">Expand Certificate</span></div>
+              </div>
+              <div class="carousel-meta-content">
+                <h3>TechBlitz 2026 &ndash; Trident AI</h3>
+                <p class="credential-issuer">Vidyavardhini's College of Engineering</p>
+                <p class="credential-date">2026</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Swiper Controls -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next" aria-label="Next Certificate"></div>
+        <div class="swiper-button-prev" aria-label="Previous Certificate"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Portal Section -->
+  <section class="contact-section reveal" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Me</h2>
+      <p class="section-sub">Let's discuss full-stack software opportunities, engineering collaboration, or new initiatives.</p>
+      
+      <div class="contact-container-grid">
+        <!-- Left Side Visual Banner Frame -->
+        <div class="contact-visual-frame">
+          <img src="assets/contact.png" alt="Sujal Verma | Engineering Workspace" class="contact-side-img" />
+        </div>
+
+        <!-- Right Side Form & Coordinates -->
+        <div class="contact-content-side">
+          <div class="contact-split-body">
+            
+            <!-- Asynchronous Formspree Form -->
+            <form class="async-contact-form" id="contactForm" action="https://formspree.io/f/mgojyoww" method="POST">
+              <div class="input-component floating-input-group">
+                <input type="text" id="form-name" name="name" required class="floating-input" placeholder=" " />
+                <label for="form-name" class="floating-label">Full Name</label>
+                <div class="input-glow-line"></div>
+              </div>
+              <div class="input-component floating-input-group">
+                <input type="email" id="form-email" name="email" required class="floating-input" placeholder=" " />
+                <label for="form-email" class="floating-label">E-mail Address</label>
+                <div class="input-glow-line"></div>
+              </div>
+              <div class="input-component floating-input-group">
+                <textarea id="form-message" name="message" rows="3" required class="floating-input" placeholder=" "></textarea>
+                <label for="form-message" class="floating-label">Your Message</label>
+                <div class="input-glow-line"></div>
+              </div>
+              <button type="submit" class="execute-btn">Send Message</button>
+              <div class="execution-status" id="formStatus"></div>
+            </form>
+
+            <!-- Information Coordinates -->
+            <div class="contact-meta-coordinates">
+              <div class="meta-coordinate-item">
+                <h4>Direct Email</h4>
+                <p class="primary-detail"><a href="mailto:vsujal956@gmail.com" style="color: inherit; text-decoration: none;">vsujal956@gmail.com</a></p>
+              </div>
+              <div class="meta-coordinate-item">
+                <h4>Location</h4>
+                <p>Mumbai, Maharashtra,<br>India</p>
+              </div>
+              
+              <!-- Social Icon Grid -->
+              <div class="contact-inline-socials">
+                <a href="https://www.linkedin.com/in/sujalverma456/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon linkedin-brand">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/Raccoon-UX" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-icon github-brand">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="mailto:vsujal956@gmail.com" aria-label="Gmail" class="social-icon gmail-brand">
+                  <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="https://wa.me/917710893839" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-icon whatsapp-brand">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Structural Footer Component (Light Mode Polished) -->
+  <footer class="footer-component">
+    <div class="footer-grid container">
+      
+      <!-- Column 1: Brand -->
+      <div class="footer-block main-identity">
+        <h2 class="footer-brand">Sujal<span class="highlight">.dev</span></h2>
+        <p class="footer-bio-text">Architecting production-ready full-stack applications, scalable database systems, and real-time distributed software.</p>
+        
+        <!-- Core Architecture Stack Badges -->
+        <div class="footer-stack-badges">
+          <span>Next.js 14</span>
+          <span>React.js</span>
+          <span>TypeScript</span>
+          <span>Node.js</span>
+          <span>PostgreSQL</span>
+          <span>Prisma</span>
+          <span>Socket.io</span>
+        </div>
+      </div>
+
+      <!-- Column 2: Navigation -->
+      <div class="footer-block access-points">
+        <h3>Navigation</h3>
+        <ul class="footer-nav-matrix">
+          <li><a href="#home"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+          <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> About</a></li>
+          <li><a href="#skills"><i class="fa-solid fa-chevron-right"></i> Skills</a></li>
+          <li><a href="#projects"><i class="fa-solid fa-chevron-right"></i> Projects</a></li>
+          <li><a href="#experience"><i class="fa-solid fa-chevron-right"></i> Experience</a></li>
+          <li><a href="#achievements"><i class="fa-solid fa-chevron-right"></i> Achievements</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Communication Channels -->
+      <div class="footer-block communication-coordinates">
+        <h3>Direct Channels</h3>
+        <div class="footer-coordinate-links">
+          <a href="mailto:vsujal956@gmail.com" class="coordinate-item">
+            <i class="fa-solid fa-envelope"></i> vsujal956@gmail.com
+          </a>
+          <a href="https://wa.me/917710893839" target="_blank" rel="noopener noreferrer" class="coordinate-item">
+            <i class="fa-brands fa-whatsapp"></i> +91 7710893839
+          </a>
+          <span class="coordinate-item-static">
+            <i class="fa-solid fa-location-dot"></i> Mumbai, Maharashtra, India
+          </span>
+        </div>
+
+        <!-- Social Handles Grid -->
+        <div class="footer-brand-channels">
+          <a href="https://www.linkedin.com/in/sujalverma456/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="footer-icon-btn linkedin-f"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com/Raccoon-UX" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="footer-icon-btn github-f"><i class="fa-brands fa-github"></i></a>
+          <a href="mailto:vsujal956@gmail.com" aria-label="Email" class="footer-icon-btn mail-f"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Separator Line Rule -->
+    <div class="footer-separator container"></div>
+    
+    <!-- Meta Bottom Layout Sheet -->
+    <div class="footer-meta-bottom container">
+      <div class="system-status-wrapper">
+        <span class="pulse-dot"></span>
+        <span class="status-label">Status: Available for SDE Opportunities</span>
+      </div>
+      <span class="copyright-text">&copy; 2026 Sujal Verma &middot; All Rights Reserved</span>
+      
+      <!-- Back to Top Mechanism -->
+      <a href="#home" class="scroll-top-trigger" aria-label="Scroll Back To Top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Immersive Case Study Modal -->
+  <div id="caseStudyModal" class="case-study-modal-overlay">
+    <div class="modal-container-glass">
+      <button class="modal-close-btn" aria-label="Close Case Study">&times;</button>
+      <div class="modal-header-banner">
+        <span class="modal-project-badge" id="modalProjBadge">Project</span>
+        <h2 id="modalProjTitle">Project Title</h2>
+        <p id="modalProjDesc">Project Description</p>
+      </div>
+      <div class="modal-body-scroll">
+        <div class="modal-two-columns">
+          <div class="modal-main-column">
+            <section class="modal-sec">
+              <h4>Overview</h4>
+              <p id="modalOverview">Detailed overview...</p>
+            </section>
+            <section class="modal-sec">
+              <h4>The Problem &amp; Solution</h4>
+              <div class="problem-solution-grid">
+                <div class="prob-box">
+                  <h5>Problem</h5>
+                  <p id="modalProblem">Problem description...</p>
+                </div>
+                <div class="sol-box">
+                  <h5>Solution</h5>
+                  <p id="modalSolution">Solution description...</p>
+                </div>
+              </div>
+            </section>
+            <section class="modal-sec">
+              <h4>Architecture &amp; Technical Details</h4>
+              <p id="modalArchitecture">System design and architecture description...</p>
+            </section>
+            <section class="modal-sec">
+              <h4>Key Challenges &amp; Engineering Resolutions</h4>
+              <p id="modalChallenges">Challenges encountered and how they were solved...</p>
+            </section>
+          </div>
+          <div class="modal-side-column">
+            <div class="side-widget">
+              <h5>Tech Stack</h5>
+              <div class="widget-tech-tags" id="modalTechStack">
+                <!-- Tags will be dynamically generated -->
+              </div>
+            </div>
+            <div class="side-widget">
+              <h5>Project Details</h5>
+              <div class="details-list">
+                <div class="detail-item-v2">
+                  <span>Type:</span>
+                  <strong id="modalProjType">Web Application</strong>
+                </div>
+                <div class="detail-item-v2">
+                  <span>Category:</span>
+                  <strong id="modalFuture">Full-Stack Platform</strong>
+                </div>
+              </div>
+            </div>
+            <div class="side-widget links-widget">
+              <h5>Project Links</h5>
+              <div class="widget-links">
+                <a href="#" id="modalGithubLink" target="_blank" rel="noopener noreferrer" class="widget-btn github-btn"><i class="fa-brands fa-github"></i> Source Code</a>
+                <a href="#" id="modalLiveLink" target="_blank" rel="noopener noreferrer" class="widget-btn live-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certificate Lightbox Engine -->
+  <div id="lightboxModal" class="lightbox-engine-overlay">
+    <span class="dismiss-btn">&times;</span>
+    <div class="lightbox-wrapper">
+      <div class="fallback-modal-icon"><i class="fa-solid fa-file-lines"></i></div>
+      <img class="lightbox-image-target" id="modalImageContainer" alt="Certificate Preview" />
+      <div id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- CDN Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
