@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <link rel="stylesheet" href="style.css?v=2.4" />
+  <link rel="stylesheet" href="style.css?v=2.5" />
 </head>
 <body> 
   <!-- Custom Premium Cursor -->
@@ -629,90 +629,148 @@
     </div>
   </section>
 
-  <!-- Career Milestones & Experience Section -->
+  <!-- Career Milestones & Experience Section (Redesigned from Reference) -->
   <section class="experience-section reveal" id="experience">
     <div class="container">
-      <h2 class="section-title">Work Experience &amp; Leadership</h2>
-      <p class="section-sub">Verified industry experience, internship contributions, and institutional leadership roles.</p>
       
-      <div class="timeline-container">
-        <!-- Timeline Path line -->
-        <div class="timeline-track-line">
-          <div class="timeline-track-fill" id="timelineTrackFill"></div>
+      <!-- Section Eyebrow Header -->
+      <div class="experience-header-block">
+        <div class="experience-eyebrow">
+          <i class="fa-solid fa-briefcase"></i> Career Journey
         </div>
+        <h2 class="section-title">Work Experience &amp; <span class="text-blue-accent">Leadership</span></h2>
+        <p class="section-sub">My professional journey, hands-on experience and leadership roles that have shaped my skills and passion for building impactful solutions.</p>
+      </div>
+
+      <!-- Experience & Leadership Filter Tabs -->
+      <div class="career-filter-tabs">
+        <button class="career-tab-btn" data-career-tab="work">
+          <i class="fa-solid fa-briefcase"></i> Work Experience
+        </button>
+        <button class="career-tab-btn" data-career-tab="leadership">
+          <i class="fa-solid fa-users"></i> Leadership
+        </button>
+      </div>
+
+      <!-- Alternating Career Timeline Container -->
+      <div class="career-timeline-container">
         
-        <!-- Milestone 1: CodTech IT Solutions Pvt. Ltd. -->
-        <div class="timeline-item">
-          <div class="timeline-dot-marker"></div>
-          <div class="timeline-date-side">
-            <span class="timeline-date-label">Dec 2025 &ndash; Jan 2026</span>
+        <!-- Central Timeline Track Line -->
+        <div class="career-track-line">
+          <div class="career-track-fill" id="careerTrackFill"></div>
+        </div>
+
+        <!-- Timeline Milestone 1: Work Experience (Left Side on Desktop) -->
+        <div class="career-timeline-item left-item" data-career-type="work">
+          <div class="career-node-marker node-work">
+            <i class="fa-solid fa-briefcase"></i>
           </div>
-          <div class="timeline-card-content tilt">
-            <div class="timeline-header-v2">
-              <div class="timeline-logo-wrap"><i class="fa-solid fa-code"></i></div>
-              <div class="timeline-title-wrap">
-                <h3>CodTech IT Solutions Pvt. Ltd.</h3>
-                <span class="role-badge">Full Stack Web Development Intern</span>
+          
+          <div class="career-card tilt">
+            <div class="career-card-header">
+              <div class="career-avatar-box avatar-work">
+                <i class="fa-solid fa-building"></i>
               </div>
-            </div>
-            <div class="timeline-body-v2">
-              <div class="timeline-achievements">
-                <h5>Key Responsibilities &amp; Impact</h5>
-                <ul>
-                  <li>Developed a real-time chat application and collaborative document editor using Socket.io and WebSockets for seamless multi-user communication.</li>
-                  <li>Built responsive React applications and integrated REST APIs to enable efficient frontend&ndash;backend communication.</li>
-                  <li>Designed backend services using Node.js, Python, MongoDB, and PostgreSQL with secure authentication and scalable data management.</li>
-                </ul>
-              </div>
-              <div class="timeline-tech-badges">
-                <span>React.js</span><span>Node.js</span><span>Express.js</span><span>Socket.io</span><span>WebSockets</span><span>Python</span><span>MongoDB</span><span>PostgreSQL</span>
-              </div>
-              
-              <!-- Embedded certificate preview with Lightbox trigger -->
-              <div class="certificate-preview-box view-trigger">
-                <img src="assets/Internships- Work Experience/Certified CodTech Intern-1_page-0001.jpg" alt="CodTech Experience Certificate" />
-                <div class="preview-overlay">
-                  <span><i class="fa-solid fa-magnifying-glass-plus"></i> View Certificate</span>
+              <div class="career-header-meta">
+                <div class="career-title-row">
+                  <h3>CodTech IT Solutions Pvt. Ltd.</h3>
+                  <span class="career-type-pill pill-work">Internship</span>
+                </div>
+                <div class="career-role-title">Full Stack Web Development Intern</div>
+                <div class="career-date-loc">
+                  <i class="fa-regular fa-calendar"></i> Dec 2025 &ndash; Jan 2026
                 </div>
               </div>
             </div>
-            <div class="timeline-footer-v2">
-              <a href="https://codtechlearning.com/api/certificates/verify-standalone/A0550C87E4CC8542" target="_blank" rel="noopener noreferrer" class="verify-cred-btn">Verify Credentials <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+
+            <div class="career-card-body">
+              <p class="career-overview">Worked on real-world web applications, gaining hands-on experience in full-stack development, real-time systems and modern web technologies.</p>
+              
+              <ul class="career-bullets">
+                <li>Developed a real-time chat application and collaborative document editor using Socket.io and WebSockets for seamless multi-user communication.</li>
+                <li>Built responsive React applications and integrated REST APIs to enable efficient frontend&ndash;backend communication.</li>
+                <li>Designed backend services using Node.js, Python, MongoDB, and PostgreSQL with secure authentication and scalable data management.</li>
+              </ul>
+
+              <div class="career-tech-stack-bar">
+                <div class="tech-stack-label">
+                  <i class="fa-solid fa-layer-group"></i>
+                  <span>Tech Stack:</span>
+                </div>
+                <div class="tech-stack-chips">
+                  <span>Node.js</span>
+                  <span>Python</span>
+                  <span>React</span>
+                  <span>MongoDB</span>
+                  <span>PostgreSQL</span>
+                  <span>Socket.io</span>
+                </div>
+              </div>
+
+              <!-- Certificate Preview & Verify Credentials Button -->
+              <div class="career-card-actions">
+                <div class="certificate-preview-box view-trigger">
+                  <img src="assets/Internships- Work Experience/Certified CodTech Intern-1_page-0001.jpg" alt="CodTech Experience Certificate" />
+                  <div class="preview-overlay">
+                    <span><i class="fa-solid fa-magnifying-glass-plus"></i> View Certificate</span>
+                  </div>
+                </div>
+                <a href="https://codtechlearning.com/api/certificates/verify-standalone/A0550C87E4CC8542" target="_blank" rel="noopener noreferrer" class="verify-cred-btn">Verify Credentials <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Milestone 2: Position of Responsibility - ITSA Committee -->
-        <div class="timeline-item">
-          <div class="timeline-dot-marker"></div>
-          <div class="timeline-date-side">
-            <span class="timeline-date-label">Position of Responsibility</span>
+        <!-- Timeline Milestone 2: Leadership (Right Side on Desktop) -->
+        <div class="career-timeline-item right-item" data-career-type="leadership">
+          <div class="career-node-marker node-leadership">
+            <i class="fa-solid fa-users"></i>
           </div>
-          <div class="timeline-card-content tilt">
-            <div class="timeline-header-v2">
-              <div class="timeline-logo-wrap"><i class="fa-solid fa-users-gear"></i></div>
-              <div class="timeline-title-wrap">
-                <h3>Information Technology Student Association (ITSA)</h3>
-                <span class="role-badge">Committee Member &middot; SLRTCE</span>
+
+          <div class="career-card tilt">
+            <div class="career-card-header">
+              <div class="career-avatar-box avatar-leadership">
+                <i class="fa-solid fa-users-gear"></i>
+              </div>
+              <div class="career-header-meta">
+                <div class="career-title-row">
+                  <h3>Information Technology Student Association (ITSA)</h3>
+                  <span class="career-type-pill pill-leadership">Leadership</span>
+                </div>
+                <div class="career-role-title">Committee Member</div>
+                <div class="career-date-loc">
+                  <i class="fa-regular fa-calendar"></i> 2024 &ndash; Present &nbsp;|&nbsp; SLRTCE, Mumbai
+                </div>
               </div>
             </div>
-            <div class="timeline-body-v2">
-              <p class="timeline-desc">Elected committee member driving technical initiatives, student bootcamps, and hackathons across the department. Coordinated technology events including the AI Experience Seminar, promoting practical development workflows and modern stacks.</p>
-              <div class="timeline-achievements">
-                <h5>Key Contributions</h5>
-                <ul>
+
+            <div class="career-card-body">
+              <p class="career-overview">Contributed to organizing technical workshops, events and community initiatives. Mentored peers and helped drive the association's technical and learning programs.</p>
+
+              <div class="career-contributions-box">
+                <div class="contributions-header">
+                  <i class="fa-regular fa-star"></i> Key Contributions
+                </div>
+                <ul class="contributions-bullets">
                   <li>Organized hands-on technical workshops covering modern web frameworks, Git, and cloud services.</li>
                   <li>Facilitated peer-to-peer coding sessions and technical seminars for 150+ student participants.</li>
                 </ul>
               </div>
-              <div class="timeline-tech-badges">
-                <span>Technical Leadership</span><span>Workshop Coordination</span><span>Team Mentorship</span><span>Event Management</span>
+
+              <div class="career-tags-row">
+                <span>Technical Leadership</span>
+                <span>Workshop Coordination</span>
+                <span>Team Mentorship</span>
+                <span>Event Management</span>
               </div>
-              
-              <div class="certificate-preview-box view-trigger">
-                <img src="assets/Achievements/ITSA AI Experience_page-0001.jpg" alt="ITSA Committee Achievement Certificate" />
-                <div class="preview-overlay">
-                  <span><i class="fa-solid fa-magnifying-glass-plus"></i> View Certificate</span>
+
+              <!-- Certificate Preview -->
+              <div class="career-card-actions">
+                <div class="certificate-preview-box view-trigger">
+                  <img src="assets/Achievements/ITSA AI Experience_page-0001.jpg" alt="ITSA Committee Achievement Certificate" />
+                  <div class="preview-overlay">
+                    <span><i class="fa-solid fa-magnifying-glass-plus"></i> View Certificate</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -720,6 +778,50 @@
         </div>
 
       </div>
+
+      <!-- Bottom Stats Strip (From Reference Image) -->
+      <div class="career-stats-strip">
+        <div class="career-stat-item">
+          <div class="career-stat-icon icon-blue">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+          <div class="career-stat-meta">
+            <span class="stat-main-num">1+</span>
+            <span class="stat-main-label">Years of Professional Experience</span>
+          </div>
+        </div>
+        
+        <div class="career-stat-item">
+          <div class="career-stat-icon icon-purple">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <div class="career-stat-meta">
+            <span class="stat-main-num">1</span>
+            <span class="stat-main-label">Leadership Role</span>
+          </div>
+        </div>
+
+        <div class="career-stat-item">
+          <div class="career-stat-icon icon-cyan">
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <div class="career-stat-meta">
+            <span class="stat-main-num">Real-World</span>
+            <span class="stat-main-label">Projects &amp; Impact</span>
+          </div>
+        </div>
+
+        <div class="career-stat-item">
+          <div class="career-stat-icon icon-emerald">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <div class="career-stat-meta">
+            <span class="stat-main-num">Continuous Learning</span>
+            <span class="stat-main-label">New Technologies &amp; Skills</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1105,6 +1207,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script src="script.js?v=2.4"></script>
+  <script src="script.js?v=2.5"></script>
 </body>
 </html>

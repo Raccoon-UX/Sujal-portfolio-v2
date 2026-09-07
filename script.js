@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(tickCursor);
 
     // Dynamic Hover classes trigger
-    const interactiveElements = document.querySelectorAll('a, button, .view-trigger, .case-study-btn, .filter-btn, .skills-pill-btn, .toolkit-chip');
+    const interactiveElements = document.querySelectorAll('a, button, .view-trigger, .case-study-btn, .filter-btn, .skills-pill-btn, .toolkit-chip, .career-tab-btn, .career-card, .career-avatar-box');
     interactiveElements.forEach(el => {
       el.addEventListener('mouseenter', () => {
         if (!isMagneticLocked && typeof gsap !== 'undefined') {
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Magnetic Attraction Mechanics
-    const magneticElements = document.querySelectorAll('.nav-link, .logo, .social-icon, .execute-btn, .btn, .filter-btn, .skills-pill-btn');
+    const magneticElements = document.querySelectorAll('.nav-link, .logo, .social-icon, .execute-btn, .btn, .filter-btn, .skills-pill-btn, .career-tab-btn');
     magneticElements.forEach(el => {
       el.addEventListener('mousemove', (e) => {
         isMagneticLocked = true;
@@ -338,10 +338,10 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Vertical Timeline track line filling
-    gsap.to(".timeline-track-fill", {
+    // Career Timeline track line filling
+    gsap.to(".career-track-fill", {
       scrollTrigger: {
-        trigger: ".timeline-container",
+        trigger: ".career-timeline-container",
         start: "top 40%",
         end: "bottom 60%",
         scrub: true
@@ -350,22 +350,22 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: "none"
     });
 
-    // Vertical Timeline items trigger
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    timelineItems.forEach(item => {
-      gsap.from(item.querySelector('.timeline-card-content'), {
+    // Career Timeline items trigger
+    const careerTimelineItems = document.querySelectorAll('.career-timeline-item');
+    careerTimelineItems.forEach(item => {
+      gsap.from(item.querySelector('.career-card'), {
         scrollTrigger: {
           trigger: item,
           start: "top 85%",
           once: true
         },
         opacity: 0,
-        y: 30,
+        x: item.classList.contains('right-item') ? 35 : -35,
         duration: 0.7,
         ease: "power2.out",
         clearProps: "all"
       });
-      gsap.from(item.querySelector('.timeline-dot-marker'), {
+      gsap.from(item.querySelector('.career-node-marker'), {
         scrollTrigger: {
           trigger: item,
           start: "top 85%",
@@ -467,6 +467,42 @@ document.addEventListener('DOMContentLoaded', () => {
             card.classList.add('hide');
           }
         });
+
+        // Trigger ScrollTrigger refresh to maintain scroll sync and Lenis harmony
+        if (typeof ScrollTrigger !== 'undefined') {
+          ScrollTrigger.refresh();
+        }
+      });
+    });
+  }
+
+  /* ================= 8.5 DYNAMIC CAREER JOURNEY TABS ================= */
+  const careerTabBtns = document.querySelectorAll('.career-tab-btn');
+  const careerItems = document.querySelectorAll('.career-timeline-item');
+
+  if (careerTabBtns.length > 0 && careerItems.length > 0) {
+    careerTabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetTab = btn.getAttribute('data-career-tab');
+        const isAlreadyActive = btn.classList.contains('active');
+
+        if (isAlreadyActive) {
+          // If clicked while active, toggle to show both (All Journey view)
+          careerTabBtns.forEach(b => b.classList.remove('active'));
+          careerItems.forEach(item => item.classList.remove('hide'));
+        } else {
+          careerTabBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          careerItems.forEach(item => {
+            const itemType = item.getAttribute('data-career-type');
+            if (targetTab === 'all' || itemType === targetTab) {
+              item.classList.remove('hide');
+            } else {
+              item.classList.add('hide');
+            }
+          });
+        }
 
         // Trigger ScrollTrigger refresh to maintain scroll sync and Lenis harmony
         if (typeof ScrollTrigger !== 'undefined') {
