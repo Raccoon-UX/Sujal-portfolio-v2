@@ -485,8 +485,8 @@ document.addEventListener('DOMContentLoaded', () => {
       techStack: ["Next.js 14", "React.js", "TypeScript", "Node.js", "PostgreSQL", "Prisma ORM", "Razorpay API", "Google OAuth", "GitHub Actions"],
       type: "Full-Stack Web Platform",
       future: "Automated demand forecasting and multi-warehouse logistics optimization.",
-      github: "https://github.com/Raccoon-UX",
-      live: "#contact"
+      github: "https://github.com/Raccoon-UX/Zudio-Digital-Commerce.git",
+      live: "https://zudio-digital-commerce.vercel.app/"
     },
     smarttransit: {
       badge: "Public Transit Platform",
@@ -500,8 +500,8 @@ document.addEventListener('DOMContentLoaded', () => {
       techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.io", "JWT", "Google OAuth", "Leaflet.js", "HTML5 Geolocation"],
       type: "Real-Time Transit Platform",
       future: "AI-driven schedule optimization based on historical municipal passenger density.",
-      github: "https://github.com/Raccoon-UX/GuardianRoute-Transport-System-O",
-      live: "https://raccoon-ux.github.io/GuardianRoute-Transport-System-O/"
+      github: "https://github.com/Raccoon-UX/SmartTransit-OS.git",
+      live: "https://smarttransit-os.vercel.app/"
     },
     verityai: {
       badge: "Hackathon Project · NMIMS GDG Cloud",
